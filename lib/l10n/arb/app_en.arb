@@ -1,0 +1,79 @@
+{
+    "@@locale": "en",
+    "gameTitle": "One Dungeon",
+    "@gameTitle": {
+        "description": "The name of the game"
+    },
+    "loadingText": "Loading...",
+    "@loadingText": {
+        "description": "Text that will be shown on Loading Page"
+    },
+    "playText": "Play",
+    "@playText": {
+        "description": "Text that will be shown on Menu Overlay"
+    },
+    "soundText": "Sound",
+    "@soundText": {
+        "description": "Text that will be shown on Menu Overlay"
+    },
+    "languageText": "Language",
+    "@languageText": {
+        "description": "Text that will be shown on Menu Overlay"
+    },
+    "howToPlayText": "How To Play",
+    "@howToPlayText": {
+        "description": "Text that will be shown on Menu Overlay"
+    },
+    "aboutText": "About",
+    "@aboutText": {
+        "description": "Text that will be shown on Menu Overlay"
+    },
+    "backText": "Back",
+    "@backText": {
+        "description": "Text that will be shown on Dialog"
+    },
+    "aboutDetailText": "One Dungeon developed during the Midyear 2022 Flame Game Jam. It is a 1-Bit style game, consists of one level, runs only on one platform, and, lastly, it is a one dungeon game. \n\nAre you interested in developing a game more than playing a game? Then do not hesitate to check out the GitHub repository of the game. One Dungeon is open source and available publicly. \n\nThe game is powered by Flame Engine and Flutter. Flame is a minimalist Flutter game engine that provides a nice set of somewhat independent modules you can choose. \n\nIn the source code, you will see tested and %100 covered clean code. The project has been created using Very Good CLI. Also used Flame Behaviors package that applies separation of concerns to game logic in the form of Entities and Behaviors. Other packages worth mentioning are Bloc, Equatable, Freezed, GetIt, Mocktail, and so on. \n\nLastly,  One Dungeon supports localizations, and English and German are already available.",
+    "@aboutDetailText": {
+        "description": "Text that will be shown on About Dialog"
+    },
+    "congratulationsText": "Congratulations!",
+    "@congratulationsText": {
+        "description": "Text that will be shown on Replay Dialog"
+    },
+    "gameOverText": "Game over!",
+    "@gameOverText": {
+        "description": "Text that will be shown on Replay Dialog"
+    },
+    "yourScoreText": "Your score:",
+    "@yourScoreText": {
+        "description": "Text that will be shown on Replay Dialog"
+    },
+    "replayText": "Replay",
+    "@replayText": {
+        "description": "Text that will be shown on Replay Dialog"
+    },
+    "exitToMenuText": "Exit to Menu",
+    "@exitToMenuText": {
+        "description": "Text that will be shown on Replay Dialog"
+    },
+    "onText": "ON",
+    "@onText": {
+        "description": "Text that will be shown on Sound Settings Dialog"
+    },
+    "offText": "OFF",
+    "@offText": {
+        "description": "Text that will be shown on Sound Settings Dialog"
+    },
+    "backgroundMusicText": "Music:",
+    "@backgroundMusicText": {
+        "description": "Text that will be shown on Sound Settings Dialog"
+    },
+    "sfxText": "SFX:",
+    "@sfxText": {
+        "description": "Text that will be shown on Sound Settings Dialog"
+    },
+    "howToPlayDetailText": "In the game, we have the character named “Dundee”. You can move him with the buttons W, A and D. \n\n\n\nW : jump \n\nA : left move \n\nD : right move \n\n\n\nThe goal in the game is to pass the Dungeon as soon as possible and get the highest score. Collected stars contribute to raising the endgame score. Come on, we'll be waiting for you at the end of the Dungeon!",
+    "@howToPlayDetailText": {
+        "description": "Text that will be shown on Sound Settings Dialog"
+    }
+}
