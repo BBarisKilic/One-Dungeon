@@ -4,7 +4,7 @@
     "@gameTitle": {
         "description": "The name of the game"
     },
-    "loadingText": "Geladen...",
+    "loadingText": "Wird geladen...",
     "@loadingText": {
         "description": "Text, der auf der Lade Seite angezeigt wird"
     },
@@ -32,7 +32,7 @@
     "@backText": {
         "description": "Text that will be shown on Dialog"
     },
-    "aboutDetailText": "One Dungeon developed during the Midyear 2022 Flame Game Jam. It is a 1-Bit style game, consists of one level, runs only on one platform, and, lastly, it is a one dungeon game. \n\nAre you interested in developing a game more than playing a game? Then do not hesitate to check out the GitHub repository of the game. One Dungeon is open source and available publicly. \n\nThe game is powered by Flame Engine and Flutter. Flame is a minimalist Flutter game engine that provides a nice set of somewhat independent modules you can choose. \n\nIn the source code, you will see tested and %100 covered clean code. The project has been created using Very Good CLI. Also used Flame Behaviors package that applies separation of concerns to game logic in the form of Entities and Behaviors. Other packages worth mentioning are Bloc, Equatable, Freezed, GetIt, Mocktail, and so on. \n\nLastly,  One Dungeon supports localizations, and English and German are already available.",
+    "aboutDetailText": "One Dungeon wurde während Midyear 2022 Flame Game Jam entwickelt. One Dungeon ist ein 1-Bit Art Spiel, dass aus 2 Abschnitten besteht und nur auf einer Plattform gelaufen wird. Zuletzt ist es ein Ein-Dungeon-Spiel.\n\nSind Sie mehr daran interessiert, ein Spiel zu entwickeln, als ein Spiel zu spielen? Dann zögern Sie nicht, sich mal das GitHub-Repository des Spiels anzusehen. One Dungeon ist Open Source und öffentlich verfügbar.\n\nDas Spiel wird von Flame Engine und Flutter angetrieben. Flame ist eine minimalistische Flutter-Spiel-Engine, die eine schöne Reihe von etwas unabhängigen Modulen bietet, die Sie auswählen können.\n\nIm Quellcode sehen Sie getesteten und zu 100 % abgedeckten sauberen Code. Das Projekt wurde mit Very Good CLI erstellt. Außerdem wurde das Flame Behaviors-Paket verwendet, das die Trennung von Bedenken auf die Spiellogik in Form von Entitäten und Verhaltensweisen anwendet. Andere erwähnenswerte Pakete sind Bloc, Equatable, Freezed, GetIt, Mocktail.\n\nSchließlich unterstützt One Dungeon Lokalisierungen. Die Englische und Deutsche Sprachen sind bereits verfügbar.",
     "@aboutDetailText": {
         "description": "Text that will be shown on About Dialog"
     },
