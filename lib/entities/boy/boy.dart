@@ -1,6 +1,7 @@
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:flame_behaviors/flame_behaviors.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:one_dungeon/entities/boy/behaviors/behaviors.dart';
 import 'package:one_dungeon/entities/entities.dart';
@@ -66,6 +67,18 @@ class Boy extends Entity {
           jumpKey: LogicalKeyboardKey.arrowUp,
           leftKey: LogicalKeyboardKey.arrowLeft,
           rightKey: LogicalKeyboardKey.arrowRight,
+        );
+
+  @visibleForTesting
+  Boy.test({
+    Vector2? velocity,
+    Vector2? center,
+    Behavior? behavior,
+  }) : this._(
+          velocity: velocity,
+          center: center ?? Vector2(30, 500),
+          behaviors: [if (behavior != null) behavior],
+          boySprite: BoySprite(textureSize: _boySize)..size = _boySize / 2,
         );
 
   final BoySprite _boySprite;
