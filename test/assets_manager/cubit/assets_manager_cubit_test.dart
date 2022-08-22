@@ -16,6 +16,7 @@ void main() {
     game = TestGame();
     audioPlayer = OneDungeonAudioPlayer.test(
       playBackgroundAudio: (_, {double? volume}) async {},
+      stopBackgroundAudio: () async {},
       playSingleAudio: (_, {double? volume}) async {},
       preCacheSingleAudio: (_) async {},
     );

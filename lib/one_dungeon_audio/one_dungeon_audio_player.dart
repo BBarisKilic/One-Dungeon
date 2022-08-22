@@ -29,10 +29,13 @@ enum OneDungeonAudio {
 }
 
 /// Defines the contract for playing a single audio.
-typedef PlaySingleAudio = Future<void> Function(String, {double volume});
+typedef PlayBackgroundAudio = Future<void> Function(String, {double volume});
+
+/// Defines the contract for pre fetching an audio.
+typedef StopBackgroundAudio = Future<void> Function();
 
 /// Defines the contract for playing a single audio.
-typedef PlayBackgroundAudio = Future<void> Function(String, {double volume});
+typedef PlaySingleAudio = Future<void> Function(String, {double volume});
 
 /// Defines the contract for pre fetching an audio.
 typedef PreCacheSingleAudio = Future<void> Function(String);
@@ -48,6 +51,7 @@ class OneDungeonAudioPlayer {
     bool? isSfxActive,
   }) : this._(
           playBackgroundAudio: FlameAudio.bgm.play,
+          stopBackgroundAudio: FlameAudio.bgm.stop,
           playSingleAudio: FlameAudio.play,
           preCacheSingleAudio: FlameAudio.audioCache.load,
           isFirstRun: isFirstRun ?? true,
@@ -57,12 +61,14 @@ class OneDungeonAudioPlayer {
 
   OneDungeonAudioPlayer._({
     required PlayBackgroundAudio playBackgroundAudio,
+    required StopBackgroundAudio stopBackgroundAudio,
     required PlaySingleAudio playSingleAudio,
     required this.preCacheSingleAudio,
     required this.isFirstRun,
     required this.isBackgroundMusicActive,
     required this.isSfxActive,
   })  : _playBackgroundAudio = playBackgroundAudio,
+        _stopBackgroundAudio = stopBackgroundAudio,
         _playSingleAudio = playSingleAudio {
     FlameAudio.audioCache.prefix = '';
   }
@@ -70,6 +76,7 @@ class OneDungeonAudioPlayer {
   @visibleForTesting
   OneDungeonAudioPlayer.test({
     required PlayBackgroundAudio playBackgroundAudio,
+    required StopBackgroundAudio stopBackgroundAudio,
     required PlaySingleAudio playSingleAudio,
     required PreCacheSingleAudio preCacheSingleAudio,
     bool? isFirstRun,
@@ -77,6 +84,7 @@ class OneDungeonAudioPlayer {
     bool? isSfxActive,
   }) : this._(
           playBackgroundAudio: playBackgroundAudio,
+          stopBackgroundAudio: stopBackgroundAudio,
           playSingleAudio: playSingleAudio,
           preCacheSingleAudio: preCacheSingleAudio,
           isFirstRun: isFirstRun ?? true,
@@ -93,6 +101,8 @@ class OneDungeonAudioPlayer {
   bool isSfxActive;
 
   PlayBackgroundAudio _playBackgroundAudio;
+
+  StopBackgroundAudio _stopBackgroundAudio;
 
   PlaySingleAudio _playSingleAudio;
 
@@ -137,5 +147,5 @@ class OneDungeonAudioPlayer {
   }
 
   /// Stops background music.
-  Future<void> stop() async => FlameAudio.bgm.stop();
+  Future<void> stop() async => _stopBackgroundAudio();
 }
