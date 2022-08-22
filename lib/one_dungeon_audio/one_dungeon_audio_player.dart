@@ -1,4 +1,5 @@
 import 'package:flame_audio/flame_audio.dart';
+import 'package:flutter/material.dart';
 import 'package:one_dungeon/constants/game_assets.dart';
 
 enum OneDungeonAudio {
@@ -27,18 +28,61 @@ enum OneDungeonAudio {
   success,
 }
 
+/// Defines the contract for playing a single audio.
+typedef PlaySingleAudio = Future<void> Function(String, {double volume});
+
+/// Defines the contract for playing a single audio.
+typedef PlayBackgroundAudio = Future<void> Function(String, {double volume});
+
+/// Defines the contract for pre fetching an audio.
+typedef PreCacheSingleAudio = Future<void> Function(String);
+
 /// {@template one_dungeon_audio_player}
 /// Sound manager for the OneDungeon game.
 /// {@endtemplate}
 class OneDungeonAudioPlayer {
   /// {@macro one_dungeon_audio_player}
   OneDungeonAudioPlayer({
-    this.isFirstRun = true,
-    this.isBackgroundMusicActive = false,
-    this.isSfxActive = false,
-  }) {
+    bool? isFirstRun,
+    bool? isBackgroundMusicActive,
+    bool? isSfxActive,
+  }) : this._(
+          playBackgroundAudio: FlameAudio.bgm.play,
+          playSingleAudio: FlameAudio.play,
+          preCacheSingleAudio: FlameAudio.audioCache.load,
+          isFirstRun: isFirstRun ?? true,
+          isBackgroundMusicActive: isBackgroundMusicActive ?? false,
+          isSfxActive: isSfxActive ?? false,
+        );
+
+  OneDungeonAudioPlayer._({
+    required PlayBackgroundAudio playBackgroundAudio,
+    required PlaySingleAudio playSingleAudio,
+    required this.preCacheSingleAudio,
+    required this.isFirstRun,
+    required this.isBackgroundMusicActive,
+    required this.isSfxActive,
+  })  : _playBackgroundAudio = playBackgroundAudio,
+        _playSingleAudio = playSingleAudio {
     FlameAudio.audioCache.prefix = '';
   }
+
+  @visibleForTesting
+  OneDungeonAudioPlayer.test({
+    required PlayBackgroundAudio playBackgroundAudio,
+    required PlaySingleAudio playSingleAudio,
+    required PreCacheSingleAudio preCacheSingleAudio,
+    bool? isFirstRun,
+    bool? isBackgroundMusicActive,
+    bool? isSfxActive,
+  }) : this._(
+          playBackgroundAudio: playBackgroundAudio,
+          playSingleAudio: playSingleAudio,
+          preCacheSingleAudio: preCacheSingleAudio,
+          isFirstRun: isFirstRun ?? true,
+          isBackgroundMusicActive: isBackgroundMusicActive ?? false,
+          isSfxActive: isSfxActive ?? false,
+        );
 
   /// On the web platform, it is not possible to play
   /// audio until the first interaction.
@@ -48,6 +92,12 @@ class OneDungeonAudioPlayer {
 
   bool isSfxActive;
 
+  PlayBackgroundAudio _playBackgroundAudio;
+
+  PlaySingleAudio _playSingleAudio;
+
+  PreCacheSingleAudio preCacheSingleAudio;
+
   /// Plays the received audio.
   Future<void> play(OneDungeonAudio audio) async {
     if (isFirstRun) return;
@@ -55,33 +105,33 @@ class OneDungeonAudioPlayer {
     switch (audio) {
       case OneDungeonAudio.backgroundMusic:
         if (!isBackgroundMusicActive) return;
-        await FlameAudio.bgm.play(GameAssets.kBackgroudMusic, volume: 0.5);
+        await _playBackgroundAudio(GameAssets.kBackgroudMusic, volume: 0.5);
         break;
       case OneDungeonAudio.descending:
         if (!isSfxActive) return;
-        await FlameAudio.play(GameAssets.kDescendingSfx);
+        await _playSingleAudio(GameAssets.kDescendingSfx);
         break;
       case OneDungeonAudio.jump:
-        await FlameAudio.play(GameAssets.kJumpSfx);
+        await _playSingleAudio(GameAssets.kJumpSfx);
         break;
       case OneDungeonAudio.landing:
         if (!isSfxActive) return;
-        await FlameAudio.play(GameAssets.kLandingSfx);
+        await _playSingleAudio(GameAssets.kLandingSfx);
         break;
       case OneDungeonAudio.pickUp:
         if (!isSfxActive) return;
-        await FlameAudio.play(GameAssets.kPickUpSfx);
+        await _playSingleAudio(GameAssets.kPickUpSfx);
         break;
       case OneDungeonAudio.pickUpStar:
         if (!isSfxActive) return;
-        await FlameAudio.play(GameAssets.kPickUpStarSfx);
+        await _playSingleAudio(GameAssets.kPickUpStarSfx);
         break;
       case OneDungeonAudio.select:
         if (!isSfxActive) return;
-        await FlameAudio.play(GameAssets.kSelectSfx);
+        await _playSingleAudio(GameAssets.kSelectSfx);
         break;
       case OneDungeonAudio.success:
-        await FlameAudio.play(GameAssets.kSuccessSfx);
+        await _playSingleAudio(GameAssets.kSuccessSfx);
         break;
     }
   }

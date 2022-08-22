@@ -24,7 +24,7 @@ class AssetsManagerCubit extends Cubit<AssetsManagerState> {
 
     _loadables.addAll([
       ..._game.preLoadAssets(),
-      ..._audioPlayer.preLoadAudios(),
+      ..._audioPlayer.preLoadAudios(_audioPlayer.preCacheSingleAudio),
     ]);
 
     emit(state.copyWith(assetsCount: _loadables.length));
