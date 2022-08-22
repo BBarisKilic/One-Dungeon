@@ -8,21 +8,21 @@ import 'package:flutter/services.dart';
 import 'package:one_dungeon/components/components.dart';
 import 'package:one_dungeon/constants/constants.dart';
 import 'package:one_dungeon/entities/entities.dart';
+import 'package:one_dungeon/injector.dart' as di;
 import 'package:one_dungeon/one_dungeon_audio/one_dungeon_audio.dart';
 import 'package:tiled/tiled.dart';
 
 class OneDungeonGame extends FlameGame
     with HasKeyboardHandlerComponents, HasCollisionDetection {
-  OneDungeonGame({
-    required this.audioPlayer,
-  })  : time = 0,
+  OneDungeonGame()
+      : time = 0,
         score = 0,
         collectedStars = 0,
         focusNode = FocusNode(),
         super();
 
   /// Instance of [OneDungeonAudioPlayer].
-  final OneDungeonAudioPlayer audioPlayer;
+  late final OneDungeonAudioPlayer audioPlayer;
 
   final FocusNode focusNode;
 
@@ -48,6 +48,7 @@ class OneDungeonGame extends FlameGame
 
   @override
   Future<void>? onLoad() async {
+    audioPlayer = di.injector<OneDungeonAudioPlayer>();
     FlameAudio.bgm.initialize();
 
     await _createWorld();
