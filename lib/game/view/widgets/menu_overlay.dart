@@ -34,26 +34,31 @@ class MenuOverlay extends StatelessWidget {
                 ),
                 const SizedBox(height: GameLayout.kLongVerticalSpace),
                 MenuButton(
+                  key: const Key('menuButton1'),
                   onPressed: startGameCubit.onPlayPressed,
                   text: l10n.playText,
                 ),
                 const SizedBox(height: GameLayout.kVerticalSpace),
                 MenuButton(
+                  key: const Key('menuButton2'),
                   onPressed: startGameCubit.onSoundPressed,
                   text: l10n.soundText,
                 ),
                 const SizedBox(height: GameLayout.kVerticalSpace),
                 MenuButton(
+                  key: const Key('menuButton3'),
                   onPressed: startGameCubit.onLanguagePressed,
                   text: l10n.languageText,
                 ),
                 const SizedBox(height: GameLayout.kVerticalSpace),
                 MenuButton(
+                  key: const Key('menuButton4'),
                   onPressed: startGameCubit.onHowToPlayPressed,
                   text: l10n.howToPlayText,
                 ),
                 const SizedBox(height: GameLayout.kVerticalSpace),
                 MenuButton(
+                  key: const Key('menuButton5'),
                   onPressed: startGameCubit.onAboutPressed,
                   text: l10n.aboutText,
                 ),

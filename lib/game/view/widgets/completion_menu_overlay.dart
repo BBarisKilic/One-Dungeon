@@ -38,11 +38,13 @@ class CompletionMenuOverlay extends StatelessWidget {
                 ),
                 const SizedBox(height: GameLayout.kLongVerticalSpace),
                 MenuButton(
+                  key: const Key('menuButton1'),
                   onPressed: game.restartGame,
                   text: l10n.replayText,
                 ),
                 const SizedBox(height: GameLayout.kVerticalSpace),
                 MenuButton(
+                  key: const Key('menuButton2'),
                   onPressed: () {
                     game.overlays.remove(OneDungeonGame.completionMenuOverlay);
                     game.overlays.add(OneDungeonGame.menuOverlay);
