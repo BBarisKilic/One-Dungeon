@@ -15,7 +15,7 @@ void main() {
 
   late _MockAssetsManagerCubit mockAssetsManagerCubit;
 
-  setUpAll(() async {
+  setUp(() async {
     mockAssetsManagerCubit = _MockAssetsManagerCubit();
 
     await di.initializeDependencies();
@@ -25,7 +25,8 @@ void main() {
         .registerFactory<AssetsManagerCubit>(() => mockAssetsManagerCubit);
   });
 
-  tearDownAll(() async {
+  tearDown(() async {
+    await mockAssetsManagerCubit.close();
     await di.injector.reset();
   });
 

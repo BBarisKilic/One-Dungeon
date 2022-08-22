@@ -3,7 +3,6 @@ import 'package:flame/components.dart';
 import 'package:flame_behaviors/flame_behaviors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:one_dungeon/entities/boy/behaviors/behaviors.dart';
 import 'package:one_dungeon/entities/entities.dart';
 
 class Boy extends Entity {

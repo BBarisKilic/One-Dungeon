@@ -6,7 +6,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:one_dungeon/components/components.dart';
-import 'package:one_dungeon/entities/boy/behaviors/behaviors.dart';
 import 'package:one_dungeon/entities/entities.dart';
 import 'package:one_dungeon/game/game.dart';
 import 'package:one_dungeon/injector.dart' as di;
@@ -27,11 +26,11 @@ class _RawKeyEvent extends Mock
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  setUp(() async {
+  setUpAll(() async {
     await di.initializeDependencies();
   });
 
-  tearDown(() async {
+  tearDownAll(() async {
     await di.injector.reset();
   });
 

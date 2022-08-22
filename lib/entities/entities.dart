@@ -1,3 +1,4 @@
+export 'boy/behaviors/behaviors.dart';
 export 'boy/boy.dart';
 export 'boy/boy_sprite.dart';
 export 'boy/states/boy_state.dart';

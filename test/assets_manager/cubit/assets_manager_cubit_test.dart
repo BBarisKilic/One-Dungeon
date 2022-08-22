@@ -12,7 +12,7 @@ void main() {
   late OneDungeonAudioPlayer audioPlayer;
   late AssetsManagerCubit assetsManagerCubit;
 
-  setUp(() async {
+  setUpAll(() async {
     game = TestGame();
     audioPlayer = OneDungeonAudioPlayer.test(
       playBackgroundAudio: (_, {double? volume}) async {},
@@ -23,7 +23,7 @@ void main() {
         AssetsManagerCubit(game: game, audioPlayer: audioPlayer);
   });
 
-  tearDown(() {
+  tearDownAll(() {
     assetsManagerCubit.close();
   });
 
