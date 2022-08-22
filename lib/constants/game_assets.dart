@@ -4,7 +4,7 @@ class GameAssets {
   static const kBoyRunSprite = 'boy_run_sprite.png';
   static const kElevatorImage = 'elevator.png';
   static const kStarSprite = 'star_sprite.png';
-  static const kLoadingImage = 'images/loading.gif';
+  static const kLoadingImage = 'assets/images/loading.gif';
   static const kBackgroudMusic = 'audio/music.wav';
   static const kDescendingSfx = 'audio/sfx/descending.wav';
   static const kJumpSfx = 'audio/sfx/jump.wav';
