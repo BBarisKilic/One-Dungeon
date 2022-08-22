@@ -1,9 +1,9 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:one_dungeon/assets_manager/assets_manager.dart';
-import 'package:one_dungeon/one_dungeon_audio/one_dungeon_audio_player.dart';
+import 'package:one_dungeon/one_dungeon_audio/one_dungeon_audio.dart';
 
-import '../../helpers/test_game.dart';
+import '../../helpers/helpers.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
