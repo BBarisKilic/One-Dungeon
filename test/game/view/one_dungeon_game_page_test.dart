@@ -15,10 +15,13 @@ void main() {
 
   late _MockAssetsManagerCubit mockAssetsManagerCubit;
 
+  setUpAll(() async {
+    await di.initializeDependencies();
+  });
+
   setUp(() async {
     mockAssetsManagerCubit = _MockAssetsManagerCubit();
 
-    await di.initializeDependencies();
     await di.injector.unregister<AssetsManagerCubit>();
 
     di.injector
@@ -27,6 +30,9 @@ void main() {
 
   tearDown(() async {
     await mockAssetsManagerCubit.close();
+  });
+
+  tearDownAll(() async {
     await di.injector.reset();
   });
 
