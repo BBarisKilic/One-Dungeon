@@ -295,6 +295,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.1.1"
+  flame_test:
+    dependency: "direct dev"
+    description:
+      name: flame_test
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.7.0"
   flame_tiled:
     dependency: "direct main"
     description:
