@@ -45,23 +45,6 @@ void main() {
       expect(elevatorMovingBehavior.isGoingDown, isFalse);
     });
 
-    flameTester.test('going up as expected', (game) async {
-      final center = Vector2(0, 350);
-      final elevator = Elevator.test(
-        center: center,
-        behavior: elevatorMovingBehavior,
-      );
-
-      await game.ready();
-      await game.ensureAdd(elevator);
-
-      elevatorMovingBehavior.isGoingDown = true;
-
-      game.update(1);
-
-      expect(elevatorMovingBehavior.isGoingDown, isFalse);
-    });
-
     flameTester.test('going down as expected', (game) async {
       final center = Vector2(0, 160);
       final elevator = Elevator.test(
