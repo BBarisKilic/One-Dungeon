@@ -19,25 +19,25 @@ void main() {
     await di.injector.reset();
   });
 
-  group('Boy', () {
+  group('Elevator', () {
     final flameTester = FlameTester<TestGame>(TestGame.new);
 
     flameTester.test('loads correctly', (game) async {
-      final boy = Boy.wasd();
+      final elevator = Elevator.test();
 
       await game.ready();
-      await game.ensureAdd(boy);
+      await game.ensureAdd(elevator);
 
-      expect(game.contains(boy), isTrue);
+      expect(game.contains(elevator), isTrue);
     });
 
     flameTester.test('positioned correctly', (game) async {
-      final boy = Boy.arrows(center: Vector2.zero());
+      final elevator = Elevator.test(center: Vector2.zero());
 
       await game.ready();
-      await game.ensureAdd(boy);
+      await game.ensureAdd(elevator);
 
-      expect(boy.position, closeToVector(Vector2(0, 0)));
+      expect(elevator.position, closeToVector(Vector2(0, 0)));
     });
   });
 }

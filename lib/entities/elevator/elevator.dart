@@ -2,8 +2,9 @@ import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:flame/flame.dart';
 import 'package:flame_behaviors/flame_behaviors.dart';
+import 'package:flutter/material.dart';
 import 'package:one_dungeon/constants/constants.dart';
-import 'package:one_dungeon/entities/elevator/behaviors/elevator_moving_behavior.dart';
+import 'package:one_dungeon/entities/elevator/behaviors/behaviors.dart';
 
 class Elevator extends Entity {
   Elevator({
@@ -30,6 +31,19 @@ class Elevator extends Entity {
             ...behaviors,
           ],
           children: [spriteComponent],
+        );
+
+  @visibleForTesting
+  Elevator.test({
+    Vector2? center,
+    Behavior? behavior,
+  }) : this._(
+          center: center ?? Vector2(1110, 200),
+          spriteComponent: SpriteComponent(
+            size: _elevatorSize,
+            sprite: Sprite(Flame.images.fromCache(GameAssets.kElevatorImage)),
+          )..size = _elevatorSize,
+          behaviors: [if (behavior != null) behavior],
         );
 
   final SpriteComponent spriteComponent;

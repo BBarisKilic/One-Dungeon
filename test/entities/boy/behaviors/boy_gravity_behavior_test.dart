@@ -30,18 +30,18 @@ void main() {
 
     flameTester.test('gravity works as expected', (game) async {
       final centerY = game.size.y / 2;
-      final chicken = Boy.test(
+      final boy = Boy.test(
         center: Vector2(0, centerY),
         behavior: boyGravityBehavior,
       );
 
       await game.ready();
-      await game.ensureAdd(chicken);
+      await game.ensureAdd(boy);
 
-      chicken.isBottomTouching = false;
+      boy.isBottomTouching = false;
       game.update(1);
 
-      expect(chicken.position.y, isNot(equals(centerY)));
+      expect(boy.position.y, isNot(equals(centerY)));
     });
   });
 }
