@@ -122,6 +122,7 @@ class OneDungeonAudioPlayer {
         await _playSingleAudio(GameAssets.kDescendingSfx);
         break;
       case OneDungeonAudio.jump:
+        if (!isSfxActive) return;
         await _playSingleAudio(GameAssets.kJumpSfx);
         break;
       case OneDungeonAudio.landing:
@@ -141,6 +142,7 @@ class OneDungeonAudioPlayer {
         await _playSingleAudio(GameAssets.kSelectSfx);
         break;
       case OneDungeonAudio.success:
+        if (!isSfxActive) return;
         await _playSingleAudio(GameAssets.kSuccessSfx);
         break;
     }

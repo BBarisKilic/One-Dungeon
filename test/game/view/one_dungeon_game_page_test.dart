@@ -1,4 +1,5 @@
 import 'package:bloc_test/bloc_test.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:one_dungeon/assets_manager/assets_manager.dart';
@@ -67,6 +68,31 @@ void main() {
 
         expect(find.byType(OneDungeonGameLoadedView), findsOneWidget);
       });
+    });
+
+    testWidgets('keep focus on game when mouse hovers over it', (tester) async {
+      arrangeState(const AssetsManagerState(assetsCount: 1, loaded: 1));
+      arrangeLoad();
+
+      await tester.pumpApp(const OneDungeonGamePage());
+      await tester.pump();
+
+      final game = di.injector<OneDungeonGame>();
+
+      game.focusNode.unfocus();
+      await tester.pump();
+
+      expect(game.focusNode.hasFocus, isFalse);
+
+      final gesture = await tester.createGesture(kind: PointerDeviceKind.mouse);
+      await gesture.addPointer(location: Offset.zero);
+      addTearDown(gesture.removePointer);
+
+      final gameSize = game.size / 2;
+      await gesture.moveTo(Offset(gameSize.x, gameSize.y));
+      await tester.pump();
+
+      expect(game.focusNode.hasFocus, isTrue);
     });
   });
 }

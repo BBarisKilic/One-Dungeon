@@ -82,13 +82,13 @@ void main() {
     });
 
     group('behaviors', () {
-      flameTester.test('Chicken has KeyboardMovingBehavior', (game) async {
+      flameTester.test('Boy has KeyboardMovingBehavior', (game) async {
         await game.ready();
 
-        final chicken = game.children.whereType<Boy>();
+        final boy = game.children.whereType<Boy>();
 
         expect(
-          chicken.first.hasBehavior<KeyboardMovingBehavior>(),
+          boy.first.hasBehavior<KeyboardMovingBehavior>(),
           isTrue,
         );
       });
