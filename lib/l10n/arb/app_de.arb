@@ -12,23 +12,23 @@
     "@playText": {
         "description": "Text, der auf der Lade Seite angezeigt wird"
     },
-    "soundText": "Sound",
+    "soundText": "Audio",
     "@soundText": {
         "description": "Text that will be shown on Menu Overlay"
     },
-    "languageText": "Language",
+    "languageText": "Sprache",
     "@languageText": {
         "description": "Text that will be shown on Menu Overlay"
     },
-    "howToPlayText": "How To Play",
+    "howToPlayText": "Spielanleitung",
     "@howToPlayText": {
         "description": "Text that will be shown on Menu Overlay"
     },
-    "aboutText": "About",
+    "aboutText": "Über",
     "@aboutText": {
         "description": "Text that will be shown on Menu Overlay"
     },
-    "backText": "Back",
+    "backText": "Zurücklegen",
     "@backText": {
         "description": "Text that will be shown on Dialog"
     },
@@ -36,7 +36,7 @@
     "@aboutDetailText": {
         "description": "Text that will be shown on About Dialog"
     },
-    "congratulationsText": "Congratulations!",
+    "congratulationsText": "Congrats!",
     "@congratulationsText": {
         "description": "Text that will be shown on Replay Dialog"
     },
@@ -44,27 +44,27 @@
     "@gameOverText": {
         "description": "Text that will be shown on Replay Dialog"
     },
-    "yourScoreText": "Your score:",
+    "yourScoreText": "Dein Ergebnis:",
     "@yourScoreText": {
         "description": "Text that will be shown on Replay Dialog"
     },
-    "replayText": "Replay",
+    "replayText": "Wiederholen",
     "@replayText": {
         "description": "Text that will be shown on Replay Dialog"
     },
-    "exitToMenuText": "Exit to Menu",
+    "exitToMenuText": "Zum Menü Zurückkehren",
     "@exitToMenuText": {
         "description": "Text that will be shown on Replay Dialog"
     },
-    "onText": "ON",
+    "onText": "Ein",
     "@onText": {
         "description": "Text that will be shown on Sound Settings Dialog"
     },
-    "offText": "OFF",
+    "offText": "Aus",
     "@offText": {
         "description": "Text that will be shown on Sound Settings Dialog"
     },
-    "backgroundMusicText": "Music:",
+    "backgroundMusicText": "Musik:",
     "@backgroundMusicText": {
         "description": "Text that will be shown on Sound Settings Dialog"
     },

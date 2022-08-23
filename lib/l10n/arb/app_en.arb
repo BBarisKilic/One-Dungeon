@@ -36,7 +36,7 @@
     "@aboutDetailText": {
         "description": "Text that will be shown on About Dialog"
     },
-    "congratulationsText": "Congratulations!",
+    "congratulationsText": "Congrats!",
     "@congratulationsText": {
         "description": "Text that will be shown on Replay Dialog"
     },
@@ -56,11 +56,11 @@
     "@exitToMenuText": {
         "description": "Text that will be shown on Replay Dialog"
     },
-    "onText": "ON",
+    "onText": "On",
     "@onText": {
         "description": "Text that will be shown on Sound Settings Dialog"
     },
-    "offText": "OFF",
+    "offText": "Off",
     "@offText": {
         "description": "Text that will be shown on Sound Settings Dialog"
     },
