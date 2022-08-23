@@ -14,4 +14,4 @@ jobs:
       - uses: bluefireteam/flutter-gh-pages@v7
         with:
           baseHref: /One-Dungeon/
-          webRenderer: --web-renderer="canvaskit"
+          webRenderer: "canvaskit"
