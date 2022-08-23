@@ -14,7 +14,7 @@ void main() {
 
   late OneDungeonAudioPlayer audioPlayer;
 
-  setUpAll(() async {
+  setUp(() async {
     audioPlayer = OneDungeonAudioPlayer.test(
       playBackgroundAudio: (_, {double? volume}) async {},
       stopBackgroundAudio: () async {},
@@ -29,7 +29,7 @@ void main() {
     di.injector.registerFactory<OneDungeonAudioPlayer>(() => audioPlayer);
   });
 
-  tearDownAll(() async {
+  tearDown(() async {
     await di.injector.reset();
   });
 
@@ -39,7 +39,13 @@ void main() {
         await tester.pumpApp(
           Stack(
             children: const [
-              OneDungeonGameLoadedView(),
+              OneDungeonGameLoadedView(
+                initialActiveOverlays: [
+                  OneDungeonGame.menuOverlay,
+                  OneDungeonGame.gameOverMenuOverlay,
+                  OneDungeonGame.completionMenuOverlay,
+                ],
+              ),
               MenuOverlay(),
             ],
           ),
@@ -56,7 +62,13 @@ void main() {
           await tester.pumpApp(
             Stack(
               children: const [
-                OneDungeonGameLoadedView(),
+                OneDungeonGameLoadedView(
+                  initialActiveOverlays: [
+                    OneDungeonGame.menuOverlay,
+                    OneDungeonGame.gameOverMenuOverlay,
+                    OneDungeonGame.completionMenuOverlay,
+                  ],
+                ),
                 MenuOverlay(),
               ],
             ),
@@ -74,7 +86,13 @@ void main() {
           await tester.pumpApp(
             Stack(
               children: const [
-                OneDungeonGameLoadedView(),
+                OneDungeonGameLoadedView(
+                  initialActiveOverlays: [
+                    OneDungeonGame.menuOverlay,
+                    OneDungeonGame.gameOverMenuOverlay,
+                    OneDungeonGame.completionMenuOverlay,
+                  ],
+                ),
                 MenuOverlay(),
               ],
             ),
@@ -93,7 +111,13 @@ void main() {
           await tester.pumpApp(
             Stack(
               children: const [
-                OneDungeonGameLoadedView(),
+                OneDungeonGameLoadedView(
+                  initialActiveOverlays: [
+                    OneDungeonGame.menuOverlay,
+                    OneDungeonGame.gameOverMenuOverlay,
+                    OneDungeonGame.completionMenuOverlay,
+                  ],
+                ),
                 MenuOverlay(),
               ],
             ),
@@ -112,7 +136,13 @@ void main() {
           await tester.pumpApp(
             Stack(
               children: const [
-                OneDungeonGameLoadedView(),
+                OneDungeonGameLoadedView(
+                  initialActiveOverlays: [
+                    OneDungeonGame.menuOverlay,
+                    OneDungeonGame.gameOverMenuOverlay,
+                    OneDungeonGame.completionMenuOverlay,
+                  ],
+                ),
                 MenuOverlay(),
               ],
             ),
@@ -131,7 +161,13 @@ void main() {
           await tester.pumpApp(
             Stack(
               children: const [
-                OneDungeonGameLoadedView(),
+                OneDungeonGameLoadedView(
+                  initialActiveOverlays: [
+                    OneDungeonGame.menuOverlay,
+                    OneDungeonGame.gameOverMenuOverlay,
+                    OneDungeonGame.completionMenuOverlay,
+                  ],
+                ),
                 MenuOverlay(),
               ],
             ),

@@ -27,7 +27,7 @@ class AssetsManagerCubit extends Cubit<AssetsManagerState> {
       ..._audioPlayer.preLoadAudios(_audioPlayer.preCacheSingleAudio),
     ]);
 
-    emit(state.copyWith(assetsCount: _loadables.length));
+    if (!isClosed) emit(state.copyWith(assetsCount: _loadables.length));
 
     unawaited(_triggerLoad());
   }
@@ -42,6 +42,6 @@ class AssetsManagerCubit extends Cubit<AssetsManagerState> {
 
     unawaited(_triggerLoad());
 
-    emit(state.copyWith(loaded: state.loaded + 1));
+    if (!isClosed) emit(state.copyWith(loaded: state.loaded + 1));
   }
 }

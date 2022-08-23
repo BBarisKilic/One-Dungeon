@@ -23,7 +23,9 @@ class OneDungeonGamePage extends StatelessWidget {
 
 @visibleForTesting
 class OneDungeonGameLoadedView extends StatelessWidget {
-  const OneDungeonGameLoadedView({super.key});
+  const OneDungeonGameLoadedView({super.key, this.initialActiveOverlays});
+
+  final List<String>? initialActiveOverlays;
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +41,8 @@ class OneDungeonGameLoadedView extends StatelessWidget {
         child: GameWidget<OneDungeonGame>(
           game: game,
           focusNode: game.focusNode,
-          initialActiveOverlays: const [OneDungeonGame.menuOverlay],
+          initialActiveOverlays:
+              initialActiveOverlays ?? [OneDungeonGame.menuOverlay],
           overlayBuilderMap: {
             OneDungeonGame.menuOverlay: (_, __) => const MenuOverlay(),
             OneDungeonGame.gameOverMenuOverlay: (_, __) =>

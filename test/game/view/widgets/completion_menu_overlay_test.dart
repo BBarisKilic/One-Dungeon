@@ -52,6 +52,7 @@ void main() {
             OneDungeonGame.menuOverlay,
             (context, game) => const SizedBox(),
           );
+          game.audioPlayer = audioPlayer;
 
           await tester.tap(find.byKey(const Key('menuButton1')));
 

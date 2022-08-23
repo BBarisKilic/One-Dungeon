@@ -42,7 +42,13 @@ class SoundSettingsDialog extends StatelessWidget {
                       initialPosition: audioPlayer.isBackgroundMusicActive
                           ? SwitchPosition.right
                           : SwitchPosition.left,
-                      onToggle: _setBackgroundMusic,
+                      onToggle: (position) {
+                        if (position == SwitchPosition.left) {
+                          audioPlayer.isBackgroundMusicActive = false;
+                        } else {
+                          audioPlayer.isBackgroundMusicActive = true;
+                        }
+                      },
                       leftSwitch: l10n.offText,
                       rightSwitch: l10n.onText,
                     ),
@@ -57,7 +63,13 @@ class SoundSettingsDialog extends StatelessWidget {
                       initialPosition: audioPlayer.isSfxActive
                           ? SwitchPosition.right
                           : SwitchPosition.left,
-                      onToggle: _setSfx,
+                      onToggle: (position) {
+                        if (position == SwitchPosition.left) {
+                          audioPlayer.isSfxActive = false;
+                        } else {
+                          audioPlayer.isSfxActive = true;
+                        }
+                      },
                       leftSwitch: l10n.offText,
                       rightSwitch: l10n.onText,
                     ),
@@ -75,25 +87,5 @@ class SoundSettingsDialog extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  void _setBackgroundMusic(SwitchPosition position) {
-    final audioPlayer = di.injector<OneDungeonAudioPlayer>();
-
-    if (position == SwitchPosition.left) {
-      audioPlayer.isBackgroundMusicActive = false;
-    } else {
-      audioPlayer.isBackgroundMusicActive = true;
-    }
-  }
-
-  void _setSfx(SwitchPosition position) {
-    final audioPlayer = di.injector<OneDungeonAudioPlayer>();
-
-    if (position == SwitchPosition.left) {
-      audioPlayer.isSfxActive = false;
-    } else {
-      audioPlayer.isSfxActive = true;
-    }
   }
 }
