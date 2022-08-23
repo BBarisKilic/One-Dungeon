@@ -2,18 +2,18 @@
 
 ![One Dungeon Gameplay][header_gif]
 
-<center>
+<div align="center">
 
 [![one_dungeon][build_status_badge]][workflow_link]
 ![coverage][coverage_badge]
 [![style: very good analysis][very_good_analysis_badge]][very_good_analysis_link]
 [![License: MIT][license_badge]][license_link]
 
-</center>
+</div>
 
 One Dungeon developed during the [Midyear 2022 Flame Game Jam][flame_game_jam_link]. It consists of one level and is a 1-Bit-style platformer game.
 
-Playable on: 
+Playable on [GitHub][github_playable_link] and [itch.io][itch_io_playable_link] through a web browser.
 
 ---
 
@@ -247,3 +247,5 @@ Please file feature requests and bugs at the [issue tracker][issues_link].
 [press_start_2p_link]: https://fonts.google.com/specimen/Press+Start+2P
 [issues_link]: https://github.com/BBarisKilic/One-Dungeon/issues
 [bbk_github_link]: https://github.com/BBarisKilic
+[github_playable_link]: https://bbariskilic.github.io/One-Dungeon
+[itch_io_playable_link]: https://bbk-games.itch.io/one-dungeon
