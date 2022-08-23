@@ -9,10 +9,7 @@ import 'package:one_dungeon/l10n/l10n.dart';
 import 'package:one_dungeon/start_game/start_game.dart';
 
 extension PumpApp on WidgetTester {
-  Future<void> pumpApp(
-    Widget widget, {
-    AssetsManagerCubit? assetsManagerCubit,
-  }) async {
+  Future<void> pumpApp(Widget widget) async {
     return pumpWidget(
       MultiBlocProvider(
         providers: [
@@ -22,19 +19,6 @@ extension PumpApp on WidgetTester {
           BlocProvider(create: (_) => di.injector<StartGameCubit>()),
         ],
         child: MaterialApp(
-          theme: ThemeData(
-            fontFamily: 'PressStart2P',
-            elevatedButtonTheme: ElevatedButtonThemeData(
-              style: ElevatedButton.styleFrom(
-                primary: GameColors.kButtonColor,
-                shape: const RoundedRectangleBorder(),
-                minimumSize: const Size(double.infinity, 0),
-                padding: const EdgeInsets.symmetric(
-                  vertical: GameLayout.kButtonPadding,
-                ),
-              ),
-            ),
-          ),
           localizationsDelegates: const [
             AppLocalizations.delegate,
             GlobalMaterialLocalizations.delegate,
