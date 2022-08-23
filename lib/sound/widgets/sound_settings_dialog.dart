@@ -11,6 +11,7 @@ class SoundSettingsDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final audioPlayer = di.injector<OneDungeonAudioPlayer>();
     final l10n = context.l10n;
 
     return Center(
@@ -38,7 +39,9 @@ class SoundSettingsDialog extends StatelessWidget {
                   children: [
                     Text(l10n.backgroundMusicText),
                     SharpToggleSwitch(
-                      initialPosition: SwitchPosition.right,
+                      initialPosition: audioPlayer.isBackgroundMusicActive
+                          ? SwitchPosition.right
+                          : SwitchPosition.left,
                       onToggle: _setBackgroundMusic,
                       leftSwitch: l10n.offText,
                       rightSwitch: l10n.onText,
@@ -51,7 +54,9 @@ class SoundSettingsDialog extends StatelessWidget {
                   children: [
                     Text(l10n.sfxText),
                     SharpToggleSwitch(
-                      initialPosition: SwitchPosition.right,
+                      initialPosition: audioPlayer.isSfxActive
+                          ? SwitchPosition.right
+                          : SwitchPosition.left,
                       onToggle: _setSfx,
                       leftSwitch: l10n.offText,
                       rightSwitch: l10n.onText,
