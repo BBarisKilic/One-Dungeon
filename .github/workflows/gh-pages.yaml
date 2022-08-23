@@ -15,3 +15,4 @@ jobs:
         with:
           baseHref: /One-Dungeon/
           webRenderer: "canvaskit"
+          customArgs: --target lib/main_production.dart
