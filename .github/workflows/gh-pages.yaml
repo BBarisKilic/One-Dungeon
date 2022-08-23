@@ -2,7 +2,7 @@ name: Gh-Pages
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   build:
@@ -13,5 +13,5 @@ jobs:
       - uses: subosito/flutter-action@v1
       - uses: bluefireteam/flutter-gh-pages@v7
         with:
-          baseHref: /one-dungeon/
-          webRenderer: canvaskit
+          baseHref: /One-Dungeon/
+          webRenderer: --web-renderer="canvaskit"

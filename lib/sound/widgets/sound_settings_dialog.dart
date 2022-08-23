@@ -11,7 +11,6 @@ class SoundSettingsDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final audioPlayer = di.injector<OneDungeonAudioPlayer>();
     final l10n = context.l10n;
 
     return Center(
@@ -40,13 +39,7 @@ class SoundSettingsDialog extends StatelessWidget {
                     Text(l10n.backgroundMusicText),
                     SharpToggleSwitch(
                       initialPosition: SwitchPosition.right,
-                      onToggle: (position) {
-                        if (position == SwitchPosition.left) {
-                          audioPlayer.isBackgroundMusicActive = false;
-                        } else {
-                          audioPlayer.isBackgroundMusicActive = true;
-                        }
-                      },
+                      onToggle: _setBackgroundMusic,
                       leftSwitch: l10n.offText,
                       rightSwitch: l10n.onText,
                     ),
@@ -59,13 +52,7 @@ class SoundSettingsDialog extends StatelessWidget {
                     Text(l10n.sfxText),
                     SharpToggleSwitch(
                       initialPosition: SwitchPosition.right,
-                      onToggle: (position) {
-                        if (position == SwitchPosition.left) {
-                          audioPlayer.isSfxActive = false;
-                        } else {
-                          audioPlayer.isSfxActive = true;
-                        }
-                      },
+                      onToggle: _setSfx,
                       leftSwitch: l10n.offText,
                       rightSwitch: l10n.onText,
                     ),
@@ -83,5 +70,25 @@ class SoundSettingsDialog extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void _setBackgroundMusic(SwitchPosition position) {
+    final audioPlayer = di.injector<OneDungeonAudioPlayer>();
+
+    if (position == SwitchPosition.left) {
+      audioPlayer.isBackgroundMusicActive = false;
+    } else {
+      audioPlayer.isBackgroundMusicActive = true;
+    }
+  }
+
+  void _setSfx(SwitchPosition position) {
+    final audioPlayer = di.injector<OneDungeonAudioPlayer>();
+
+    if (position == SwitchPosition.left) {
+      audioPlayer.isSfxActive = false;
+    } else {
+      audioPlayer.isSfxActive = true;
+    }
   }
 }
