@@ -11,7 +11,7 @@
 
 </div>
 
-One Dungeon developed during the [Midyear 2022 Flame Game Jam][flame_game_jam_link]. It consists of one level and is a 1-Bit-style platformer game.
+One Dungeon is a ​1-Bit-style platformer game that consists of one level. It developed during the [Midyear 2022 Flame Game Jam][flame_game_jam_link].
 
 Playable on [GitHub][github_playable_link] and [itch.io][itch_io_playable_link] through a web browser.
 
