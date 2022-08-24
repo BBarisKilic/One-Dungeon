@@ -2,7 +2,7 @@ import 'package:flame/extensions.dart';
 import 'package:one_dungeon/constants/constants.dart';
 import 'package:one_dungeon/game/game.dart';
 
-extension OneDungeonGameAssetsExt on OneDungeonGame {
+extension OneDungeonGameX on OneDungeonGame {
   List<Future<Image> Function()> preLoadAssets() {
     return [
       () => images.load(GameAssets.kBoyIdleSprite),
