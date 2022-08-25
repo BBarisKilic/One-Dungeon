@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:one_dungeon/assets_manager/assets_manager.dart';
 import 'package:one_dungeon/game/game.dart';
 import 'package:one_dungeon/injector.dart' as di;
+import 'package:one_dungeon/l10n/l10n.dart';
 import 'package:one_dungeon/start_game/start_game.dart';
 
 class OneDungeonGamePage extends StatelessWidget {
@@ -30,6 +31,7 @@ class OneDungeonGameLoadedView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final game = di.injector<OneDungeonGame>();
+    final l10n = context.l10n;
 
     return StartGameListener(
       child: MouseRegion(
@@ -39,7 +41,7 @@ class OneDungeonGameLoadedView extends StatelessWidget {
           }
         },
         child: GameWidget<OneDungeonGame>(
-          game: game,
+          game: game..l10n = l10n,
           focusNode: game.focusNode,
           initialActiveOverlays:
               initialActiveOverlays ?? [OneDungeonGame.menuOverlay],

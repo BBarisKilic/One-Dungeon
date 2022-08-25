@@ -10,6 +10,7 @@ import 'package:one_dungeon/constants/constants.dart';
 import 'package:one_dungeon/entities/entities.dart';
 import 'package:one_dungeon/game/game.dart';
 import 'package:one_dungeon/injector.dart' as di;
+import 'package:one_dungeon/l10n/l10n.dart';
 import 'package:one_dungeon/one_dungeon_audio/one_dungeon_audio.dart';
 import 'package:tiled/tiled.dart';
 
@@ -36,6 +37,9 @@ class OneDungeonGame extends FlameGame
 
   /// Instance of [FocusNode].
   final FocusNode focusNode;
+
+  /// Instance of [AppLocalizations].
+  AppLocalizations? l10n;
 
   /// Game [score] of the player.
   int score;

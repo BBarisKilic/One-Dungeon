@@ -15,7 +15,7 @@ class TimeChangeBehavior extends Behavior<GameTime>
 
     final time = Duration(seconds: gameRef.time.round()).format();
 
-    parent.textComponent.text = 'Time: $time';
+    parent.textComponent.text = '${gameRef.l10n?.timeText} $time';
 
     super.update(dt);
   }
