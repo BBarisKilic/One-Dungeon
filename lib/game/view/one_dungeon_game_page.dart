@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:one_dungeon/assets_manager/assets_manager.dart';
 import 'package:one_dungeon/game/game.dart';
 import 'package:one_dungeon/injector.dart' as di;
-import 'package:one_dungeon/start_game/widgets/start_game_listener.dart';
+import 'package:one_dungeon/start_game/start_game.dart';
 
 class OneDungeonGamePage extends StatelessWidget {
   const OneDungeonGamePage({super.key});

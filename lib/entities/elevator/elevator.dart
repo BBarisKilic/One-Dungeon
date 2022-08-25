@@ -2,8 +2,7 @@ import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:flame_behaviors/flame_behaviors.dart';
 import 'package:flutter/material.dart';
-import 'package:one_dungeon/entities/elevator/behaviors/behaviors.dart';
-import 'package:one_dungeon/entities/elevator/elevator_sprite.dart';
+import 'package:one_dungeon/entities/entities.dart';
 
 class Elevator extends Entity {
   Elevator({

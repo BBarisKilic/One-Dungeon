@@ -1,4 +1,4 @@
-import 'package:one_dungeon/constants/game_assets.dart';
+import 'package:one_dungeon/constants/constants.dart';
 import 'package:one_dungeon/one_dungeon_audio/one_dungeon_audio.dart';
 
 extension OneDungeonAudioPlayerX on OneDungeonAudioPlayer {
