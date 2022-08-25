@@ -11,7 +11,7 @@ class BoySprite extends SpriteAnimationGroupComponent<BoyState>
     required Vector2 textureSize,
   })  : _state = state,
         _textureSize = textureSize,
-        super();
+        super(size: textureSize / 2);
 
   final BoyState _state;
   final Vector2 _textureSize;

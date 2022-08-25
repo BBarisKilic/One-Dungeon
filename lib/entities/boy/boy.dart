@@ -27,7 +27,7 @@ class Boy extends Entity {
             ),
             StarCollidingBehavior(),
           ],
-          boySprite: BoySprite(textureSize: _boySize)..size = _boySize / 2,
+          boySprite: BoySprite(textureSize: _boySize),
         );
 
   Boy._({
