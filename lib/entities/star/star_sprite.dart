@@ -8,7 +8,7 @@ class StarSprite extends SpriteAnimationComponent
   StarSprite({
     required Vector2 textureSize,
   })  : _textureSize = textureSize,
-        super();
+        super(size: textureSize);
 
   final Vector2 _textureSize;
 

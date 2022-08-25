@@ -9,7 +9,7 @@ class Star extends Entity {
   }) : this._(
           center: center,
           behaviors: [],
-          starSprite: StarSprite(textureSize: _starSize)..size = _starSize,
+          starSprite: StarSprite(textureSize: _starSize),
         );
 
   Star._({
