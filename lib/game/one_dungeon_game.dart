@@ -1,7 +1,6 @@
 import 'package:flame/game.dart';
 import 'package:flame/input.dart';
 import 'package:flame_audio/flame_audio.dart';
-import 'package:flame_behaviors/flame_behaviors.dart';
 import 'package:flame_tiled/flame_tiled.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -168,14 +167,14 @@ class OneDungeonGame extends FlameGame
 
     overlays.clear();
 
-    _removeEntities();
+    removeAll(children);
+    await _createWorld();
     await _createEntities();
 
     await audioPlayer.play(OneDungeonAudio.backgroundMusic);
+
     resumeEngine();
   }
-
-  void _removeEntities() => children.whereType<Entity>().forEach(remove);
 
   Future<void> stopGame(GameStatus status) async {
     score = status == GameStatus.win ? _calculateScore() : 0;
