@@ -47,8 +47,6 @@ class OneDungeonGameLoadedView extends StatelessWidget {
             OneDungeonGame.menuOverlay: (_, __) => const MenuOverlay(),
             OneDungeonGame.gameOverMenuOverlay: (_, __) =>
                 const GameOverMenuOverlay(),
-            OneDungeonGame.completionMenuOverlay: (_, __) =>
-                const CompletionMenuOverlay(),
           },
         ),
       ),

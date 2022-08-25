@@ -48,13 +48,10 @@ class OneDungeonGame extends FlameGame
 
   final int _baseScore = 100;
 
-  /// Identifier of the menu overlay.
+  /// Identifier for the [MenuOverlay].
   static const menuOverlay = 'menu';
 
-  /// Identifier of the pause overlay.
-  static const completionMenuOverlay = 'completion_menu';
-
-  /// Identifier of the pause overlay.
+  /// Identifier for the [GameOverMenuOverlay].
   static const gameOverMenuOverlay = 'game_over_menu';
 
   @override
@@ -176,25 +173,25 @@ class OneDungeonGame extends FlameGame
 
   void _removeEntities() => children.whereType<Entity>().forEach(remove);
 
-  Future<void> stopGame(String overlayName) async {
+  Future<void> stopGame(GameStatus status) async {
+    score = status == GameStatus.win ? _calculateScore() : 0;
+
     await audioPlayer.stop();
+    await audioPlayer.play(
+      status == GameStatus.win
+          ? OneDungeonAudio.success
+          : OneDungeonAudio.descending,
+    );
 
-    if (overlayName == OneDungeonGame.completionMenuOverlay) {
-      _calculateScore();
-      await audioPlayer.play(OneDungeonAudio.success);
-    } else {
-      await audioPlayer.play(OneDungeonAudio.descending);
-    }
+    await Future<void>.delayed(const Duration(milliseconds: 333));
 
-    await Future<void>.delayed(const Duration(milliseconds: 500));
-
-    overlays.add(overlayName);
+    overlays.add(OneDungeonGame.gameOverMenuOverlay);
 
     pauseEngine();
   }
 
-  void _calculateScore() {
+  int _calculateScore() {
     final timeScore = ((60 - time) > 0 ? (60 - time) * 10 : 0).toInt();
-    score = _baseScore + (collectedStars * 10) + timeScore;
+    return _baseScore + (collectedStars * 10) + timeScore;
   }
 }

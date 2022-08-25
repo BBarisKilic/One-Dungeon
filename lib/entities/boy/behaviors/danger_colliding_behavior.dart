@@ -11,7 +11,7 @@ class DangerCollidingBehavior extends CollisionBehavior<Danger, Boy>
     parent.velocity.x = 0;
     parent.velocity.y = -100;
 
-    gameRef.stopGame(OneDungeonGame.gameOverMenuOverlay);
+    gameRef.stopGame(GameStatus.lose);
 
     super.onCollisionStart(intersectionPoints, other);
   }

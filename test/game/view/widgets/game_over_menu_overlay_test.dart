@@ -10,6 +10,7 @@ void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
   late OneDungeonAudioPlayer audioPlayer;
+  late TestGame game;
 
   setUpAll(() async {
     audioPlayer = OneDungeonAudioPlayer.test(
@@ -18,12 +19,15 @@ void main() {
       playSingleAudio: (_, {double? volume}) async {},
       preCacheSingleAudio: (_) async {},
     );
+    game = TestGame();
 
     await di.initializeDependencies();
 
     await di.injector.unregister<OneDungeonAudioPlayer>();
+    await di.injector.unregister<OneDungeonGame>();
 
-    di.injector.registerFactory<OneDungeonAudioPlayer>(() => audioPlayer);
+    di.injector.registerSingleton<OneDungeonAudioPlayer>(audioPlayer);
+    di.injector.registerSingleton<OneDungeonGame>(game);
   });
 
   tearDownAll(() async {
@@ -40,23 +44,42 @@ void main() {
       });
     });
 
-    testWidgets('buttons works as expected', (tester) async {
-      await tester.runAsync(() async {
-        final game = di.injector<OneDungeonGame>();
+    group('buttons', () {
+      testWidgets('replay works as expected', (tester) async {
+        await tester.runAsync(() async {
+          final game = di.injector<OneDungeonGame>();
 
-        await tester.pumpApp(const GameOverMenuOverlay());
-        await tester.pump();
+          await tester.pumpApp(const GameOverMenuOverlay());
+          await tester.pump();
 
-        game.overlays.addEntry(
-          OneDungeonGame.menuOverlay,
-          (context, game) => const SizedBox(),
-        );
+          game.audioPlayer = audioPlayer;
 
-        expect(game.overlays.activeOverlays, isEmpty);
+          await tester.tap(find.byKey(const Key('menuButton1')));
 
-        await tester.tap(find.byKey(const Key('menuButton2')));
+          expect(game.score, equals(0));
+          expect(game.collectedStars, equals(0));
+          expect(game.time, equals(0));
+        });
+      });
 
-        expect(game.overlays.activeOverlays, [OneDungeonGame.menuOverlay]);
+      testWidgets('exit to menu works as expected', (tester) async {
+        await tester.runAsync(() async {
+          final game = di.injector<OneDungeonGame>();
+
+          await tester.pumpApp(const GameOverMenuOverlay());
+          await tester.pump();
+
+          game.overlays.addEntry(
+            OneDungeonGame.menuOverlay,
+            (context, game) => const SizedBox(),
+          );
+
+          expect(game.overlays.activeOverlays, isEmpty);
+
+          await tester.tap(find.byKey(const Key('menuButton2')));
+
+          expect(game.overlays.activeOverlays, [OneDungeonGame.menuOverlay]);
+        });
       });
     });
   });

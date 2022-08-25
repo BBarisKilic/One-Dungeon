@@ -9,8 +9,8 @@ extension OneDungeonGameX on OneDungeonGame {
       () => images.load(GameAssets.kBoyIdleSprite),
       () => images.load(GameAssets.kBoyRunSprite),
       () => images.load(GameAssets.kBoyJumpSprite),
-      () => images.load(GameAssets.kStarSprite),
       () => images.load(GameAssets.kElevatorImage),
+      () => images.load(GameAssets.kStarSprite),
     ];
   }
 

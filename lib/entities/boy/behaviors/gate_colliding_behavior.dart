@@ -8,7 +8,7 @@ class GateCollidingBehavior extends CollisionBehavior<Gate, Boy>
     with HasGameRef<OneDungeonGame> {
   @override
   void onCollisionStart(Set<Vector2> intersectionPoints, Gate other) {
-    gameRef.stopGame(OneDungeonGame.completionMenuOverlay);
+    gameRef.stopGame(GameStatus.win);
 
     super.onCollisionStart(intersectionPoints, other);
   }

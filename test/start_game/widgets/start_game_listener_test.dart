@@ -43,7 +43,6 @@ void main() {
                 initialActiveOverlays: [
                   OneDungeonGame.menuOverlay,
                   OneDungeonGame.gameOverMenuOverlay,
-                  OneDungeonGame.completionMenuOverlay,
                 ],
               ),
               MenuOverlay(),
@@ -66,7 +65,6 @@ void main() {
                   initialActiveOverlays: [
                     OneDungeonGame.menuOverlay,
                     OneDungeonGame.gameOverMenuOverlay,
-                    OneDungeonGame.completionMenuOverlay,
                   ],
                 ),
                 MenuOverlay(),
@@ -90,7 +88,6 @@ void main() {
                   initialActiveOverlays: [
                     OneDungeonGame.menuOverlay,
                     OneDungeonGame.gameOverMenuOverlay,
-                    OneDungeonGame.completionMenuOverlay,
                   ],
                 ),
                 MenuOverlay(),
@@ -115,7 +112,6 @@ void main() {
                   initialActiveOverlays: [
                     OneDungeonGame.menuOverlay,
                     OneDungeonGame.gameOverMenuOverlay,
-                    OneDungeonGame.completionMenuOverlay,
                   ],
                 ),
                 MenuOverlay(),
@@ -140,7 +136,6 @@ void main() {
                   initialActiveOverlays: [
                     OneDungeonGame.menuOverlay,
                     OneDungeonGame.gameOverMenuOverlay,
-                    OneDungeonGame.completionMenuOverlay,
                   ],
                 ),
                 MenuOverlay(),
@@ -165,7 +160,6 @@ void main() {
                   initialActiveOverlays: [
                     OneDungeonGame.menuOverlay,
                     OneDungeonGame.gameOverMenuOverlay,
-                    OneDungeonGame.completionMenuOverlay,
                   ],
                 ),
                 MenuOverlay(),

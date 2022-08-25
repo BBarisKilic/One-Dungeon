@@ -33,7 +33,7 @@ class GameOverMenuOverlay extends StatelessWidget {
                 ),
                 const SizedBox(height: GameLayout.kLongVerticalSpace),
                 Text(
-                  '${l10n.yourScoreText} 0',
+                  '${l10n.yourScoreText} ${game.score}',
                   style: Theme.of(context).textTheme.bodyText2,
                 ),
                 const SizedBox(height: GameLayout.kLongVerticalSpace),

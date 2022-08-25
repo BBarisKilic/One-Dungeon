@@ -54,7 +54,7 @@ void main() {
       );
 
       game.overlays.addEntry(
-        OneDungeonGame.completionMenuOverlay,
+        OneDungeonGame.gameOverMenuOverlay,
         (context, game) => const SizedBox(),
       );
       await game.ready();
