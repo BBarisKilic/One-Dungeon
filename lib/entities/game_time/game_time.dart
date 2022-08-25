@@ -17,7 +17,7 @@ class GameTime extends Entity {
                 fontSize: 22,
               ),
             ),
-          )..size = _gameTimeSize,
+          ),
           behaviors: [TimeChangeBehavior()],
         );
 
