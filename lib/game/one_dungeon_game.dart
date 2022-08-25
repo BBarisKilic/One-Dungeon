@@ -8,9 +8,19 @@ import 'package:flutter/services.dart';
 import 'package:one_dungeon/components/components.dart';
 import 'package:one_dungeon/constants/constants.dart';
 import 'package:one_dungeon/entities/entities.dart';
+import 'package:one_dungeon/game/game.dart';
 import 'package:one_dungeon/injector.dart' as di;
 import 'package:one_dungeon/one_dungeon_audio/one_dungeon_audio.dart';
 import 'package:tiled/tiled.dart';
+
+/// Helps to define current [GameStatus]
+enum GameStatus {
+  /// Game is won.
+  win,
+
+  /// Game is lost.
+  lose,
+}
 
 class OneDungeonGame extends FlameGame
     with HasKeyboardHandlerComponents, HasCollisionDetection {
@@ -24,15 +34,16 @@ class OneDungeonGame extends FlameGame
   /// Instance of [OneDungeonAudioPlayer].
   late final OneDungeonAudioPlayer audioPlayer;
 
+  /// Instance of [FocusNode].
   final FocusNode focusNode;
 
   /// Game [score] of the player.
   int score;
 
-  /// Total game duration.
+  /// Total game [time].
   double time;
 
-  /// Total number of collected stars.
+  /// Total number of [collectedStars].
   int collectedStars;
 
   final int _baseScore = 100;
@@ -125,30 +136,9 @@ class OneDungeonGame extends FlameGame
   }
 
   Future<void> _addStars() async {
-    await add(Star(center: Vector2(350, 470)));
-    await add(Star(center: Vector2(665, 470)));
-    await add(Star(center: Vector2(805, 440)));
-    await add(Star(center: Vector2(950, 395)));
-    await add(Star(center: Vector2(1095, 380)));
-    await add(Star(center: Vector2(1260, 270)));
-    await add(Star(center: Vector2(1260, 110)));
-    await add(Star(center: Vector2(330, 130)));
-    await add(Star(center: Vector2(380, 140)));
-    await add(Star(center: Vector2(430, 150)));
-    await add(Star(center: Vector2(480, 160)));
-    await add(Star(center: Vector2(530, 150)));
-    await add(Star(center: Vector2(580, 140)));
-    await add(Star(center: Vector2(630, 130)));
-    await add(Star(center: Vector2(680, 140)));
-    await add(Star(center: Vector2(730, 150)));
-    await add(Star(center: Vector2(780, 160)));
-    await add(Star(center: Vector2(830, 170)));
-    await add(Star(center: Vector2(880, 160)));
-    await add(Star(center: Vector2(930, 150)));
-    await add(Star(center: Vector2(40, 120)));
-    await add(Star(center: Vector2(184, 150)));
-    await add(Star(center: Vector2(40, 240)));
-    await add(Star(center: Vector2(150, 355)));
+    await Future.wait<void>(
+      loadStars().map((loadableBuilder) => loadableBuilder()).toList(),
+    );
   }
 
   @override
