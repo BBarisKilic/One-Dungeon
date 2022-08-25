@@ -11,10 +11,10 @@
  <objectgroup id="2" name="ground">
   <object id="5" x="8.625" y="527.938" width="383.438" height="7.1875"/>
   <object id="6" x="376.739" y="535.304" width="15.4427" height="96.1502"/>
-  <object id="7" x="464.727" y="496" width="95.2727" height="7.09091"/>
+  <object id="7" x="464.727" y="496" width="95.2727" height="15.0909"/>
   <object id="9" x="632" y="537" width="16.25" height="92"/>
-  <object id="10" x="624.75" y="528.125" width="79.25" height="6.875"/>
-  <object id="11" x="680.625" y="535.125" width="15.5" height="93.25"/>
+  <object id="10" x="624.75" y="528.125" width="79.25" height="8.5"/>
+  <object id="11" x="680.625" y="536.842" width="15.5" height="91.5326"/>
   <object id="12" x="777.063" y="503.875" width="14.9375" height="124.25"/>
   <object id="13" x="825" y="504" width="15" height="124.636"/>
   <object id="14" x="769" y="496.063" width="79.0909" height="7.66477"/>

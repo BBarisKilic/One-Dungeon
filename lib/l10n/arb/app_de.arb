@@ -2,7 +2,7 @@
     "@@locale": "de",
     "gameTitle": "One Dungeon",
     "@gameTitle": {
-        "description": "The name of the game"
+        "description": "Der Name des Spiels"
     },
     "loadingText": "Wird geladen...",
     "@loadingText": {
@@ -24,6 +24,10 @@
     "@howToPlayText": {
         "description": "Text that will be shown on Menu Overlay"
     },
+    "howToPlayDetailText": "In the game, we have the character named “Dundee”. You can move him with the buttons W, A and D. \n\n\n\nW : jump \n\nA : left move \n\nD : right move \n\n\n\nThe goal in the game is to pass the Dungeon as soon as possible and get the highest score. Collected stars contribute to raising the endgame score. Come on, we'll be waiting for you at the end of the Dungeon!",
+    "@howToPlayDetailText": {
+        "description": "Text that will be shown on Sound Settings Dialog"
+    },
     "aboutText": "Über",
     "@aboutText": {
         "description": "Text that will be shown on Menu Overlay"
@@ -35,10 +39,6 @@
     "aboutDetailText": "One Dungeon wurde während Midyear 2022 Flame Game Jam entwickelt. One Dungeon ist ein 1-Bit Art Spiel, dass aus 2 Abschnitten besteht und nur auf einer Plattform gelaufen wird. Zuletzt ist es ein Ein-Dungeon-Spiel.\n\nSind Sie mehr daran interessiert, ein Spiel zu entwickeln, als ein Spiel zu spielen? Dann zögern Sie nicht, sich mal das GitHub-Repository des Spiels anzusehen. One Dungeon ist Open Source und öffentlich verfügbar.\n\nDas Spiel wird von Flame Engine und Flutter angetrieben. Flame ist eine minimalistische Flutter-Spiel-Engine, die eine schöne Reihe von etwas unabhängigen Modulen bietet, die Sie auswählen können.\n\nIm Quellcode sehen Sie getesteten und zu 100 % abgedeckten sauberen Code. Das Projekt wurde mit Very Good CLI erstellt. Außerdem wurde das Flame Behaviors-Paket verwendet, das die Trennung von Bedenken auf die Spiellogik in Form von Entitäten und Verhaltensweisen anwendet. Andere erwähnenswerte Pakete sind Bloc, Equatable, Freezed, GetIt, Mocktail.\n\nSchließlich unterstützt One Dungeon Lokalisierungen. Die Englische und Deutsche Sprachen sind bereits verfügbar.",
     "@aboutDetailText": {
         "description": "Text that will be shown on About Dialog"
-    },
-    "congratulationsText": "Congrats!",
-    "@congratulationsText": {
-        "description": "Text that will be shown on Replay Dialog"
     },
     "gameOverText": "Game over!",
     "@gameOverText": {
@@ -72,8 +72,8 @@
     "@sfxText": {
         "description": "Text that will be shown on Sound Settings Dialog"
     },
-    "howToPlayDetailText": "In the game, we have the character named “Dundee”. You can move him with the buttons W, A and D. \n\n\n\nW : jump \n\nA : left move \n\nD : right move \n\n\n\nThe goal in the game is to pass the Dungeon as soon as possible and get the highest score. Collected stars contribute to raising the endgame score. Come on, we'll be waiting for you at the end of the Dungeon!",
-    "@howToPlayDetailText": {
-        "description": "Text that will be shown on Sound Settings Dialog"
+    "timeText": "Zeit:",
+    "@timeText": {
+        "description": "Text that will be shown in Time Sprite"
     }
 }
