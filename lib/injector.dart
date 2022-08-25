@@ -8,8 +8,8 @@ final injector = GetIt.instance;
 
 Future<void> initializeDependencies() async {
   injector
-    ..registerLazySingleton<OneDungeonAudioPlayer>(OneDungeonAudioPlayer.new)
-    ..registerLazySingleton<OneDungeonGame>(OneDungeonGame.new)
+    ..registerSingleton<OneDungeonAudioPlayer>(OneDungeonAudioPlayer())
+    ..registerSingleton<OneDungeonGame>(OneDungeonGame())
     ..registerFactory<AssetsManagerCubit>(
       () => AssetsManagerCubit(
         game: injector(),

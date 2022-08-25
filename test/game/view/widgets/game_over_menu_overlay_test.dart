@@ -10,7 +10,6 @@ void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
   late OneDungeonAudioPlayer audioPlayer;
-  late TestGame game;
 
   setUpAll(() async {
     audioPlayer = OneDungeonAudioPlayer.test(
@@ -19,15 +18,11 @@ void main() {
       playSingleAudio: (_, {double? volume}) async {},
       preCacheSingleAudio: (_) async {},
     );
-    game = TestGame();
-
     await di.initializeDependencies();
 
     await di.injector.unregister<OneDungeonAudioPlayer>();
-    await di.injector.unregister<OneDungeonGame>();
 
     di.injector.registerSingleton<OneDungeonAudioPlayer>(audioPlayer);
-    di.injector.registerSingleton<OneDungeonGame>(game);
   });
 
   tearDownAll(() async {

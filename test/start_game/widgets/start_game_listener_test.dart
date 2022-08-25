@@ -26,7 +26,7 @@ void main() {
 
     await di.injector.unregister<OneDungeonAudioPlayer>();
 
-    di.injector.registerFactory<OneDungeonAudioPlayer>(() => audioPlayer);
+    di.injector.registerSingleton<OneDungeonAudioPlayer>(audioPlayer);
   });
 
   tearDown(() async {

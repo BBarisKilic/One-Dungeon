@@ -23,7 +23,7 @@ void main() {
 
     await di.injector.unregister<OneDungeonAudioPlayer>();
 
-    di.injector.registerLazySingleton<OneDungeonAudioPlayer>(() => audioPlayer);
+    di.injector.registerSingleton<OneDungeonAudioPlayer>(audioPlayer);
   });
 
   tearDownAll(() async {
