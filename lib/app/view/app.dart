@@ -24,7 +24,7 @@ class App extends StatelessWidget {
           fontFamily: 'PressStart2P',
           elevatedButtonTheme: ElevatedButtonThemeData(
             style: ElevatedButton.styleFrom(
-              primary: GameColors.kButtonColor,
+              backgroundColor: GameColors.kButtonColor,
               shape: const RoundedRectangleBorder(),
               minimumSize: const Size(double.infinity, 0),
               padding: const EdgeInsets.symmetric(

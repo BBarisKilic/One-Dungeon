@@ -11,7 +11,6 @@ import 'package:one_dungeon/game/game.dart';
 import 'package:one_dungeon/injector.dart' as di;
 import 'package:one_dungeon/l10n/l10n.dart';
 import 'package:one_dungeon/one_dungeon_audio/one_dungeon_audio.dart';
-import 'package:tiled/tiled.dart';
 
 /// Helps to define current [GameStatus]
 enum GameStatus {
