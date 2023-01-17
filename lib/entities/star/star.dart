@@ -3,7 +3,7 @@ import 'package:flame/components.dart';
 import 'package:flame_behaviors/flame_behaviors.dart';
 import 'package:one_dungeon/entities/entities.dart';
 
-class Star extends Entity {
+class Star extends PositionedEntity {
   Star({
     required Vector2 center,
   }) : this._(
