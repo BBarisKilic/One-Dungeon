@@ -26,78 +26,86 @@ void main() {
   });
 
   group('BoyAirResistanceBehavior', () {
-    final flameTester = FlameTester<TestGame>(TestGame.new);
+    testWithGame<TestGame>(
+      'applies resistance when having positive velocity in the x direction',
+      TestGame.new,
+      (game) async {
+        final boy = Boy.test(
+          velocity: Vector2(10, 0),
+          behavior: boyAirResistanceBehavior,
+        );
 
-    flameTester.test(
-        'applies resistance when having positive velocity in the x direction',
-        (game) async {
-      final boy = Boy.test(
-        velocity: Vector2(10, 0),
-        behavior: boyAirResistanceBehavior,
-      );
+        await game.ready();
+        await game.ensureAdd(boy);
 
-      await game.ready();
-      await game.ensureAdd(boy);
+        expect(boy.velocity.x, equals(10));
 
-      expect(boy.velocity.x, equals(10));
+        game.update(1);
 
-      game.update(1);
+        expect(boy.velocity.x, isNot(equals(10)));
+      },
+    );
 
-      expect(boy.velocity.x, isNot(equals(10)));
-    });
+    testWithGame<TestGame>(
+      'applies resistance when having negative velocity in the x direction',
+      TestGame.new,
+      (game) async {
+        final boy = Boy.test(
+          velocity: Vector2(-10, 0),
+          behavior: boyAirResistanceBehavior,
+        );
 
-    flameTester.test(
-        'applies resistance when having negative velocity in the x direction',
-        (game) async {
-      final boy = Boy.test(
-        velocity: Vector2(-10, 0),
-        behavior: boyAirResistanceBehavior,
-      );
+        await game.ready();
+        await game.ensureAdd(boy);
 
-      await game.ready();
-      await game.ensureAdd(boy);
+        expect(boy.velocity.x, equals(-10));
 
-      expect(boy.velocity.x, equals(-10));
+        game.update(1);
 
-      game.update(1);
+        expect(boy.velocity.x, isNot(equals(-10)));
+      },
+    );
 
-      expect(boy.velocity.x, isNot(equals(-10)));
-    });
+    testWithGame<TestGame>(
+      'stops character on left edge of the screen',
+      TestGame.new,
+      (game) async {
+        final boy = Boy.test(
+          velocity: Vector2(-10, 0),
+          center: Vector2(10, 0),
+          behavior: boyAirResistanceBehavior,
+        );
 
-    flameTester.test('stops character on left edge of the screen',
-        (game) async {
-      final boy = Boy.test(
-        velocity: Vector2(-10, 0),
-        center: Vector2(10, 0),
-        behavior: boyAirResistanceBehavior,
-      );
+        await game.ready();
+        await game.ensureAdd(boy);
 
-      await game.ready();
-      await game.ensureAdd(boy);
+        expect(boy.position.x, equals(10));
 
-      expect(boy.position.x, equals(10));
+        game.update(1);
 
-      game.update(1);
+        expect(boy.position.x, equals(boy.size.x / 2));
+      },
+    );
 
-      expect(boy.position.x, equals(boy.size.x / 2));
-    });
+    testWithGame<TestGame>(
+      'stops character on right edge of the screen',
+      TestGame.new,
+      (game) async {
+        final boy = Boy.test(
+          velocity: Vector2(10, 0),
+          center: Vector2(game.size[0], 0),
+          behavior: boyAirResistanceBehavior,
+        );
 
-    flameTester.test('stops character on right edge of the screen',
-        (game) async {
-      final boy = Boy.test(
-        velocity: Vector2(10, 0),
-        center: Vector2(game.size[0], 0),
-        behavior: boyAirResistanceBehavior,
-      );
+        await game.ready();
+        await game.ensureAdd(boy);
 
-      await game.ready();
-      await game.ensureAdd(boy);
+        expect(boy.position.x, equals(game.size[0]));
 
-      expect(boy.position.x, equals(game.size[0]));
+        game.update(1);
 
-      game.update(1);
-
-      expect(boy.position.x, equals(game.size[0] - (boy.size.x / 2)));
-    });
+        expect(boy.position.x, equals(game.size[0] - (boy.size.x / 2)));
+      },
+    );
   });
 }

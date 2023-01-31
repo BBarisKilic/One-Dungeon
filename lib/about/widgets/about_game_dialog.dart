@@ -28,14 +28,14 @@ class AboutGameDialog extends StatelessWidget {
                 const SizedBox(height: GameLayout.kVerticalSpace),
                 Text(
                   l10n.aboutText,
-                  style: Theme.of(context).textTheme.headline6,
+                  style: Theme.of(context).textTheme.titleMedium,
                 ),
                 const SizedBox(height: GameLayout.kLongVerticalSpace),
                 Expanded(
                   child: SingleChildScrollView(
                     child: Text(
                       l10n.aboutDetailText,
-                      style: Theme.of(context).textTheme.bodyText2,
+                      style: Theme.of(context).textTheme.bodySmall,
                       textAlign: TextAlign.center,
                     ),
                   ),

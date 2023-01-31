@@ -35,88 +35,114 @@ void main() {
   });
 
   group('OneDungeonGame', () {
-    final flameTester = FlameTester<TestGame>(TestGame.new);
-
     test('can be instantiated', () {
       expect(OneDungeonGame(), isA<OneDungeonGame>());
     });
 
     group('components', () {
-      flameTester.test('has only many Gates', (game) async {
-        await game.ready();
+      testWithGame<TestGame>(
+        'has only many Gates',
+        TestGame.new,
+        (game) async {
+          await game.ready();
 
-        expect(
-          game.descendants().whereType<Gate>().length,
-          greaterThanOrEqualTo(1),
-        );
-      });
+          expect(
+            game.descendants().whereType<Gate>().length,
+            greaterThanOrEqualTo(1),
+          );
+        },
+      );
 
-      flameTester.test('has only many Grounds', (game) async {
-        await game.ready();
+      testWithGame<TestGame>(
+        'has only many Grounds',
+        TestGame.new,
+        (game) async {
+          await game.ready();
 
-        expect(
-          game.descendants().whereType<Ground>().length,
-          greaterThanOrEqualTo(1),
-        );
-      });
+          expect(
+            game.descendants().whereType<Ground>().length,
+            greaterThanOrEqualTo(1),
+          );
+        },
+      );
 
-      flameTester.test('has only many Traps', (game) async {
-        await game.ready();
+      testWithGame<TestGame>(
+        'has only many Traps',
+        TestGame.new,
+        (game) async {
+          await game.ready();
 
-        expect(
-          game.descendants().whereType<Trap>().length,
-          greaterThanOrEqualTo(1),
-        );
-      });
+          expect(
+            game.descendants().whereType<Trap>().length,
+            greaterThanOrEqualTo(1),
+          );
+        },
+      );
     });
 
     group('entities', () {
-      flameTester.test('has only one Boy', (game) async {
-        await game.ready();
+      testWithGame<TestGame>(
+        'has only one Boy',
+        TestGame.new,
+        (game) async {
+          await game.ready();
 
-        expect(
-          game.children.whereType<Boy>().length,
-          equals(1),
-        );
-      });
+          expect(
+            game.children.whereType<Boy>().length,
+            equals(1),
+          );
+        },
+      );
     });
 
     group('behaviors', () {
-      flameTester.test('Boy has KeyboardMovingBehavior', (game) async {
-        await game.ready();
+      testWithGame<TestGame>(
+        'Boy has KeyboardMovingBehavior',
+        TestGame.new,
+        (game) async {
+          await game.ready();
 
-        final boy = game.children.whereType<Boy>();
+          final boy = game.children.whereType<Boy>();
 
-        expect(
-          boy.first.hasBehavior<KeyboardMovingBehavior>(),
-          isTrue,
-        );
-      });
+          expect(
+            boy.first.hasBehavior<KeyboardMovingBehavior>(),
+            isTrue,
+          );
+        },
+      );
     });
 
     group('key events', () {
-      flameTester.test('are handled', (game) async {
-        await game.ready();
+      testWithGame<TestGame>(
+        'are handled',
+        TestGame.new,
+        (game) async {
+          await game.ready();
 
-        final event = _RawKeyEvent();
-        final keysPressed = {LogicalKeyboardKey.pageDown};
+          final event = _RawKeyEvent();
+          final keysPressed = {LogicalKeyboardKey.pageDown};
 
-        expect(
-          game.onKeyEvent(event, keysPressed),
-          KeyEventResult.handled,
-        );
-      });
+          expect(
+            game.onKeyEvent(event, keysPressed),
+            KeyEventResult.handled,
+          );
+        },
+      );
 
-      flameTester.test('pressed up arrow', (game) async {
-        await game.ready();
+      testWithGame<TestGame>(
+        'pressed up arrow',
+        TestGame.new,
+        (game) async {
+          await game.ready();
 
-        final keysPressed = {LogicalKeyboardKey.arrowUp};
+          final keysPressed = {LogicalKeyboardKey.arrowUp};
 
-        expect(
-          keysPressed.contains(LogicalKeyboardKey.arrowUp),
-          isTrue,
-        );
-      });
+          expect(
+            keysPressed.contains(LogicalKeyboardKey.arrowUp),
+            isTrue,
+          );
+        },
+      );
     });
   });
 }

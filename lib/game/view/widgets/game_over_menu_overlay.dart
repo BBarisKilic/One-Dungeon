@@ -29,12 +29,12 @@ class GameOverMenuOverlay extends StatelessWidget {
                 const SizedBox(height: GameLayout.kVerticalSpace),
                 Text(
                   l10n.gameOverText,
-                  style: Theme.of(context).textTheme.headline6,
+                  style: Theme.of(context).textTheme.titleMedium,
                 ),
                 const SizedBox(height: GameLayout.kLongVerticalSpace),
                 Text(
                   '${l10n.yourScoreText} ${game.score}',
-                  style: Theme.of(context).textTheme.bodyText2,
+                  style: Theme.of(context).textTheme.bodySmall,
                 ),
                 const SizedBox(height: GameLayout.kLongVerticalSpace),
                 MenuButton(

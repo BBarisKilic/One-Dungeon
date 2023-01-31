@@ -26,40 +26,46 @@ void main() {
   });
 
   group('ElevatorMovingBehavior', () {
-    final flameTester = FlameTester<TestGame>(TestGame.new);
+    testWithGame<TestGame>(
+      'going up as expected',
+      TestGame.new,
+      (game) async {
+        final center = Vector2(0, 350);
+        final elevator = Elevator.test(
+          center: center,
+          behavior: elevatorMovingBehavior,
+        );
 
-    flameTester.test('going up as expected', (game) async {
-      final center = Vector2(0, 350);
-      final elevator = Elevator.test(
-        center: center,
-        behavior: elevatorMovingBehavior,
-      );
+        await game.ready();
+        await game.ensureAdd(elevator);
 
-      await game.ready();
-      await game.ensureAdd(elevator);
+        elevatorMovingBehavior.isGoingDown = true;
 
-      elevatorMovingBehavior.isGoingDown = true;
+        game.update(1);
 
-      game.update(1);
+        expect(elevatorMovingBehavior.isGoingDown, isFalse);
+      },
+    );
 
-      expect(elevatorMovingBehavior.isGoingDown, isFalse);
-    });
+    testWithGame<TestGame>(
+      'going down as expected',
+      TestGame.new,
+      (game) async {
+        final center = Vector2(0, 160);
+        final elevator = Elevator.test(
+          center: center,
+          behavior: elevatorMovingBehavior,
+        );
 
-    flameTester.test('going down as expected', (game) async {
-      final center = Vector2(0, 160);
-      final elevator = Elevator.test(
-        center: center,
-        behavior: elevatorMovingBehavior,
-      );
+        await game.ready();
+        await game.ensureAdd(elevator);
 
-      await game.ready();
-      await game.ensureAdd(elevator);
+        elevatorMovingBehavior.isGoingDown = false;
 
-      elevatorMovingBehavior.isGoingDown = false;
+        game.update(1);
 
-      game.update(1);
-
-      expect(elevatorMovingBehavior.isGoingDown, isTrue);
-    });
+        expect(elevatorMovingBehavior.isGoingDown, isTrue);
+      },
+    );
   });
 }
