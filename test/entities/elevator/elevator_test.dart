@@ -20,24 +20,30 @@ void main() {
   });
 
   group('Elevator', () {
-    final flameTester = FlameTester<TestGame>(TestGame.new);
+    testWithGame<TestGame>(
+      'loads correctly',
+      TestGame.new,
+      (game) async {
+        final elevator = Elevator.test();
 
-    flameTester.test('loads correctly', (game) async {
-      final elevator = Elevator.test();
+        await game.ready();
+        await game.ensureAdd(elevator);
 
-      await game.ready();
-      await game.ensureAdd(elevator);
+        expect(game.contains(elevator), isTrue);
+      },
+    );
 
-      expect(game.contains(elevator), isTrue);
-    });
+    testWithGame<TestGame>(
+      'positioned correctly',
+      TestGame.new,
+      (game) async {
+        final elevator = Elevator.test(center: Vector2.zero());
 
-    flameTester.test('positioned correctly', (game) async {
-      final elevator = Elevator.test(center: Vector2.zero());
+        await game.ready();
+        await game.ensureAdd(elevator);
 
-      await game.ready();
-      await game.ensureAdd(elevator);
-
-      expect(elevator.position, closeToVector(Vector2(0, 0)));
-    });
+        expect(elevator.position, closeToVector(Vector2(0, 0)));
+      },
+    );
   });
 }

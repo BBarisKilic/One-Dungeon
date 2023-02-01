@@ -45,25 +45,27 @@ void main() {
   });
 
   group('GateCollidingBehavior', () {
-    final flameTester = FlameTester<TestGame>(TestGame.new);
+    testWithGame<TestGame>(
+      'detects when touches',
+      TestGame.new,
+      (game) async {
+        final boy = Boy.test(
+          velocity: Vector2(10, 10),
+          behavior: gateCollidingBehavior,
+        );
 
-    flameTester.test('detects when touches', (game) async {
-      final boy = Boy.test(
-        velocity: Vector2(10, 10),
-        behavior: gateCollidingBehavior,
-      );
+        game.overlays.addEntry(
+          OneDungeonGame.gameOverMenuOverlay,
+          (context, game) => const SizedBox(),
+        );
+        await game.ready();
+        await game.ensureAdd(boy);
 
-      game.overlays.addEntry(
-        OneDungeonGame.gameOverMenuOverlay,
-        (context, game) => const SizedBox(),
-      );
-      await game.ready();
-      await game.ensureAdd(boy);
+        gateCollidingBehavior
+            .onCollisionStart({Vector2(0, 0), Vector2(10, 0)}, _MockGate());
 
-      gateCollidingBehavior
-          .onCollisionStart({Vector2(0, 0), Vector2(10, 0)}, _MockGate());
-
-      expect(boy.velocity.y, equals(10));
-    });
+        expect(boy.velocity.y, equals(10));
+      },
+    );
   });
 }

@@ -3,7 +3,7 @@ import 'package:flame_behaviors/flame_behaviors.dart';
 import 'package:flutter/material.dart';
 import 'package:one_dungeon/entities/entities.dart';
 
-class GameTime extends Entity {
+class GameTime extends PositionedEntity {
   GameTime({
     Vector2? center,
   }) : this._(

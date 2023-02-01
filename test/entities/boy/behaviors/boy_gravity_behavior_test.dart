@@ -26,22 +26,24 @@ void main() {
   });
 
   group('BoyGravityBehavior', () {
-    final flameTester = FlameTester<TestGame>(TestGame.new);
+    testWithGame<TestGame>(
+      'gravity works as expected',
+      TestGame.new,
+      (game) async {
+        final centerY = game.size.y / 2;
+        final boy = Boy.test(
+          center: Vector2(0, centerY),
+          behavior: boyGravityBehavior,
+        );
 
-    flameTester.test('gravity works as expected', (game) async {
-      final centerY = game.size.y / 2;
-      final boy = Boy.test(
-        center: Vector2(0, centerY),
-        behavior: boyGravityBehavior,
-      );
+        await game.ready();
+        await game.ensureAdd(boy);
 
-      await game.ready();
-      await game.ensureAdd(boy);
+        boy.isBottomTouching = false;
+        game.update(1);
 
-      boy.isBottomTouching = false;
-      game.update(1);
-
-      expect(boy.position.y, isNot(equals(centerY)));
-    });
+        expect(boy.position.y, isNot(equals(centerY)));
+      },
+    );
   });
 }

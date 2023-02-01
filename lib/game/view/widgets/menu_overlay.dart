@@ -30,7 +30,7 @@ class MenuOverlay extends StatelessWidget {
                 const SizedBox(height: GameLayout.kVerticalSpace),
                 Text(
                   l10n.gameTitle,
-                  style: Theme.of(context).textTheme.headline6,
+                  style: Theme.of(context).textTheme.titleMedium,
                 ),
                 const SizedBox(height: GameLayout.kLongVerticalSpace),
                 MenuButton(
@@ -68,14 +68,14 @@ class MenuOverlay extends StatelessWidget {
                   children: [
                     Text(
                       'v1.0.0',
-                      style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                             fontSize: 8,
                             color: GameColors.kButtonColor,
                           ),
                     ),
                     Text(
                       '2022 © BBK Games',
-                      style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                             fontSize: 8,
                             color: GameColors.kButtonColor,
                           ),

@@ -41,56 +41,61 @@ void main() {
   });
 
   group('StarCollidingBehavior', () {
-    final flameTester = FlameTester<TestGame>(TestGame.new);
+    testWithGame<TestGame>(
+      'collected stars increases when touches',
+      TestGame.new,
+      (game) async {
+        final star = Star(center: Vector2(10, 10));
+        final boy = Boy.test(
+          velocity: Vector2(10, 10),
+          behavior: starCollidingBehavior,
+        );
 
-    flameTester.test('collected stars increases when touches', (game) async {
-      final star = Star(center: Vector2(10, 10));
-      final boy = Boy.test(
-        velocity: Vector2(10, 10),
-        behavior: starCollidingBehavior,
-      );
+        game.overlays.addEntry(
+          OneDungeonGame.gameOverMenuOverlay,
+          (context, game) => const SizedBox(),
+        );
 
-      game.overlays.addEntry(
-        OneDungeonGame.gameOverMenuOverlay,
-        (context, game) => const SizedBox(),
-      );
+        await game.ready();
+        await game.ensureAdd(star);
+        await game.ensureAdd(boy);
 
-      await game.ready();
-      await game.ensureAdd(star);
-      await game.ensureAdd(boy);
+        final collectedStars = game.collectedStars;
 
-      final collectedStars = game.collectedStars;
+        await starCollidingBehavior
+            .onCollisionStart({Vector2(0, 0), Vector2(10, 0)}, star);
 
-      await starCollidingBehavior
-          .onCollisionStart({Vector2(0, 0), Vector2(10, 0)}, star);
+        expect(game.collectedStars, equals(collectedStars + 1));
+      },
+    );
 
-      expect(game.collectedStars, equals(collectedStars + 1));
-    });
+    testWithGame<TestGame>(
+      'stars get removed from the component tree when touches',
+      TestGame.new,
+      (game) async {
+        final star = Star(center: Vector2(10, 10));
+        final boy = Boy.test(
+          velocity: Vector2(10, 10),
+          behavior: starCollidingBehavior,
+        );
 
-    flameTester.test('stars get removed from the component tree when touches',
-        (game) async {
-      final star = Star(center: Vector2(10, 10));
-      final boy = Boy.test(
-        velocity: Vector2(10, 10),
-        behavior: starCollidingBehavior,
-      );
+        game.overlays.addEntry(
+          OneDungeonGame.gameOverMenuOverlay,
+          (context, game) => const SizedBox(),
+        );
 
-      game.overlays.addEntry(
-        OneDungeonGame.gameOverMenuOverlay,
-        (context, game) => const SizedBox(),
-      );
+        await game.ready();
+        await game.ensureAdd(star);
+        await game.ensureAdd(boy);
 
-      await game.ready();
-      await game.ensureAdd(star);
-      await game.ensureAdd(boy);
+        expect(game.children.contains(star), isTrue);
 
-      expect(game.children.contains(star), isTrue);
+        await starCollidingBehavior
+            .onCollisionStart({Vector2(0, 0), Vector2(10, 0)}, star);
+        game.update(1);
 
-      await starCollidingBehavior
-          .onCollisionStart({Vector2(0, 0), Vector2(10, 0)}, star);
-      game.update(1);
-
-      expect(game.children.contains(star), isFalse);
-    });
+        expect(game.children.contains(star), isFalse);
+      },
+    );
   });
 }

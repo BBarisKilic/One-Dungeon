@@ -27,12 +27,12 @@ class HowToPlayDialog extends StatelessWidget {
                 const SizedBox(height: GameLayout.kVerticalSpace),
                 Text(
                   l10n.howToPlayText,
-                  style: Theme.of(context).textTheme.headline6,
+                  style: Theme.of(context).textTheme.titleMedium,
                 ),
                 const SizedBox(height: GameLayout.kLongVerticalSpace),
                 Text(
                   l10n.howToPlayDetailText,
-                  style: Theme.of(context).textTheme.bodyText2,
+                  style: Theme.of(context).textTheme.bodySmall,
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: GameLayout.kVerticalSpace),

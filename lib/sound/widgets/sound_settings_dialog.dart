@@ -31,7 +31,7 @@ class SoundSettingsDialog extends StatelessWidget {
                 const SizedBox(height: GameLayout.kVerticalSpace),
                 Text(
                   l10n.soundText,
-                  style: Theme.of(context).textTheme.headline6,
+                  style: Theme.of(context).textTheme.titleMedium,
                 ),
                 const SizedBox(height: GameLayout.kLongVerticalSpace),
                 Row(

@@ -20,24 +20,30 @@ void main() {
   });
 
   group('Boy', () {
-    final flameTester = FlameTester<TestGame>(TestGame.new);
+    testWithGame<TestGame>(
+      'loads correctly',
+      TestGame.new,
+      (game) async {
+        final boy = Boy.wasd();
 
-    flameTester.test('loads correctly', (game) async {
-      final boy = Boy.wasd();
+        await game.ready();
+        await game.ensureAdd(boy);
 
-      await game.ready();
-      await game.ensureAdd(boy);
+        expect(game.contains(boy), isTrue);
+      },
+    );
 
-      expect(game.contains(boy), isTrue);
-    });
+    testWithGame<TestGame>(
+      'positioned correctly',
+      TestGame.new,
+      (game) async {
+        final boy = Boy.arrows(center: Vector2.zero());
 
-    flameTester.test('positioned correctly', (game) async {
-      final boy = Boy.arrows(center: Vector2.zero());
+        await game.ready();
+        await game.ensureAdd(boy);
 
-      await game.ready();
-      await game.ensureAdd(boy);
-
-      expect(boy.position, closeToVector(Vector2(0, 0)));
-    });
+        expect(boy.position, closeToVector(Vector2(0, 0)));
+      },
+    );
   });
 }

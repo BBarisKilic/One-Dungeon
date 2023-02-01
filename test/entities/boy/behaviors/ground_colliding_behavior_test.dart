@@ -30,102 +30,119 @@ void main() {
   });
 
   group('GroundCollidingBehavior', () {
-    final flameTester = FlameTester<TestGame>(TestGame.new);
+    testWithGame<TestGame>(
+      'detects when bottom touches',
+      TestGame.new,
+      (game) async {
+        final boy = Boy.test(
+          center: Vector2(0, 0),
+          behavior: groundCollidingBehavior,
+        );
 
-    flameTester.test('detects when bottom touches', (game) async {
-      final boy = Boy.test(
-        center: Vector2(0, 0),
-        behavior: groundCollidingBehavior,
-      );
+        await game.ready();
+        await game.ensureAdd(boy);
+        boy.isBottomTouching = false;
 
-      await game.ready();
-      await game.ensureAdd(boy);
-      boy.isBottomTouching = false;
+        groundCollidingBehavior
+            .onCollision({Vector2(0, 0), Vector2(10, 10)}, _MockGround());
 
-      groundCollidingBehavior
-          .onCollision({Vector2(0, 0), Vector2(10, 10)}, _MockGround());
+        expect(boy.isBottomTouching, isTrue);
+      },
+    );
 
-      expect(boy.isBottomTouching, isTrue);
-    });
+    testWithGame<TestGame>(
+      'detects when top touches',
+      TestGame.new,
+      (game) async {
+        final boy = Boy.test(
+          center: Vector2(0, 200),
+          behavior: groundCollidingBehavior,
+        );
 
-    flameTester.test('detects when top touches', (game) async {
-      final boy = Boy.test(
-        center: Vector2(0, 200),
-        behavior: groundCollidingBehavior,
-      );
+        await game.ready();
+        await game.ensureAdd(boy);
 
-      await game.ready();
-      await game.ensureAdd(boy);
+        expect(boy.isTopTouching, isFalse);
 
-      expect(boy.isTopTouching, isFalse);
+        groundCollidingBehavior
+            .onCollision({Vector2(0, 0), Vector2(10, 0)}, _MockGround());
 
-      groundCollidingBehavior
-          .onCollision({Vector2(0, 0), Vector2(10, 0)}, _MockGround());
+        expect(boy.isTopTouching, isTrue);
+      },
+    );
 
-      expect(boy.isTopTouching, isTrue);
-    });
+    testWithGame<TestGame>(
+      'detects when side(left) touches',
+      TestGame.new,
+      (game) async {
+        final boy = Boy.test(
+          center: Vector2(10, 0),
+          behavior: groundCollidingBehavior,
+        );
 
-    flameTester.test('detects when side(left) touches', (game) async {
-      final boy = Boy.test(
-        center: Vector2(10, 0),
-        behavior: groundCollidingBehavior,
-      );
+        await game.ready();
+        await game.ensureAdd(boy);
 
-      await game.ready();
-      await game.ensureAdd(boy);
+        expect(boy.isLeftSideTouching, isFalse);
+        expect(boy.isRightSideTouching, isFalse);
 
-      expect(boy.isLeftSideTouching, isFalse);
-      expect(boy.isRightSideTouching, isFalse);
+        boy.isFlipped = true;
+        groundCollidingBehavior
+            .onCollision({Vector2(8, 0), Vector2(9, 10)}, _MockGround());
 
-      boy.isFlipped = true;
-      groundCollidingBehavior
-          .onCollision({Vector2(8, 0), Vector2(9, 10)}, _MockGround());
+        expect(boy.isLeftSideTouching, isTrue);
+        expect(boy.isRightSideTouching, isFalse);
+      },
+    );
 
-      expect(boy.isLeftSideTouching, isTrue);
-      expect(boy.isRightSideTouching, isFalse);
-    });
+    testWithGame<TestGame>(
+      'detects when side(right) touches',
+      TestGame.new,
+      (game) async {
+        final boy = Boy.test(
+          center: Vector2(10, 0),
+          behavior: groundCollidingBehavior,
+        );
 
-    flameTester.test('detects when side(right) touches', (game) async {
-      final boy = Boy.test(
-        center: Vector2(10, 0),
-        behavior: groundCollidingBehavior,
-      );
+        await game.ready();
+        await game.ensureAdd(boy);
 
-      await game.ready();
-      await game.ensureAdd(boy);
+        expect(boy.isLeftSideTouching, isFalse);
+        expect(boy.isRightSideTouching, isFalse);
 
-      expect(boy.isLeftSideTouching, isFalse);
-      expect(boy.isRightSideTouching, isFalse);
+        boy.isFlipped = false;
+        groundCollidingBehavior
+            .onCollision({Vector2(11, 0), Vector2(12, 10)}, _MockGround());
 
-      boy.isFlipped = false;
-      groundCollidingBehavior
-          .onCollision({Vector2(11, 0), Vector2(12, 10)}, _MockGround());
+        expect(boy.isLeftSideTouching, isFalse);
+        expect(boy.isRightSideTouching, isTrue);
+      },
+    );
 
-      expect(boy.isLeftSideTouching, isFalse);
-      expect(boy.isRightSideTouching, isTrue);
-    });
+    testWithGame<TestGame>(
+      'bottom is not touching when the collision end',
+      TestGame.new,
+      (game) async {
+        final boy = Boy.test(
+          velocity: Vector2(0, 10),
+          center: Vector2(10, 20),
+          behavior: groundCollidingBehavior,
+        );
 
-    flameTester.test('bottom is not touching when the collision end',
-        (game) async {
-      final boy = Boy.test(
-        velocity: Vector2(0, 10),
-        center: Vector2(10, 20),
-        behavior: groundCollidingBehavior,
-      );
+        await game.ready();
+        await game.ensureAdd(boy);
 
-      await game.ready();
-      await game.ensureAdd(boy);
+        expect(boy.isBottomTouching, isFalse);
 
-      expect(boy.isBottomTouching, isFalse);
+        groundCollidingBehavior
+            .onCollision({Vector2(10, 20), Vector2(40, 20)}, _MockGround());
 
-      groundCollidingBehavior
-          .onCollision({Vector2(10, 20), Vector2(40, 20)}, _MockGround());
+        expect(boy.isBottomTouching, isTrue);
 
-      expect(boy.isBottomTouching, isTrue);
+        groundCollidingBehavior.onCollisionEnd(_MockGround());
 
-      groundCollidingBehavior.onCollisionEnd(_MockGround());
-
-      expect(boy.isBottomTouching, isFalse);
-    });
+        expect(boy.isBottomTouching, isFalse);
+      },
+    );
   });
 }

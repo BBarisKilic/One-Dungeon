@@ -45,30 +45,32 @@ void main() {
   });
 
   group('DangerCollidingBehavior', () {
-    final flameTester = FlameTester<TestGame>(TestGame.new);
+    testWithGame<TestGame>(
+      'detects when touches',
+      TestGame.new,
+      (game) async {
+        final boy = Boy.test(
+          center: Vector2(100, 200),
+          velocity: Vector2(10, 20),
+          behavior: dangerCollidingBehavior,
+        );
 
-    flameTester.test('detects when touches', (game) async {
-      final boy = Boy.test(
-        center: Vector2(100, 200),
-        velocity: Vector2(10, 20),
-        behavior: dangerCollidingBehavior,
-      );
+        game.overlays.addEntry(
+          OneDungeonGame.gameOverMenuOverlay,
+          (context, game) => const SizedBox(),
+        );
+        await game.ready();
+        await game.ensureAdd(boy);
 
-      game.overlays.addEntry(
-        OneDungeonGame.gameOverMenuOverlay,
-        (context, game) => const SizedBox(),
-      );
-      await game.ready();
-      await game.ensureAdd(boy);
+        expect(boy.velocity.x, equals(10));
+        expect(boy.velocity.y, equals(20));
 
-      expect(boy.velocity.x, equals(10));
-      expect(boy.velocity.y, equals(20));
+        dangerCollidingBehavior
+            .onCollisionStart({Vector2(0, 0), Vector2(10, 0)}, _MockDanger());
 
-      dangerCollidingBehavior
-          .onCollisionStart({Vector2(0, 0), Vector2(10, 0)}, _MockDanger());
-
-      expect(boy.velocity.x, equals(0));
-      expect(boy.velocity.y, equals(-100));
-    });
+        expect(boy.velocity.x, equals(0));
+        expect(boy.velocity.y, equals(-100));
+      },
+    );
   });
 }

@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:one_dungeon/entities/entities.dart';
 
-class Boy extends Entity {
+class Boy extends PositionedEntity {
   Boy({
     Vector2? center,
     required LogicalKeyboardKey jumpKey,

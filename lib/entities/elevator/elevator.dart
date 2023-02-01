@@ -4,7 +4,7 @@ import 'package:flame_behaviors/flame_behaviors.dart';
 import 'package:flutter/material.dart';
 import 'package:one_dungeon/entities/entities.dart';
 
-class Elevator extends Entity {
+class Elevator extends PositionedEntity {
   Elevator({
     Vector2? center,
   }) : this._(

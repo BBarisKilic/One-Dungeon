@@ -44,8 +44,6 @@ void main() {
   });
 
   group('KeyboardMovingBehavior', () {
-    final flameTester = FlameTester<TestGame>(TestGame.new);
-
     group('initial', () {
       test('keys are correct', () {
         expect(
@@ -63,84 +61,101 @@ void main() {
       });
     });
 
-    flameTester.test('jumps as expected', (game) async {
-      final boy = Boy.test(
-        behavior: keyboardMovingBehavior,
-      );
+    testWithGame<TestGame>(
+      'jumps as expected',
+      TestGame.new,
+      (game) async {
+        final boy = Boy.test(
+          behavior: keyboardMovingBehavior,
+        );
 
-      await game.ready();
-      await game.ensureAdd(boy);
+        await game.ready();
+        await game.ensureAdd(boy);
 
-      final event = _RawKeyEvent();
-      final keysPressed = {LogicalKeyboardKey.arrowUp};
+        final event = _RawKeyEvent();
+        final keysPressed = {LogicalKeyboardKey.arrowUp};
 
-      expect(boy.velocity.y, equals(0));
+        expect(boy.velocity.y, equals(0));
 
-      keyboardMovingBehavior.onKeyEvent(event, keysPressed);
+        keyboardMovingBehavior.onKeyEvent(event, keysPressed);
 
-      expect(boy.velocity.y, equals(-110));
-    });
+        expect(boy.velocity.y, equals(-110));
+      },
+    );
 
-    flameTester.test('moves right as expected', (game) async {
-      final boy = Boy.test(
-        behavior: keyboardMovingBehavior,
-      );
+    testWithGame<TestGame>(
+      'moves right as expected',
+      TestGame.new,
+      (game) async {
+        final boy = Boy.test(
+          behavior: keyboardMovingBehavior,
+        );
 
-      await game.ready();
-      await game.ensureAdd(boy);
+        await game.ready();
+        await game.ensureAdd(boy);
 
-      final event = _RawKeyEvent();
-      final keysPressed = {LogicalKeyboardKey.arrowRight};
+        final event = _RawKeyEvent();
+        final keysPressed = {LogicalKeyboardKey.arrowRight};
 
-      expect(boy.velocity.x, equals(0));
+        expect(boy.velocity.x, equals(0));
 
-      keyboardMovingBehavior.onKeyEvent(event, keysPressed);
+        keyboardMovingBehavior.onKeyEvent(event, keysPressed);
 
-      expect(boy.velocity.x, equals(100));
-    });
+        expect(boy.velocity.x, equals(100));
+      },
+    );
 
-    flameTester.test('moves left as expected', (game) async {
-      final boy = Boy.test(
-        behavior: keyboardMovingBehavior,
-      );
+    testWithGame<TestGame>(
+      'moves left as expected',
+      TestGame.new,
+      (game) async {
+        final boy = Boy.test(
+          behavior: keyboardMovingBehavior,
+        );
 
-      await game.ready();
-      await game.ensureAdd(boy);
+        await game.ready();
+        await game.ensureAdd(boy);
 
-      final event = _RawKeyEvent();
-      final keysPressed = {LogicalKeyboardKey.arrowLeft};
+        final event = _RawKeyEvent();
+        final keysPressed = {LogicalKeyboardKey.arrowLeft};
 
-      expect(boy.velocity.x, equals(0));
+        expect(boy.velocity.x, equals(0));
 
-      keyboardMovingBehavior.onKeyEvent(event, keysPressed);
+        keyboardMovingBehavior.onKeyEvent(event, keysPressed);
 
-      expect(boy.velocity.x, equals(-100));
-    });
+        expect(boy.velocity.x, equals(-100));
+      },
+    );
 
-    flameTester.test('flips as expected', (game) async {
-      final boy = Boy.test(
-        behavior: keyboardMovingBehavior,
-      );
+    testWithGame<TestGame>(
+      'flips as expected',
+      TestGame.new,
+      (game) async {
+        final boy = Boy.test(
+          behavior: keyboardMovingBehavior,
+        );
 
-      await game.ready();
-      await game.ensureAdd(boy);
+        await game.ready();
+        await game.ensureAdd(boy);
 
-      final event = _RawKeyEvent();
-      final leftKeysPressed = {LogicalKeyboardKey.arrowLeft};
-      final rightKeysPressed = {LogicalKeyboardKey.arrowRight};
+        final event = _RawKeyEvent();
+        final leftKeysPressed = {LogicalKeyboardKey.arrowLeft};
+        final rightKeysPressed = {LogicalKeyboardKey.arrowRight};
 
-      keyboardMovingBehavior.onKeyEvent(event, leftKeysPressed);
-      game.update(1);
+        keyboardMovingBehavior.onKeyEvent(event, leftKeysPressed);
+        game.update(1);
 
-      expect(boy.isFlipped, isTrue);
+        expect(boy.isFlipped, isTrue);
 
-      keyboardMovingBehavior.onKeyEvent(event, rightKeysPressed);
-      game.update(1);
+        keyboardMovingBehavior.onKeyEvent(event, rightKeysPressed);
+        game.update(1);
 
-      expect(boy.isFlipped, isFalse);
-    });
+        expect(boy.isFlipped, isFalse);
+      },
+    );
 
-    flameTester.test('motionless as expected', (game) async {
+    testWithGame<TestGame>('motionless as expected', TestGame.new,
+        (game) async {
       final center = Vector2(0, 0);
       final boy = Boy.test(
         behavior: keyboardMovingBehavior,
@@ -159,32 +174,40 @@ void main() {
       expect(boy.position, equals(Vector2.zero()));
     });
 
-    flameTester.test('in the expected point at elevator', (game) async {
-      final center = Vector2(100, 100);
-      final boy = Boy.test(
-        behavior: keyboardMovingBehavior,
-        center: center,
-      );
+    testWithGame<TestGame>(
+      'in the expected point at elevator',
+      TestGame.new,
+      (game) async {
+        final center = Vector2(100, 100);
+        final boy = Boy.test(
+          behavior: keyboardMovingBehavior,
+          center: center,
+        );
 
-      await game.ready();
-      await game.ensureAdd(boy);
+        await game.ready();
+        await game.ensureAdd(boy);
 
-      final event = _RawKeyEvent();
-      final keysPressed = {LogicalKeyboardKey.arrowUp};
+        final event = _RawKeyEvent();
+        final keysPressed = {LogicalKeyboardKey.arrowUp};
 
-      expect(boy.position.y, equals(100));
+        expect(boy.position.y, equals(100));
 
-      boy.isUsingElevator = true;
-      keyboardMovingBehavior.onKeyEvent(event, keysPressed);
+        boy.isUsingElevator = true;
+        keyboardMovingBehavior.onKeyEvent(event, keysPressed);
 
-      expect(boy.position.y, equals(95));
-    });
+        expect(boy.position.y, equals(95));
+      },
+    );
 
-    flameTester.test('key events are handled', (game) {
-      final event = _RawKeyEvent();
-      final keysPressed = {LogicalKeyboardKey.pageDown};
+    testWithGame<TestGame>(
+      'key events are handled',
+      TestGame.new,
+      (game) async {
+        final event = _RawKeyEvent();
+        final keysPressed = {LogicalKeyboardKey.pageDown};
 
-      expect(game.onKeyEvent(event, keysPressed), KeyEventResult.handled);
-    });
+        expect(game.onKeyEvent(event, keysPressed), KeyEventResult.handled);
+      },
+    );
   });
 }
