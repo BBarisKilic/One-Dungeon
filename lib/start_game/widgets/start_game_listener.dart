@@ -8,7 +8,10 @@ import 'package:one_dungeon/sound/sound.dart';
 import 'package:one_dungeon/start_game/start_game.dart';
 
 class StartGameListener extends StatelessWidget {
-  const StartGameListener({super.key, required Widget child}) : _child = child;
+  const StartGameListener({
+    required Widget child,
+    super.key,
+  }) : _child = child;
 
   final Widget _child;
 

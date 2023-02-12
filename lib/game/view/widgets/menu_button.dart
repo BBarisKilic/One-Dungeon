@@ -4,9 +4,9 @@ import 'package:one_dungeon/one_dungeon_audio/one_dungeon_audio.dart';
 
 class MenuButton extends StatelessWidget {
   const MenuButton({
-    super.key,
     required this.onPressed,
     required this.text,
+    super.key,
   });
 
   final void Function() onPressed;

@@ -7,10 +7,10 @@ import 'package:one_dungeon/entities/entities.dart';
 
 class Boy extends PositionedEntity {
   Boy({
-    Vector2? center,
     required LogicalKeyboardKey jumpKey,
     required LogicalKeyboardKey leftKey,
     required LogicalKeyboardKey rightKey,
+    Vector2? center,
   }) : this._(
           center: center ?? Vector2(30, 500),
           behaviors: [
@@ -31,10 +31,10 @@ class Boy extends PositionedEntity {
         );
 
   Boy._({
-    Vector2? velocity,
     required Vector2 center,
     required Iterable<Behavior> behaviors,
     required BoySprite boySprite,
+    Vector2? velocity,
   })  : _boySprite = boySprite,
         velocity = velocity ?? Vector2.zero(),
         super(

@@ -3,8 +3,10 @@ import 'package:one_dungeon/constants/constants.dart';
 import 'package:one_dungeon/l10n/l10n.dart';
 
 class LoadingPage extends StatelessWidget {
-  const LoadingPage({super.key, required double progress})
-      : _progress = progress;
+  const LoadingPage({
+    required double progress,
+    super.key,
+  }) : _progress = progress;
 
   final double _progress;
 

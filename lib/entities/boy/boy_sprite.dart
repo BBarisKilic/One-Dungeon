@@ -7,8 +7,8 @@ import 'package:one_dungeon/game/game.dart';
 class BoySprite extends SpriteAnimationGroupComponent<BoyState>
     with HasGameRef<OneDungeonGame> {
   BoySprite({
-    BoyState state = const BoyState.idle(),
     required Vector2 textureSize,
+    BoyState state = const BoyState.idle(),
   })  : _state = state,
         _textureSize = textureSize,
         super(size: textureSize / 2);
