@@ -9,7 +9,7 @@ class MenuButton extends StatelessWidget {
     super.key,
   });
 
-  final void Function() onPressed;
+  final VoidCallback onPressed;
   final String text;
 
   @override

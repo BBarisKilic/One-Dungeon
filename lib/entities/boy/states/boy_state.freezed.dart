@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'boy_state.dart';
 
@@ -25,9 +25,9 @@ mixin _$BoyState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? idle,
-    TResult Function()? run,
-    TResult Function()? jump,
+    TResult? Function()? idle,
+    TResult? Function()? run,
+    TResult? Function()? jump,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -47,9 +47,9 @@ mixin _$BoyState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Idle value)? idle,
-    TResult Function(_Run value)? run,
-    TResult Function(_Jump value)? jump,
+    TResult? Function(_Idle value)? idle,
+    TResult? Function(_Run value)? run,
+    TResult? Function(_Jump value)? jump,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -65,16 +65,18 @@ mixin _$BoyState {
 /// @nodoc
 abstract class $BoyStateCopyWith<$Res> {
   factory $BoyStateCopyWith(BoyState value, $Res Function(BoyState) then) =
-      _$BoyStateCopyWithImpl<$Res>;
+      _$BoyStateCopyWithImpl<$Res, BoyState>;
 }
 
 /// @nodoc
-class _$BoyStateCopyWithImpl<$Res> implements $BoyStateCopyWith<$Res> {
+class _$BoyStateCopyWithImpl<$Res, $Val extends BoyState>
+    implements $BoyStateCopyWith<$Res> {
   _$BoyStateCopyWithImpl(this._value, this._then);
 
-  final BoyState _value;
   // ignore: unused_field
-  final $Res Function(BoyState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -84,13 +86,10 @@ abstract class _$$_IdleCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_IdleCopyWithImpl<$Res> extends _$BoyStateCopyWithImpl<$Res>
+class __$$_IdleCopyWithImpl<$Res> extends _$BoyStateCopyWithImpl<$Res, _$_Idle>
     implements _$$_IdleCopyWith<$Res> {
   __$$_IdleCopyWithImpl(_$_Idle _value, $Res Function(_$_Idle) _then)
-      : super(_value, (v) => _then(v as _$_Idle));
-
-  @override
-  _$_Idle get _value => super._value as _$_Idle;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -125,9 +124,9 @@ class _$_Idle implements _Idle {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? idle,
-    TResult Function()? run,
-    TResult Function()? jump,
+    TResult? Function()? idle,
+    TResult? Function()? run,
+    TResult? Function()? jump,
   }) {
     return idle?.call();
   }
@@ -159,9 +158,9 @@ class _$_Idle implements _Idle {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Idle value)? idle,
-    TResult Function(_Run value)? run,
-    TResult Function(_Jump value)? jump,
+    TResult? Function(_Idle value)? idle,
+    TResult? Function(_Run value)? run,
+    TResult? Function(_Jump value)? jump,
   }) {
     return idle?.call(this);
   }
@@ -192,13 +191,10 @@ abstract class _$$_RunCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_RunCopyWithImpl<$Res> extends _$BoyStateCopyWithImpl<$Res>
+class __$$_RunCopyWithImpl<$Res> extends _$BoyStateCopyWithImpl<$Res, _$_Run>
     implements _$$_RunCopyWith<$Res> {
   __$$_RunCopyWithImpl(_$_Run _value, $Res Function(_$_Run) _then)
-      : super(_value, (v) => _then(v as _$_Run));
-
-  @override
-  _$_Run get _value => super._value as _$_Run;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -233,9 +229,9 @@ class _$_Run implements _Run {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? idle,
-    TResult Function()? run,
-    TResult Function()? jump,
+    TResult? Function()? idle,
+    TResult? Function()? run,
+    TResult? Function()? jump,
   }) {
     return run?.call();
   }
@@ -267,9 +263,9 @@ class _$_Run implements _Run {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Idle value)? idle,
-    TResult Function(_Run value)? run,
-    TResult Function(_Jump value)? jump,
+    TResult? Function(_Idle value)? idle,
+    TResult? Function(_Run value)? run,
+    TResult? Function(_Jump value)? jump,
   }) {
     return run?.call(this);
   }
@@ -300,13 +296,10 @@ abstract class _$$_JumpCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_JumpCopyWithImpl<$Res> extends _$BoyStateCopyWithImpl<$Res>
+class __$$_JumpCopyWithImpl<$Res> extends _$BoyStateCopyWithImpl<$Res, _$_Jump>
     implements _$$_JumpCopyWith<$Res> {
   __$$_JumpCopyWithImpl(_$_Jump _value, $Res Function(_$_Jump) _then)
-      : super(_value, (v) => _then(v as _$_Jump));
-
-  @override
-  _$_Jump get _value => super._value as _$_Jump;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -341,9 +334,9 @@ class _$_Jump implements _Jump {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? idle,
-    TResult Function()? run,
-    TResult Function()? jump,
+    TResult? Function()? idle,
+    TResult? Function()? run,
+    TResult? Function()? jump,
   }) {
     return jump?.call();
   }
@@ -375,9 +368,9 @@ class _$_Jump implements _Jump {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Idle value)? idle,
-    TResult Function(_Run value)? run,
-    TResult Function(_Jump value)? jump,
+    TResult? Function(_Idle value)? idle,
+    TResult? Function(_Run value)? run,
+    TResult? Function(_Jump value)? jump,
   }) {
     return jump?.call(this);
   }

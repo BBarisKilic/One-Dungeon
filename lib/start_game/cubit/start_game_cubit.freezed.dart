@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'start_game_cubit.dart';
 
@@ -18,7 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$StartGameState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
+    required TResult Function() menu,
     required TResult Function() play,
     required TResult Function() sound,
     required TResult Function() language,
@@ -28,17 +28,17 @@ mixin _$StartGameState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? play,
-    TResult Function()? sound,
-    TResult Function()? language,
-    TResult Function()? howToPlay,
-    TResult Function()? about,
+    TResult? Function()? menu,
+    TResult? Function()? play,
+    TResult? Function()? sound,
+    TResult? Function()? language,
+    TResult? Function()? howToPlay,
+    TResult? Function()? about,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
+    TResult Function()? menu,
     TResult Function()? play,
     TResult Function()? sound,
     TResult Function()? language,
@@ -49,7 +49,7 @@ mixin _$StartGameState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(_Menu value) menu,
     required TResult Function(_Play value) play,
     required TResult Function(_Sound value) sound,
     required TResult Function(_Language value) language,
@@ -59,17 +59,17 @@ mixin _$StartGameState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Play value)? play,
-    TResult Function(_Sound value)? sound,
-    TResult Function(_Language value)? language,
-    TResult Function(_HowToPlay value)? howToPlay,
-    TResult Function(_About value)? about,
+    TResult? Function(_Menu value)? menu,
+    TResult? Function(_Play value)? play,
+    TResult? Function(_Sound value)? sound,
+    TResult? Function(_Language value)? language,
+    TResult? Function(_HowToPlay value)? howToPlay,
+    TResult? Function(_About value)? about,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(_Menu value)? menu,
     TResult Function(_Play value)? play,
     TResult Function(_Sound value)? sound,
     TResult Function(_Language value)? language,
@@ -84,56 +84,54 @@ mixin _$StartGameState {
 abstract class $StartGameStateCopyWith<$Res> {
   factory $StartGameStateCopyWith(
           StartGameState value, $Res Function(StartGameState) then) =
-      _$StartGameStateCopyWithImpl<$Res>;
+      _$StartGameStateCopyWithImpl<$Res, StartGameState>;
 }
 
 /// @nodoc
-class _$StartGameStateCopyWithImpl<$Res>
+class _$StartGameStateCopyWithImpl<$Res, $Val extends StartGameState>
     implements $StartGameStateCopyWith<$Res> {
   _$StartGameStateCopyWithImpl(this._value, this._then);
 
-  final StartGameState _value;
   // ignore: unused_field
-  final $Res Function(StartGameState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$$_InitialCopyWith<$Res> {
-  factory _$$_InitialCopyWith(
-          _$_Initial value, $Res Function(_$_Initial) then) =
-      __$$_InitialCopyWithImpl<$Res>;
+abstract class _$$_MenuCopyWith<$Res> {
+  factory _$$_MenuCopyWith(_$_Menu value, $Res Function(_$_Menu) then) =
+      __$$_MenuCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res> extends _$StartGameStateCopyWithImpl<$Res>
-    implements _$$_InitialCopyWith<$Res> {
-  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
-      : super(_value, (v) => _then(v as _$_Initial));
-
-  @override
-  _$_Initial get _value => super._value as _$_Initial;
+class __$$_MenuCopyWithImpl<$Res>
+    extends _$StartGameStateCopyWithImpl<$Res, _$_Menu>
+    implements _$$_MenuCopyWith<$Res> {
+  __$$_MenuCopyWithImpl(_$_Menu _value, $Res Function(_$_Menu) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Initial with DiagnosticableTreeMixin implements _Initial {
-  const _$_Initial();
+class _$_Menu with DiagnosticableTreeMixin implements _Menu {
+  const _$_Menu();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'StartGameState.initial()';
+    return 'StartGameState.menu()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'StartGameState.initial'));
+    properties.add(DiagnosticsProperty('type', 'StartGameState.menu'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Initial);
+        (other.runtimeType == runtimeType && other is _$_Menu);
   }
 
   @override
@@ -142,33 +140,33 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
+    required TResult Function() menu,
     required TResult Function() play,
     required TResult Function() sound,
     required TResult Function() language,
     required TResult Function() howToPlay,
     required TResult Function() about,
   }) {
-    return initial();
+    return menu();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? play,
-    TResult Function()? sound,
-    TResult Function()? language,
-    TResult Function()? howToPlay,
-    TResult Function()? about,
+    TResult? Function()? menu,
+    TResult? Function()? play,
+    TResult? Function()? sound,
+    TResult? Function()? language,
+    TResult? Function()? howToPlay,
+    TResult? Function()? about,
   }) {
-    return initial?.call();
+    return menu?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
+    TResult Function()? menu,
     TResult Function()? play,
     TResult Function()? sound,
     TResult Function()? language,
@@ -176,8 +174,8 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
     TResult Function()? about,
     required TResult orElse(),
   }) {
-    if (initial != null) {
-      return initial();
+    if (menu != null) {
+      return menu();
     }
     return orElse();
   }
@@ -185,33 +183,33 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(_Menu value) menu,
     required TResult Function(_Play value) play,
     required TResult Function(_Sound value) sound,
     required TResult Function(_Language value) language,
     required TResult Function(_HowToPlay value) howToPlay,
     required TResult Function(_About value) about,
   }) {
-    return initial(this);
+    return menu(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Play value)? play,
-    TResult Function(_Sound value)? sound,
-    TResult Function(_Language value)? language,
-    TResult Function(_HowToPlay value)? howToPlay,
-    TResult Function(_About value)? about,
+    TResult? Function(_Menu value)? menu,
+    TResult? Function(_Play value)? play,
+    TResult? Function(_Sound value)? sound,
+    TResult? Function(_Language value)? language,
+    TResult? Function(_HowToPlay value)? howToPlay,
+    TResult? Function(_About value)? about,
   }) {
-    return initial?.call(this);
+    return menu?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(_Menu value)? menu,
     TResult Function(_Play value)? play,
     TResult Function(_Sound value)? sound,
     TResult Function(_Language value)? language,
@@ -219,15 +217,15 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
     TResult Function(_About value)? about,
     required TResult orElse(),
   }) {
-    if (initial != null) {
-      return initial(this);
+    if (menu != null) {
+      return menu(this);
     }
     return orElse();
   }
 }
 
-abstract class _Initial implements StartGameState {
-  const factory _Initial() = _$_Initial;
+abstract class _Menu implements StartGameState {
+  const factory _Menu() = _$_Menu;
 }
 
 /// @nodoc
@@ -237,13 +235,11 @@ abstract class _$$_PlayCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_PlayCopyWithImpl<$Res> extends _$StartGameStateCopyWithImpl<$Res>
+class __$$_PlayCopyWithImpl<$Res>
+    extends _$StartGameStateCopyWithImpl<$Res, _$_Play>
     implements _$$_PlayCopyWith<$Res> {
   __$$_PlayCopyWithImpl(_$_Play _value, $Res Function(_$_Play) _then)
-      : super(_value, (v) => _then(v as _$_Play));
-
-  @override
-  _$_Play get _value => super._value as _$_Play;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -274,7 +270,7 @@ class _$_Play with DiagnosticableTreeMixin implements _Play {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
+    required TResult Function() menu,
     required TResult Function() play,
     required TResult Function() sound,
     required TResult Function() language,
@@ -287,12 +283,12 @@ class _$_Play with DiagnosticableTreeMixin implements _Play {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? play,
-    TResult Function()? sound,
-    TResult Function()? language,
-    TResult Function()? howToPlay,
-    TResult Function()? about,
+    TResult? Function()? menu,
+    TResult? Function()? play,
+    TResult? Function()? sound,
+    TResult? Function()? language,
+    TResult? Function()? howToPlay,
+    TResult? Function()? about,
   }) {
     return play?.call();
   }
@@ -300,7 +296,7 @@ class _$_Play with DiagnosticableTreeMixin implements _Play {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
+    TResult Function()? menu,
     TResult Function()? play,
     TResult Function()? sound,
     TResult Function()? language,
@@ -317,7 +313,7 @@ class _$_Play with DiagnosticableTreeMixin implements _Play {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(_Menu value) menu,
     required TResult Function(_Play value) play,
     required TResult Function(_Sound value) sound,
     required TResult Function(_Language value) language,
@@ -330,12 +326,12 @@ class _$_Play with DiagnosticableTreeMixin implements _Play {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Play value)? play,
-    TResult Function(_Sound value)? sound,
-    TResult Function(_Language value)? language,
-    TResult Function(_HowToPlay value)? howToPlay,
-    TResult Function(_About value)? about,
+    TResult? Function(_Menu value)? menu,
+    TResult? Function(_Play value)? play,
+    TResult? Function(_Sound value)? sound,
+    TResult? Function(_Language value)? language,
+    TResult? Function(_HowToPlay value)? howToPlay,
+    TResult? Function(_About value)? about,
   }) {
     return play?.call(this);
   }
@@ -343,7 +339,7 @@ class _$_Play with DiagnosticableTreeMixin implements _Play {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(_Menu value)? menu,
     TResult Function(_Play value)? play,
     TResult Function(_Sound value)? sound,
     TResult Function(_Language value)? language,
@@ -369,13 +365,11 @@ abstract class _$$_SoundCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_SoundCopyWithImpl<$Res> extends _$StartGameStateCopyWithImpl<$Res>
+class __$$_SoundCopyWithImpl<$Res>
+    extends _$StartGameStateCopyWithImpl<$Res, _$_Sound>
     implements _$$_SoundCopyWith<$Res> {
   __$$_SoundCopyWithImpl(_$_Sound _value, $Res Function(_$_Sound) _then)
-      : super(_value, (v) => _then(v as _$_Sound));
-
-  @override
-  _$_Sound get _value => super._value as _$_Sound;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -406,7 +400,7 @@ class _$_Sound with DiagnosticableTreeMixin implements _Sound {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
+    required TResult Function() menu,
     required TResult Function() play,
     required TResult Function() sound,
     required TResult Function() language,
@@ -419,12 +413,12 @@ class _$_Sound with DiagnosticableTreeMixin implements _Sound {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? play,
-    TResult Function()? sound,
-    TResult Function()? language,
-    TResult Function()? howToPlay,
-    TResult Function()? about,
+    TResult? Function()? menu,
+    TResult? Function()? play,
+    TResult? Function()? sound,
+    TResult? Function()? language,
+    TResult? Function()? howToPlay,
+    TResult? Function()? about,
   }) {
     return sound?.call();
   }
@@ -432,7 +426,7 @@ class _$_Sound with DiagnosticableTreeMixin implements _Sound {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
+    TResult Function()? menu,
     TResult Function()? play,
     TResult Function()? sound,
     TResult Function()? language,
@@ -449,7 +443,7 @@ class _$_Sound with DiagnosticableTreeMixin implements _Sound {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(_Menu value) menu,
     required TResult Function(_Play value) play,
     required TResult Function(_Sound value) sound,
     required TResult Function(_Language value) language,
@@ -462,12 +456,12 @@ class _$_Sound with DiagnosticableTreeMixin implements _Sound {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Play value)? play,
-    TResult Function(_Sound value)? sound,
-    TResult Function(_Language value)? language,
-    TResult Function(_HowToPlay value)? howToPlay,
-    TResult Function(_About value)? about,
+    TResult? Function(_Menu value)? menu,
+    TResult? Function(_Play value)? play,
+    TResult? Function(_Sound value)? sound,
+    TResult? Function(_Language value)? language,
+    TResult? Function(_HowToPlay value)? howToPlay,
+    TResult? Function(_About value)? about,
   }) {
     return sound?.call(this);
   }
@@ -475,7 +469,7 @@ class _$_Sound with DiagnosticableTreeMixin implements _Sound {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(_Menu value)? menu,
     TResult Function(_Play value)? play,
     TResult Function(_Sound value)? sound,
     TResult Function(_Language value)? language,
@@ -502,14 +496,12 @@ abstract class _$$_LanguageCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_LanguageCopyWithImpl<$Res> extends _$StartGameStateCopyWithImpl<$Res>
+class __$$_LanguageCopyWithImpl<$Res>
+    extends _$StartGameStateCopyWithImpl<$Res, _$_Language>
     implements _$$_LanguageCopyWith<$Res> {
   __$$_LanguageCopyWithImpl(
       _$_Language _value, $Res Function(_$_Language) _then)
-      : super(_value, (v) => _then(v as _$_Language));
-
-  @override
-  _$_Language get _value => super._value as _$_Language;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -540,7 +532,7 @@ class _$_Language with DiagnosticableTreeMixin implements _Language {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
+    required TResult Function() menu,
     required TResult Function() play,
     required TResult Function() sound,
     required TResult Function() language,
@@ -553,12 +545,12 @@ class _$_Language with DiagnosticableTreeMixin implements _Language {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? play,
-    TResult Function()? sound,
-    TResult Function()? language,
-    TResult Function()? howToPlay,
-    TResult Function()? about,
+    TResult? Function()? menu,
+    TResult? Function()? play,
+    TResult? Function()? sound,
+    TResult? Function()? language,
+    TResult? Function()? howToPlay,
+    TResult? Function()? about,
   }) {
     return language?.call();
   }
@@ -566,7 +558,7 @@ class _$_Language with DiagnosticableTreeMixin implements _Language {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
+    TResult Function()? menu,
     TResult Function()? play,
     TResult Function()? sound,
     TResult Function()? language,
@@ -583,7 +575,7 @@ class _$_Language with DiagnosticableTreeMixin implements _Language {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(_Menu value) menu,
     required TResult Function(_Play value) play,
     required TResult Function(_Sound value) sound,
     required TResult Function(_Language value) language,
@@ -596,12 +588,12 @@ class _$_Language with DiagnosticableTreeMixin implements _Language {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Play value)? play,
-    TResult Function(_Sound value)? sound,
-    TResult Function(_Language value)? language,
-    TResult Function(_HowToPlay value)? howToPlay,
-    TResult Function(_About value)? about,
+    TResult? Function(_Menu value)? menu,
+    TResult? Function(_Play value)? play,
+    TResult? Function(_Sound value)? sound,
+    TResult? Function(_Language value)? language,
+    TResult? Function(_HowToPlay value)? howToPlay,
+    TResult? Function(_About value)? about,
   }) {
     return language?.call(this);
   }
@@ -609,7 +601,7 @@ class _$_Language with DiagnosticableTreeMixin implements _Language {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(_Menu value)? menu,
     TResult Function(_Play value)? play,
     TResult Function(_Sound value)? sound,
     TResult Function(_Language value)? language,
@@ -637,14 +629,11 @@ abstract class _$$_HowToPlayCopyWith<$Res> {
 
 /// @nodoc
 class __$$_HowToPlayCopyWithImpl<$Res>
-    extends _$StartGameStateCopyWithImpl<$Res>
+    extends _$StartGameStateCopyWithImpl<$Res, _$_HowToPlay>
     implements _$$_HowToPlayCopyWith<$Res> {
   __$$_HowToPlayCopyWithImpl(
       _$_HowToPlay _value, $Res Function(_$_HowToPlay) _then)
-      : super(_value, (v) => _then(v as _$_HowToPlay));
-
-  @override
-  _$_HowToPlay get _value => super._value as _$_HowToPlay;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -675,7 +664,7 @@ class _$_HowToPlay with DiagnosticableTreeMixin implements _HowToPlay {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
+    required TResult Function() menu,
     required TResult Function() play,
     required TResult Function() sound,
     required TResult Function() language,
@@ -688,12 +677,12 @@ class _$_HowToPlay with DiagnosticableTreeMixin implements _HowToPlay {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? play,
-    TResult Function()? sound,
-    TResult Function()? language,
-    TResult Function()? howToPlay,
-    TResult Function()? about,
+    TResult? Function()? menu,
+    TResult? Function()? play,
+    TResult? Function()? sound,
+    TResult? Function()? language,
+    TResult? Function()? howToPlay,
+    TResult? Function()? about,
   }) {
     return howToPlay?.call();
   }
@@ -701,7 +690,7 @@ class _$_HowToPlay with DiagnosticableTreeMixin implements _HowToPlay {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
+    TResult Function()? menu,
     TResult Function()? play,
     TResult Function()? sound,
     TResult Function()? language,
@@ -718,7 +707,7 @@ class _$_HowToPlay with DiagnosticableTreeMixin implements _HowToPlay {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(_Menu value) menu,
     required TResult Function(_Play value) play,
     required TResult Function(_Sound value) sound,
     required TResult Function(_Language value) language,
@@ -731,12 +720,12 @@ class _$_HowToPlay with DiagnosticableTreeMixin implements _HowToPlay {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Play value)? play,
-    TResult Function(_Sound value)? sound,
-    TResult Function(_Language value)? language,
-    TResult Function(_HowToPlay value)? howToPlay,
-    TResult Function(_About value)? about,
+    TResult? Function(_Menu value)? menu,
+    TResult? Function(_Play value)? play,
+    TResult? Function(_Sound value)? sound,
+    TResult? Function(_Language value)? language,
+    TResult? Function(_HowToPlay value)? howToPlay,
+    TResult? Function(_About value)? about,
   }) {
     return howToPlay?.call(this);
   }
@@ -744,7 +733,7 @@ class _$_HowToPlay with DiagnosticableTreeMixin implements _HowToPlay {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(_Menu value)? menu,
     TResult Function(_Play value)? play,
     TResult Function(_Sound value)? sound,
     TResult Function(_Language value)? language,
@@ -770,13 +759,11 @@ abstract class _$$_AboutCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_AboutCopyWithImpl<$Res> extends _$StartGameStateCopyWithImpl<$Res>
+class __$$_AboutCopyWithImpl<$Res>
+    extends _$StartGameStateCopyWithImpl<$Res, _$_About>
     implements _$$_AboutCopyWith<$Res> {
   __$$_AboutCopyWithImpl(_$_About _value, $Res Function(_$_About) _then)
-      : super(_value, (v) => _then(v as _$_About));
-
-  @override
-  _$_About get _value => super._value as _$_About;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -807,7 +794,7 @@ class _$_About with DiagnosticableTreeMixin implements _About {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
+    required TResult Function() menu,
     required TResult Function() play,
     required TResult Function() sound,
     required TResult Function() language,
@@ -820,12 +807,12 @@ class _$_About with DiagnosticableTreeMixin implements _About {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? play,
-    TResult Function()? sound,
-    TResult Function()? language,
-    TResult Function()? howToPlay,
-    TResult Function()? about,
+    TResult? Function()? menu,
+    TResult? Function()? play,
+    TResult? Function()? sound,
+    TResult? Function()? language,
+    TResult? Function()? howToPlay,
+    TResult? Function()? about,
   }) {
     return about?.call();
   }
@@ -833,7 +820,7 @@ class _$_About with DiagnosticableTreeMixin implements _About {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
+    TResult Function()? menu,
     TResult Function()? play,
     TResult Function()? sound,
     TResult Function()? language,
@@ -850,7 +837,7 @@ class _$_About with DiagnosticableTreeMixin implements _About {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(_Menu value) menu,
     required TResult Function(_Play value) play,
     required TResult Function(_Sound value) sound,
     required TResult Function(_Language value) language,
@@ -863,12 +850,12 @@ class _$_About with DiagnosticableTreeMixin implements _About {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Play value)? play,
-    TResult Function(_Sound value)? sound,
-    TResult Function(_Language value)? language,
-    TResult Function(_HowToPlay value)? howToPlay,
-    TResult Function(_About value)? about,
+    TResult? Function(_Menu value)? menu,
+    TResult? Function(_Play value)? play,
+    TResult? Function(_Sound value)? sound,
+    TResult? Function(_Language value)? language,
+    TResult? Function(_HowToPlay value)? howToPlay,
+    TResult? Function(_About value)? about,
   }) {
     return about?.call(this);
   }
@@ -876,7 +863,7 @@ class _$_About with DiagnosticableTreeMixin implements _About {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(_Menu value)? menu,
     TResult Function(_Play value)? play,
     TResult Function(_Sound value)? sound,
     TResult Function(_Language value)? language,
