@@ -17,41 +17,29 @@ class StartGameListener extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final startGameCubit = context.read<StartGameCubit>();
-
     return BlocListener<StartGameCubit, StartGameState>(
-      listener: (context, state) => state.when(
-        initial: () => null,
-        play: () {
-          startGameCubit.setBackToInitial();
-          return di.injector<OneDungeonGame>().startGame();
-        },
-        sound: () async {
-          startGameCubit.setBackToInitial();
-          return showDialog<SoundSettingsDialog>(
+      listener: (context, state) {
+        state.when(
+          menu: () => null,
+          play: () => di.injector<OneDungeonGame>().startGame(),
+          sound: () => showDialog<SoundSettingsDialog>(
             context: context,
             barrierDismissible: false,
             builder: (_) => const SoundSettingsDialog(),
-          );
-        },
-        language: () => null,
-        howToPlay: () async {
-          startGameCubit.setBackToInitial();
-          return showDialog<HowToPlayDialog>(
+          ),
+          language: () => null,
+          howToPlay: () => showDialog<HowToPlayDialog>(
             context: context,
             barrierDismissible: false,
             builder: (_) => const HowToPlayDialog(),
-          );
-        },
-        about: () async {
-          startGameCubit.setBackToInitial();
-          return showDialog<AboutGameDialog>(
+          ),
+          about: () => showDialog<AboutGameDialog>(
             context: context,
             barrierDismissible: false,
             builder: (_) => const AboutGameDialog(),
-          );
-        },
-      ),
+          ),
+        );
+      },
       child: _child,
     );
   }

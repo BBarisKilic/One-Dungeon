@@ -2,7 +2,7 @@ part of 'start_game_cubit.dart';
 
 @freezed
 class StartGameState with _$StartGameState {
-  const factory StartGameState.initial() = _Initial;
+  const factory StartGameState.menu() = _Menu;
   const factory StartGameState.play() = _Play;
   const factory StartGameState.sound() = _Sound;
   const factory StartGameState.language() = _Language;

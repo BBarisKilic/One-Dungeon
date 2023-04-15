@@ -150,5 +150,5 @@ class OneDungeonAudioPlayer {
   }
 
   /// Stops background music.
-  Future<void> stop() async => _stopBackgroundAudio();
+  Future<void> stop() => _stopBackgroundAudio();
 }
