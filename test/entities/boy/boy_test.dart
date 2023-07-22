@@ -27,9 +27,10 @@ void main() {
         final boy = Boy.wasd();
 
         await game.ready();
-        await game.ensureAdd(boy);
 
-        expect(game.contains(boy), isTrue);
+        await game.world.ensureAdd(boy);
+
+        expect(game.world.contains(boy), isTrue);
       },
     );
 
@@ -40,7 +41,8 @@ void main() {
         final boy = Boy.arrows(center: Vector2.zero());
 
         await game.ready();
-        await game.ensureAdd(boy);
+
+        await game.world.ensureAdd(boy);
 
         expect(boy.position, closeToVector(Vector2(0, 0)));
       },

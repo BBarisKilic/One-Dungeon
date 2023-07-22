@@ -59,7 +59,8 @@ void main() {
           (context, game) => const SizedBox(),
         );
         await game.ready();
-        await game.ensureAdd(boy);
+
+        await game.world.ensureAdd(boy);
 
         gateCollidingBehavior
             .onCollisionStart({Vector2(0, 0), Vector2(10, 0)}, _MockGate());

@@ -37,7 +37,8 @@ void main() {
         );
 
         await game.ready();
-        await game.ensureAdd(boy);
+
+        await game.world.ensureAdd(boy);
 
         boy.isBottomTouching = false;
         game.update(1);

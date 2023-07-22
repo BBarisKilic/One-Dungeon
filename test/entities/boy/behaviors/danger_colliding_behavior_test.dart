@@ -60,7 +60,8 @@ void main() {
           (context, game) => const SizedBox(),
         );
         await game.ready();
-        await game.ensureAdd(boy);
+
+        await game.world.ensureAdd(boy);
 
         expect(boy.velocity.x, equals(10));
         expect(boy.velocity.y, equals(20));

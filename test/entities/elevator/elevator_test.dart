@@ -27,9 +27,10 @@ void main() {
         final elevator = Elevator.test();
 
         await game.ready();
-        await game.ensureAdd(elevator);
 
-        expect(game.contains(elevator), isTrue);
+        await game.world.ensureAdd(elevator);
+
+        expect(game.world.contains(elevator), isTrue);
       },
     );
 
@@ -40,7 +41,8 @@ void main() {
         final elevator = Elevator.test(center: Vector2.zero());
 
         await game.ready();
-        await game.ensureAdd(elevator);
+
+        await game.world.ensureAdd(elevator);
 
         expect(elevator.position, closeToVector(Vector2(0, 0)));
       },

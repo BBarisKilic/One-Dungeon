@@ -37,7 +37,8 @@ void main() {
         );
 
         await game.ready();
-        await game.ensureAdd(elevator);
+
+        await game.world.ensureAdd(elevator);
 
         elevatorMovingBehavior.isGoingDown = true;
 
@@ -58,7 +59,8 @@ void main() {
         );
 
         await game.ready();
-        await game.ensureAdd(elevator);
+
+        await game.world.ensureAdd(elevator);
 
         elevatorMovingBehavior.isGoingDown = false;
 

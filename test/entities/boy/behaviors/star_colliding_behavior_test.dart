@@ -57,8 +57,9 @@ void main() {
         );
 
         await game.ready();
-        await game.ensureAdd(star);
-        await game.ensureAdd(boy);
+
+        await game.world.ensureAdd(star);
+        await game.world.ensureAdd(boy);
 
         final collectedStars = game.collectedStars;
 
@@ -85,16 +86,17 @@ void main() {
         );
 
         await game.ready();
-        await game.ensureAdd(star);
-        await game.ensureAdd(boy);
 
-        expect(game.children.contains(star), isTrue);
+        await game.world.ensureAdd(star);
+        await game.world.ensureAdd(boy);
+
+        expect(game.world.children.contains(star), isTrue);
 
         await starCollidingBehavior
             .onCollisionStart({Vector2(0, 0), Vector2(10, 0)}, star);
         game.update(1);
 
-        expect(game.children.contains(star), isFalse);
+        expect(game.world.children.contains(star), isFalse);
       },
     );
   });

@@ -70,7 +70,8 @@ void main() {
         );
 
         await game.ready();
-        await game.ensureAdd(boy);
+
+        await game.world.ensureAdd(boy);
 
         final event = _RawKeyEvent();
         final keysPressed = {LogicalKeyboardKey.arrowUp};
@@ -92,7 +93,8 @@ void main() {
         );
 
         await game.ready();
-        await game.ensureAdd(boy);
+
+        await game.world.ensureAdd(boy);
 
         final event = _RawKeyEvent();
         final keysPressed = {LogicalKeyboardKey.arrowRight};
@@ -114,7 +116,8 @@ void main() {
         );
 
         await game.ready();
-        await game.ensureAdd(boy);
+
+        await game.world.ensureAdd(boy);
 
         final event = _RawKeyEvent();
         final keysPressed = {LogicalKeyboardKey.arrowLeft};
@@ -136,7 +139,8 @@ void main() {
         );
 
         await game.ready();
-        await game.ensureAdd(boy);
+
+        await game.world.ensureAdd(boy);
 
         final event = _RawKeyEvent();
         final leftKeysPressed = {LogicalKeyboardKey.arrowLeft};
@@ -163,7 +167,8 @@ void main() {
       );
 
       await game.ready();
-      await game.ensureAdd(boy);
+
+      await game.world.ensureAdd(boy);
 
       final event = _RawKeyEvent();
       final keysPressed = <LogicalKeyboardKey>{};
@@ -185,7 +190,8 @@ void main() {
         );
 
         await game.ready();
-        await game.ensureAdd(boy);
+
+        await game.world.ensureAdd(boy);
 
         final event = _RawKeyEvent();
         final keysPressed = {LogicalKeyboardKey.arrowUp};

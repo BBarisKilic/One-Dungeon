@@ -88,7 +88,7 @@ void main() {
           await game.ready();
 
           expect(
-            game.children.whereType<Boy>().length,
+            game.world.children.whereType<Boy>().length,
             equals(1),
           );
         },
@@ -102,7 +102,7 @@ void main() {
         (game) async {
           await game.ready();
 
-          final boy = game.children.whereType<Boy>();
+          final boy = game.world.children.whereType<Boy>();
 
           expect(
             boy.first.hasBehavior<KeyboardMovingBehavior>(),

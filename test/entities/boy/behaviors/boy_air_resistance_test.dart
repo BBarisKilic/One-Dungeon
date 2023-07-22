@@ -36,7 +36,8 @@ void main() {
         );
 
         await game.ready();
-        await game.ensureAdd(boy);
+
+        await game.world.ensureAdd(boy);
 
         expect(boy.velocity.x, equals(10));
 
@@ -56,7 +57,7 @@ void main() {
         );
 
         await game.ready();
-        await game.ensureAdd(boy);
+        await game.world.ensureAdd(boy);
 
         expect(boy.velocity.x, equals(-10));
 
@@ -77,7 +78,7 @@ void main() {
         );
 
         await game.ready();
-        await game.ensureAdd(boy);
+        await game.world.ensureAdd(boy);
 
         expect(boy.position.x, equals(10));
 
@@ -93,18 +94,27 @@ void main() {
       (game) async {
         final boy = Boy.test(
           velocity: Vector2(10, 0),
-          center: Vector2(game.size[0], 0),
+          center: Vector2(game.cameraComponent.visibleWorldRect.width, 0),
           behavior: boyAirResistanceBehavior,
         );
 
         await game.ready();
-        await game.ensureAdd(boy);
 
-        expect(boy.position.x, equals(game.size[0]));
+        await game.world.ensureAdd(boy);
+
+        expect(
+          boy.position.x,
+          equals(game.cameraComponent.visibleWorldRect.width),
+        );
 
         game.update(1);
 
-        expect(boy.position.x, equals(game.size[0] - (boy.size.x / 2)));
+        expect(
+          boy.position.x,
+          equals(
+            game.cameraComponent.visibleWorldRect.width - (boy.size.x / 2),
+          ),
+        );
       },
     );
   });

@@ -40,7 +40,8 @@ void main() {
         );
 
         await game.ready();
-        await game.ensureAdd(boy);
+
+        await game.world.ensureAdd(boy);
         boy.isBottomTouching = false;
 
         groundCollidingBehavior
@@ -60,7 +61,8 @@ void main() {
         );
 
         await game.ready();
-        await game.ensureAdd(boy);
+
+        await game.world.ensureAdd(boy);
 
         expect(boy.isTopTouching, isFalse);
 
@@ -81,7 +83,8 @@ void main() {
         );
 
         await game.ready();
-        await game.ensureAdd(boy);
+
+        await game.world.ensureAdd(boy);
 
         expect(boy.isLeftSideTouching, isFalse);
         expect(boy.isRightSideTouching, isFalse);
@@ -105,7 +108,8 @@ void main() {
         );
 
         await game.ready();
-        await game.ensureAdd(boy);
+
+        await game.world.ensureAdd(boy);
 
         expect(boy.isLeftSideTouching, isFalse);
         expect(boy.isRightSideTouching, isFalse);
@@ -130,7 +134,8 @@ void main() {
         );
 
         await game.ready();
-        await game.ensureAdd(boy);
+
+        await game.world.ensureAdd(boy);
 
         expect(boy.isBottomTouching, isFalse);
 
