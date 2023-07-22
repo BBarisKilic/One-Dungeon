@@ -37,8 +37,8 @@ void main() {
     testWidgets('renders StartGameListener', (tester) async {
       await tester.runAsync(() async {
         await tester.pumpApp(
-          Stack(
-            children: const [
+          const Stack(
+            children: [
               OneDungeonGameLoadedView(
                 initialActiveOverlays: [
                   OneDungeonGame.menuOverlay,
@@ -59,8 +59,8 @@ void main() {
       testWidgets('play works as expected', (tester) async {
         await tester.runAsync(() async {
           await tester.pumpApp(
-            Stack(
-              children: const [
+            const Stack(
+              children: [
                 OneDungeonGameLoadedView(
                   initialActiveOverlays: [
                     OneDungeonGame.menuOverlay,
@@ -82,8 +82,8 @@ void main() {
       testWidgets('sound works as expected', (tester) async {
         await tester.runAsync(() async {
           await tester.pumpApp(
-            Stack(
-              children: const [
+            const Stack(
+              children: [
                 OneDungeonGameLoadedView(
                   initialActiveOverlays: [
                     OneDungeonGame.menuOverlay,
@@ -106,8 +106,8 @@ void main() {
       testWidgets('language works as expected', (tester) async {
         await tester.runAsync(() async {
           await tester.pumpApp(
-            Stack(
-              children: const [
+            const Stack(
+              children: [
                 OneDungeonGameLoadedView(
                   initialActiveOverlays: [
                     OneDungeonGame.menuOverlay,
@@ -130,8 +130,8 @@ void main() {
       testWidgets('how to play works as expected', (tester) async {
         await tester.runAsync(() async {
           await tester.pumpApp(
-            Stack(
-              children: const [
+            const Stack(
+              children: [
                 OneDungeonGameLoadedView(
                   initialActiveOverlays: [
                     OneDungeonGame.menuOverlay,
@@ -154,8 +154,8 @@ void main() {
       testWidgets('about works as expected', (tester) async {
         await tester.runAsync(() async {
           await tester.pumpApp(
-            Stack(
-              children: const [
+            const Stack(
+              children: [
                 OneDungeonGameLoadedView(
                   initialActiveOverlays: [
                     OneDungeonGame.menuOverlay,

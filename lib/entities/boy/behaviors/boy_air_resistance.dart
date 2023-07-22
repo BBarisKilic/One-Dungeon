@@ -34,9 +34,11 @@ class BoyAirResistanceBehavior extends Behavior<Boy>
     if (parent.position.x < parent.size.x / 2) {
       parent.velocity.x = 0;
       parent.position.x = parent.size.x / 2;
-    } else if (parent.position.x > gameRef.size[0] - parent.size.x / 2) {
+    } else if (parent.position.x >
+        gameRef.cameraComponent.visibleWorldRect.width - parent.size.x / 2) {
       parent.velocity.x = 0;
-      parent.position.x = gameRef.size[0] - parent.size.x / 2;
+      parent.position.x =
+          gameRef.cameraComponent.visibleWorldRect.width - parent.size.x / 2;
     } else {
       parent.position.x += parent.velocity.x * dt;
     }

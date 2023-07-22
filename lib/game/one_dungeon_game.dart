@@ -1,3 +1,4 @@
+import 'package:flame/components.dart';
 import 'package:flame/game.dart';
 import 'package:flame/input.dart';
 import 'package:flame_audio/flame_audio.dart';
@@ -28,7 +29,14 @@ class OneDungeonGame extends FlameGame
         score = 0,
         collectedStars = 0,
         focusNode = FocusNode(),
+        world = World(),
         super();
+
+  /// Instance of [World].
+  final World world;
+
+  /// Instance of [CameraComponent].
+  late final CameraComponent cameraComponent;
 
   /// Instance of [OneDungeonAudioPlayer].
   late final OneDungeonAudioPlayer audioPlayer;
@@ -61,7 +69,8 @@ class OneDungeonGame extends FlameGame
     audioPlayer = di.injector<OneDungeonAudioPlayer>();
     FlameAudio.bgm.initialize();
 
-    await _createWorld();
+    await _createCameraAndWorld();
+    await _createMap();
     await _createEntities();
 
     pauseEngine();
@@ -69,14 +78,26 @@ class OneDungeonGame extends FlameGame
     return super.onLoad();
   }
 
-  Future<void> _createWorld() async {
-    final map = await TiledComponent.load(GameMaps.kLeveOne, Vector2(16, 16));
-    final mapHeight = 16.0 * map.tileMap.map.height;
-    final mapWidth = 16.0 * map.tileMap.map.width;
+  Future<void> _createCameraAndWorld() async {
+    cameraComponent = CameraComponent.withFixedResolution(
+      world: world,
+      width: 16 * 80,
+      height: 16 * 40,
+    );
 
-    camera.viewport = FixedResolutionViewport(Vector2(mapWidth, mapHeight));
+    cameraComponent.viewfinder.zoom = 0.5;
+    cameraComponent.viewfinder.anchor = Anchor.topLeft;
 
-    await add(map);
+    await addAll([cameraComponent, world]);
+  }
+
+  Future<void> _createMap() async {
+    final map = await TiledComponent.load(GameMaps.kLeveOne, Vector2.all(16));
+
+    // Add map to the world.
+    await world.add(map);
+
+    // Add map layers to the world.
     await _addGrounds(map);
     await _addGates(map);
     await _addTraps(map);
@@ -85,58 +106,61 @@ class OneDungeonGame extends FlameGame
   Future<void> _addGrounds(TiledComponent map) async {
     final obstacleGroup =
         map.tileMap.getLayer<ObjectGroup>(GameMapLayers.kGroundLayer);
-    if (obstacleGroup != null) {
-      for (final obj in obstacleGroup.objects) {
-        await add(
-          Ground(
-            size: Vector2(obj.width, obj.height),
-            position: Vector2(obj.x, obj.y),
-          ),
-        );
-      }
+
+    if (obstacleGroup == null) return;
+
+    for (final tiledObject in obstacleGroup.objects) {
+      await world.add(
+        Ground(
+          size: Vector2(tiledObject.width, tiledObject.height),
+          position: Vector2(tiledObject.x, tiledObject.y),
+        ),
+      );
     }
   }
 
   Future<void> _addGates(TiledComponent map) async {
     final obstacleGroup =
         map.tileMap.getLayer<ObjectGroup>(GameMapLayers.kGateLayer);
-    if (obstacleGroup != null) {
-      for (final obj in obstacleGroup.objects) {
-        await add(
-          Gate(
-            size: Vector2(obj.width, obj.height),
-            position: Vector2(obj.x, obj.y),
-          ),
-        );
-      }
+
+    if (obstacleGroup == null) return;
+
+    for (final tiledObject in obstacleGroup.objects) {
+      await world.add(
+        Gate(
+          size: Vector2(tiledObject.width, tiledObject.height),
+          position: Vector2(tiledObject.x, tiledObject.y),
+        ),
+      );
     }
   }
 
   Future<void> _addTraps(TiledComponent map) async {
     final obstacleGroup =
         map.tileMap.getLayer<ObjectGroup>(GameMapLayers.kTrapLayer);
-    if (obstacleGroup != null) {
-      for (final obj in obstacleGroup.objects) {
-        await add(
-          Trap(
-            size: Vector2(obj.width, obj.height),
-            position: Vector2(obj.x, obj.y),
-          ),
-        );
-      }
+
+    if (obstacleGroup == null) return;
+
+    for (final tiledObject in obstacleGroup.objects) {
+      await world.add(
+        Trap(
+          size: Vector2(tiledObject.width, tiledObject.height),
+          position: Vector2(tiledObject.x, tiledObject.y),
+        ),
+      );
     }
   }
 
   Future<void> _createEntities() async {
     await _addStars();
-    await add(GameTime());
-    await add(Elevator());
-    await add(Boy.wasd());
+    await world.add(GameTime());
+    await world.add(Elevator());
+    await world.add(Boy.wasd());
   }
 
   Future<void> _addStars() async {
     await Future.wait<void>(
-      loadStars().map((loadableBuilder) => loadableBuilder()).toList(),
+      loadStars(world).map((loadableBuilder) => loadableBuilder()).toList(),
     );
   }
 
@@ -166,8 +190,11 @@ class OneDungeonGame extends FlameGame
 
     overlays.clear();
 
-    removeAll(children);
-    await _createWorld();
+    // Remove all children from the world.
+    world.removeAll(world.children);
+
+    // Readd all children to the world.
+    await _createMap();
     await _createEntities();
 
     await audioPlayer.play(OneDungeonAudio.backgroundMusic);

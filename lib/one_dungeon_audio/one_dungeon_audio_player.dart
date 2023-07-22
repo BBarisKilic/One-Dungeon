@@ -117,35 +117,27 @@ class OneDungeonAudioPlayer {
       case OneDungeonAudio.backgroundMusic:
         if (!isBackgroundMusicActive) return;
         await _playBackgroundAudio(GameAssets.kBackgroudMusic, volume: 0.5);
-        break;
       case OneDungeonAudio.descending:
         if (!isSfxActive) return;
         await _playSingleAudio(GameAssets.kDescendingSfx);
-        break;
       case OneDungeonAudio.jump:
         if (!isSfxActive) return;
         await _playSingleAudio(GameAssets.kJumpSfx);
-        break;
       case OneDungeonAudio.landing:
         if (!isSfxActive) return;
         await _playSingleAudio(GameAssets.kLandingSfx);
-        break;
       case OneDungeonAudio.pickUp:
         if (!isSfxActive) return;
         await _playSingleAudio(GameAssets.kPickUpSfx);
-        break;
       case OneDungeonAudio.pickUpStar:
         if (!isSfxActive) return;
         await _playSingleAudio(GameAssets.kPickUpStarSfx);
-        break;
       case OneDungeonAudio.select:
         if (!isSfxActive) return;
         await _playSingleAudio(GameAssets.kSelectSfx);
-        break;
       case OneDungeonAudio.success:
         if (!isSfxActive) return;
         await _playSingleAudio(GameAssets.kSuccessSfx);
-        break;
     }
   }
 

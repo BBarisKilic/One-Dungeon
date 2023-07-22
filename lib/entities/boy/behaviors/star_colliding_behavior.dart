@@ -11,7 +11,7 @@ class StarCollidingBehavior extends CollisionBehavior<Star, Boy>
     Set<Vector2> intersectionPoints,
     Star other,
   ) async {
-    gameRef.remove(other);
+    gameRef.world.remove(other);
     gameRef.collectedStars++;
     await gameRef.audioPlayer.play(OneDungeonAudio.pickUpStar);
 

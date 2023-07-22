@@ -32,7 +32,9 @@ class KeyboardMovingBehavior extends Behavior<Boy>
       parent.velocity.x = -100;
     } else if (keysPressed.contains(rightKey) &&
         !parent.isRightSideTouching &&
-        parent.position.x < gameRef.size[0] - parent.size.x / 2) {
+        parent.position.x <
+            gameRef.cameraComponent.visibleWorldRect.width -
+                parent.size.x / 2) {
       parent.isWalking = true;
       parent.velocity.x = 100;
     } else {
