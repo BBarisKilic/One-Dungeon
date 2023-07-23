@@ -11,7 +11,7 @@ class _MockAssetsManagerCubit extends MockCubit<AssetsManagerState>
     implements AssetsManagerCubit {}
 
 void main() {
-  late _MockAssetsManagerCubit mockAssetsManagerCubit;
+  late AssetsManagerCubit mockAssetsManagerCubit;
 
   setUpAll(() async {
     mockAssetsManagerCubit = _MockAssetsManagerCubit();

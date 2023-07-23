@@ -16,7 +16,7 @@ class _MockAudioPlayerTester extends Mock implements _AudioPlayerTester {}
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  late _MockAudioPlayerTester mockAudioPlayerTester;
+  late _AudioPlayerTester mockAudioPlayerTester;
   late OneDungeonAudioPlayer audioPlayer;
 
   setUpAll(() {

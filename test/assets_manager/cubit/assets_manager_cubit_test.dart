@@ -1,27 +1,17 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:one_dungeon/assets_manager/assets_manager.dart';
-import 'package:one_dungeon/one_dungeon_audio/one_dungeon_audio.dart';
 
 import '../../helpers/helpers.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  late TestGame game;
-  late OneDungeonAudioPlayer audioPlayer;
   late AssetsManagerCubit assetsManagerCubit;
 
   setUp(() async {
-    game = TestGame();
-    audioPlayer = OneDungeonAudioPlayer.test(
-      playBackgroundAudio: (_, {double? volume}) async {},
-      stopBackgroundAudio: () async {},
-      playSingleAudio: (_, {double? volume}) async {},
-      preCacheSingleAudio: (_) async {},
-    );
     assetsManagerCubit =
-        AssetsManagerCubit(game: game, audioPlayer: audioPlayer);
+        AssetsManagerCubit(game: TestGame(), audioPlayer: TestAudioPlayer());
   });
 
   tearDown(() {

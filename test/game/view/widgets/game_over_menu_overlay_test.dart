@@ -12,17 +12,10 @@ void main() {
   late OneDungeonAudioPlayer audioPlayer;
 
   setUpAll(() async {
-    audioPlayer = OneDungeonAudioPlayer.test(
-      playBackgroundAudio: (_, {double? volume}) async {},
-      stopBackgroundAudio: () async {},
-      playSingleAudio: (_, {double? volume}) async {},
-      preCacheSingleAudio: (_) async {},
-    );
-    await di.initializeDependencies();
-
-    await di.injector.unregister<OneDungeonAudioPlayer>();
-
+    audioPlayer = TestAudioPlayer();
     di.injector.registerSingleton<OneDungeonAudioPlayer>(audioPlayer);
+
+    await di.initializeDependencies();
   });
 
   tearDownAll(() async {

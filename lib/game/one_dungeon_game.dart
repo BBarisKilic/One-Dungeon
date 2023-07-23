@@ -1,8 +1,11 @@
+import 'dart:io';
+
 import 'package:flame/components.dart';
 import 'package:flame/game.dart';
 import 'package:flame/input.dart';
 import 'package:flame_audio/flame_audio.dart';
 import 'package:flame_tiled/flame_tiled.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:one_dungeon/components/components.dart';
@@ -67,7 +70,10 @@ class OneDungeonGame extends FlameGame
   @override
   Future<void>? onLoad() async {
     audioPlayer = di.injector<OneDungeonAudioPlayer>();
-    FlameAudio.bgm.initialize();
+
+    if (kIsWeb || !Platform.environment.containsKey('FLUTTER_TEST')) {
+      FlameAudio.bgm.initialize();
+    }
 
     await _createCameraAndWorld();
     await _createMap();

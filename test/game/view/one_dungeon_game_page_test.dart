@@ -5,6 +5,7 @@ import 'package:mocktail/mocktail.dart';
 import 'package:one_dungeon/assets_manager/assets_manager.dart';
 import 'package:one_dungeon/game/game.dart';
 import 'package:one_dungeon/injector.dart' as di;
+import 'package:one_dungeon/one_dungeon_audio/one_dungeon_audio.dart';
 
 import '../../helpers/helpers.dart';
 
@@ -14,9 +15,11 @@ class _MockAssetsManagerCubit extends MockCubit<AssetsManagerState>
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  late _MockAssetsManagerCubit mockAssetsManagerCubit;
+  late AssetsManagerCubit mockAssetsManagerCubit;
 
   setUpAll(() async {
+    di.injector.registerSingleton<OneDungeonAudioPlayer>(TestAudioPlayer());
+
     await di.initializeDependencies();
   });
 

@@ -116,28 +116,28 @@ class OneDungeonAudioPlayer {
     switch (audio) {
       case OneDungeonAudio.backgroundMusic:
         if (!isBackgroundMusicActive) return;
-        await _playBackgroundAudio(GameAssets.kBackgroudMusic, volume: 0.5);
+        return _playBackgroundAudio(GameAssets.kBackgroudMusic, volume: 0.5);
       case OneDungeonAudio.descending:
         if (!isSfxActive) return;
-        await _playSingleAudio(GameAssets.kDescendingSfx);
+        return _playSingleAudio(GameAssets.kDescendingSfx);
       case OneDungeonAudio.jump:
         if (!isSfxActive) return;
-        await _playSingleAudio(GameAssets.kJumpSfx);
+        return _playSingleAudio(GameAssets.kJumpSfx);
       case OneDungeonAudio.landing:
         if (!isSfxActive) return;
-        await _playSingleAudio(GameAssets.kLandingSfx);
+        return _playSingleAudio(GameAssets.kLandingSfx);
       case OneDungeonAudio.pickUp:
         if (!isSfxActive) return;
-        await _playSingleAudio(GameAssets.kPickUpSfx);
+        return _playSingleAudio(GameAssets.kPickUpSfx);
       case OneDungeonAudio.pickUpStar:
         if (!isSfxActive) return;
-        await _playSingleAudio(GameAssets.kPickUpStarSfx);
+        return _playSingleAudio(GameAssets.kPickUpStarSfx);
       case OneDungeonAudio.select:
         if (!isSfxActive) return;
-        await _playSingleAudio(GameAssets.kSelectSfx);
+        return _playSingleAudio(GameAssets.kSelectSfx);
       case OneDungeonAudio.success:
         if (!isSfxActive) return;
-        await _playSingleAudio(GameAssets.kSuccessSfx);
+        return _playSingleAudio(GameAssets.kSuccessSfx);
     }
   }
 

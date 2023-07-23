@@ -8,6 +8,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:one_dungeon/entities/entities.dart';
 import 'package:one_dungeon/injector.dart' as di;
+import 'package:one_dungeon/one_dungeon_audio/one_dungeon_audio.dart';
 
 import '../../../helpers/helpers.dart';
 
@@ -36,6 +37,8 @@ void main() {
   });
 
   setUpAll(() async {
+    di.injector.registerSingleton<OneDungeonAudioPlayer>(TestAudioPlayer());
+
     await di.initializeDependencies();
   });
 
