@@ -11,6 +11,8 @@ class _MockAssetsManagerCubit extends MockCubit<AssetsManagerState>
     implements AssetsManagerCubit {}
 
 void main() {
+  TestWidgetsBinding.ensureInitialized();
+
   late AssetsManagerCubit mockAssetsManagerCubit;
 
   setUpAll(() async {

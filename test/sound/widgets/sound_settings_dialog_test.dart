@@ -8,15 +8,15 @@ import 'package:sharp_toggle_switch/sharp_toggle_switch.dart';
 import '../../helpers/helpers.dart';
 
 void main() {
-  TestWidgetsFlutterBinding.ensureInitialized();
+  TestWidgetsBinding.ensureInitialized();
 
   late OneDungeonAudioPlayer audioPlayer;
 
   setUpAll(() async {
     audioPlayer = TestAudioPlayer();
-    di.injector.registerSingleton<OneDungeonAudioPlayer>(audioPlayer);
-
     await di.initializeDependencies();
+    await di.injector.unregister<OneDungeonAudioPlayer>();
+    di.injector.registerSingleton<OneDungeonAudioPlayer>(audioPlayer);
   });
 
   tearDownAll(() async {

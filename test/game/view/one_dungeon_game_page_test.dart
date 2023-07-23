@@ -13,14 +13,14 @@ class _MockAssetsManagerCubit extends MockCubit<AssetsManagerState>
     implements AssetsManagerCubit {}
 
 void main() {
-  TestWidgetsFlutterBinding.ensureInitialized();
+  TestWidgetsBinding.ensureInitialized();
 
   late AssetsManagerCubit mockAssetsManagerCubit;
 
   setUpAll(() async {
-    di.injector.registerSingleton<OneDungeonAudioPlayer>(TestAudioPlayer());
-
     await di.initializeDependencies();
+    await di.injector.unregister<OneDungeonAudioPlayer>();
+    di.injector.registerSingleton<OneDungeonAudioPlayer>(TestAudioPlayer());
   });
 
   setUp(() async {

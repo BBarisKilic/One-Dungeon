@@ -101,13 +101,13 @@ class OneDungeonAudioPlayer {
 
   bool isSfxActive;
 
-  PlayBackgroundAudio _playBackgroundAudio;
+  final PlayBackgroundAudio _playBackgroundAudio;
 
-  StopBackgroundAudio _stopBackgroundAudio;
+  final StopBackgroundAudio _stopBackgroundAudio;
 
-  PlaySingleAudio _playSingleAudio;
+  final PlaySingleAudio _playSingleAudio;
 
-  PreCacheSingleAudio preCacheSingleAudio;
+  final PreCacheSingleAudio preCacheSingleAudio;
 
   /// Plays the received audio.
   Future<void> play(OneDungeonAudio audio) async {

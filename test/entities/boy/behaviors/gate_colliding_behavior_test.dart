@@ -16,7 +16,7 @@ import '../../../helpers/helpers.dart';
 class _MockGate extends Mock implements Gate {}
 
 void main() {
-  TestWidgetsFlutterBinding.ensureInitialized();
+  TestWidgetsBinding.ensureInitialized();
 
   late GateCollidingBehavior gateCollidingBehavior;
 
@@ -25,9 +25,9 @@ void main() {
   });
 
   setUpAll(() async {
-    di.injector.registerSingleton<OneDungeonAudioPlayer>(TestAudioPlayer());
-
     await di.initializeDependencies();
+    await di.injector.unregister<OneDungeonAudioPlayer>();
+    di.injector.registerSingleton<OneDungeonAudioPlayer>(TestAudioPlayer());
   });
 
   tearDownAll(() async {

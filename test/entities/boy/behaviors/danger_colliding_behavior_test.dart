@@ -16,7 +16,7 @@ import '../../../helpers/helpers.dart';
 class _MockDanger extends Mock implements Danger {}
 
 void main() {
-  TestWidgetsFlutterBinding.ensureInitialized();
+  TestWidgetsBinding.ensureInitialized();
 
   late DangerCollidingBehavior dangerCollidingBehavior;
 
@@ -25,9 +25,9 @@ void main() {
   });
 
   setUpAll(() async {
-    di.injector.registerSingleton<OneDungeonAudioPlayer>(TestAudioPlayer());
-
     await di.initializeDependencies();
+    await di.injector.unregister<OneDungeonAudioPlayer>();
+    di.injector.registerSingleton<OneDungeonAudioPlayer>(TestAudioPlayer());
   });
 
   tearDownAll(() async {

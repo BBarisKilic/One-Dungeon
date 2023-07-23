@@ -25,12 +25,12 @@ class _RawKeyEvent extends Mock
     implements RawKeyEvent {}
 
 void main() {
-  TestWidgetsFlutterBinding.ensureInitialized();
+  TestWidgetsBinding.ensureInitialized();
 
   setUpAll(() async {
-    di.injector.registerSingleton<OneDungeonAudioPlayer>(TestAudioPlayer());
-
     await di.initializeDependencies();
+    await di.injector.unregister<OneDungeonAudioPlayer>();
+    di.injector.registerSingleton<OneDungeonAudioPlayer>(TestAudioPlayer());
   });
 
   tearDownAll(() async {

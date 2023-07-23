@@ -10,12 +10,12 @@ import 'package:one_dungeon/sound/sound.dart';
 import '../../helpers/helpers.dart';
 
 void main() {
-  TestWidgetsFlutterBinding.ensureInitialized();
+  TestWidgetsBinding.ensureInitialized();
 
   setUp(() async {
-    di.injector.registerSingleton<OneDungeonAudioPlayer>(TestAudioPlayer());
-
     await di.initializeDependencies();
+    await di.injector.unregister<OneDungeonAudioPlayer>();
+    di.injector.registerSingleton<OneDungeonAudioPlayer>(TestAudioPlayer());
   });
 
   tearDown(() async {

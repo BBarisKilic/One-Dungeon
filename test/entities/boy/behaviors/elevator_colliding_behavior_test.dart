@@ -10,7 +10,7 @@ import 'package:one_dungeon/one_dungeon_audio/one_dungeon_audio.dart';
 import '../../../helpers/helpers.dart';
 
 void main() {
-  TestWidgetsFlutterBinding.ensureInitialized();
+  TestWidgetsBinding.ensureInitialized();
 
   late ElevatorCollidingBehavior elevatorCollidingBehavior;
 
@@ -19,9 +19,9 @@ void main() {
   });
 
   setUpAll(() async {
-    di.injector.registerSingleton<OneDungeonAudioPlayer>(TestAudioPlayer());
-
     await di.initializeDependencies();
+    await di.injector.unregister<OneDungeonAudioPlayer>();
+    di.injector.registerSingleton<OneDungeonAudioPlayer>(TestAudioPlayer());
   });
 
   tearDownAll(() async {
