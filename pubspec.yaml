@@ -4,36 +4,36 @@ version: 1.0.0+1
 publish_to: none
 
 environment:
-  sdk: ">=2.19.0 <3.0.0"
-  flutter: ">=3.7.0"
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.10.0"
 
 dependencies:
-  bloc: ^8.1.1
+  bloc: ^8.1.2
   equatable: ^2.0.5
-  flame: ^1.7.2
-  flame_audio: ^1.4.0
+  flame: ^1.8.1
+  flame_audio: ^2.0.4
   flame_behaviors: ^0.2.0
-  flame_tiled: ^1.10.0
+  flame_tiled: ^1.12.0
   flutter:
     sdk: flutter
-  flutter_bloc: ^8.1.2
+  flutter_bloc: ^8.1.3
   flutter_localizations:
     sdk: flutter
-  freezed_annotation: ^2.2.0
-  get_it: ^7.2.0
-  intl: ^0.17.0
+  freezed_annotation: ^2.4.1
+  get_it: ^7.6.0
+  intl: ^0.18.0
   sharp_toggle_switch:
     path: ./packages/sharp_toggle_switch
 
 dev_dependencies:
-  bloc_test: ^9.1.1
-  build_runner: ^2.3.3
-  flame_test: ^1.10.0
+  bloc_test: ^9.1.3
+  build_runner: ^2.4.6
+  flame_test: ^1.12.0
   flutter_test:
     sdk: flutter
-  freezed: ^2.3.2
+  freezed: ^2.4.1
   mocktail: ^0.3.0
-  very_good_analysis: ^4.0.0+1
+  very_good_analysis: ^5.0.0+1
 
 flutter:
   uses-material-design: true

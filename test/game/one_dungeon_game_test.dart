@@ -9,6 +9,7 @@ import 'package:one_dungeon/components/components.dart';
 import 'package:one_dungeon/entities/entities.dart';
 import 'package:one_dungeon/game/game.dart';
 import 'package:one_dungeon/injector.dart' as di;
+import 'package:one_dungeon/one_dungeon_audio/one_dungeon_audio.dart';
 
 import '../helpers/helpers.dart';
 
@@ -24,10 +25,12 @@ class _RawKeyEvent extends Mock
     implements RawKeyEvent {}
 
 void main() {
-  TestWidgetsFlutterBinding.ensureInitialized();
+  TestWidgetsBinding.ensureInitialized();
 
   setUpAll(() async {
     await di.initializeDependencies();
+    await di.injector.unregister<OneDungeonAudioPlayer>();
+    di.injector.registerSingleton<OneDungeonAudioPlayer>(TestAudioPlayer());
   });
 
   tearDownAll(() async {
@@ -88,7 +91,7 @@ void main() {
           await game.ready();
 
           expect(
-            game.children.whereType<Boy>().length,
+            game.world.children.whereType<Boy>().length,
             equals(1),
           );
         },
@@ -102,7 +105,7 @@ void main() {
         (game) async {
           await game.ready();
 
-          final boy = game.children.whereType<Boy>();
+          final boy = game.world.children.whereType<Boy>();
 
           expect(
             boy.first.hasBehavior<KeyboardMovingBehavior>(),

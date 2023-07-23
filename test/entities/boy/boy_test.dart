@@ -5,14 +5,17 @@ import 'package:flame_test/flame_test.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:one_dungeon/entities/entities.dart';
 import 'package:one_dungeon/injector.dart' as di;
+import 'package:one_dungeon/one_dungeon_audio/one_dungeon_audio.dart';
 
 import '../../helpers/helpers.dart';
 
 void main() {
-  TestWidgetsFlutterBinding.ensureInitialized();
+  TestWidgetsBinding.ensureInitialized();
 
   setUpAll(() async {
     await di.initializeDependencies();
+    await di.injector.unregister<OneDungeonAudioPlayer>();
+    di.injector.registerSingleton<OneDungeonAudioPlayer>(TestAudioPlayer());
   });
 
   tearDownAll(() async {
@@ -27,9 +30,10 @@ void main() {
         final boy = Boy.wasd();
 
         await game.ready();
-        await game.ensureAdd(boy);
 
-        expect(game.contains(boy), isTrue);
+        await game.world.ensureAdd(boy);
+
+        expect(game.world.contains(boy), isTrue);
       },
     );
 
@@ -40,7 +44,8 @@ void main() {
         final boy = Boy.arrows(center: Vector2.zero());
 
         await game.ready();
-        await game.ensureAdd(boy);
+
+        await game.world.ensureAdd(boy);
 
         expect(boy.position, closeToVector(Vector2(0, 0)));
       },

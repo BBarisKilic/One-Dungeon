@@ -8,23 +8,12 @@ import 'package:one_dungeon/one_dungeon_audio/one_dungeon_audio.dart';
 import '../../../helpers/helpers.dart';
 
 void main() {
-  TestWidgetsFlutterBinding.ensureInitialized();
-
-  late OneDungeonAudioPlayer audioPlayer;
+  TestWidgetsBinding.ensureInitialized();
 
   setUpAll(() async {
-    audioPlayer = OneDungeonAudioPlayer.test(
-      playBackgroundAudio: (_, {double? volume}) async {},
-      stopBackgroundAudio: () async {},
-      playSingleAudio: (_, {double? volume}) async {},
-      preCacheSingleAudio: (_) async {},
-    );
-
     await di.initializeDependencies();
-
     await di.injector.unregister<OneDungeonAudioPlayer>();
-
-    di.injector.registerSingleton<OneDungeonAudioPlayer>(audioPlayer);
+    di.injector.registerSingleton<OneDungeonAudioPlayer>(TestAudioPlayer());
   });
 
   tearDownAll(() async {

@@ -5,11 +5,12 @@ import 'package:flame_test/flame_test.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:one_dungeon/entities/entities.dart';
 import 'package:one_dungeon/injector.dart' as di;
+import 'package:one_dungeon/one_dungeon_audio/one_dungeon_audio.dart';
 
 import '../../../helpers/helpers.dart';
 
 void main() {
-  TestWidgetsFlutterBinding.ensureInitialized();
+  TestWidgetsBinding.ensureInitialized();
 
   late ElevatorCollidingBehavior elevatorCollidingBehavior;
 
@@ -19,6 +20,8 @@ void main() {
 
   setUpAll(() async {
     await di.initializeDependencies();
+    await di.injector.unregister<OneDungeonAudioPlayer>();
+    di.injector.registerSingleton<OneDungeonAudioPlayer>(TestAudioPlayer());
   });
 
   tearDownAll(() async {
@@ -36,7 +39,8 @@ void main() {
         );
 
         await game.ready();
-        await game.ensureAdd(boy);
+
+        await game.world.ensureAdd(boy);
         boy.isBottomTouching = false;
 
         elevatorCollidingBehavior
@@ -56,7 +60,8 @@ void main() {
         );
 
         await game.ready();
-        await game.ensureAdd(boy);
+
+        await game.world.ensureAdd(boy);
 
         expect(boy.isTopTouching, isFalse);
 
@@ -77,7 +82,8 @@ void main() {
         );
 
         await game.ready();
-        await game.ensureAdd(boy);
+
+        await game.world.ensureAdd(boy);
 
         expect(boy.isLeftSideTouching, isFalse);
         expect(boy.isRightSideTouching, isFalse);
@@ -101,7 +107,8 @@ void main() {
         );
 
         await game.ready();
-        await game.ensureAdd(boy);
+
+        await game.world.ensureAdd(boy);
 
         expect(boy.isLeftSideTouching, isFalse);
         expect(boy.isRightSideTouching, isFalse);
@@ -126,7 +133,8 @@ void main() {
         );
 
         await game.ready();
-        await game.ensureAdd(boy);
+
+        await game.world.ensureAdd(boy);
 
         expect(boy.isBottomTouching, isFalse);
 

@@ -16,9 +16,8 @@ import '../../../helpers/helpers.dart';
 class _MockGate extends Mock implements Gate {}
 
 void main() {
-  TestWidgetsFlutterBinding.ensureInitialized();
+  TestWidgetsBinding.ensureInitialized();
 
-  late OneDungeonAudioPlayer audioPlayer;
   late GateCollidingBehavior gateCollidingBehavior;
 
   setUp(() {
@@ -26,18 +25,9 @@ void main() {
   });
 
   setUpAll(() async {
-    audioPlayer = OneDungeonAudioPlayer.test(
-      playBackgroundAudio: (_, {double? volume}) async {},
-      stopBackgroundAudio: () async {},
-      playSingleAudio: (_, {double? volume}) async {},
-      preCacheSingleAudio: (_) async {},
-    );
-
     await di.initializeDependencies();
-
     await di.injector.unregister<OneDungeonAudioPlayer>();
-
-    di.injector.registerSingleton<OneDungeonAudioPlayer>(audioPlayer);
+    di.injector.registerSingleton<OneDungeonAudioPlayer>(TestAudioPlayer());
   });
 
   tearDownAll(() async {
@@ -59,7 +49,8 @@ void main() {
           (context, game) => const SizedBox(),
         );
         await game.ready();
-        await game.ensureAdd(boy);
+
+        await game.world.ensureAdd(boy);
 
         gateCollidingBehavior
             .onCollisionStart({Vector2(0, 0), Vector2(10, 0)}, _MockGate());

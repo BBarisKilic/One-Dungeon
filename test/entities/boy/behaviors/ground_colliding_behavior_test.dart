@@ -7,13 +7,14 @@ import 'package:mocktail/mocktail.dart';
 import 'package:one_dungeon/components/components.dart';
 import 'package:one_dungeon/entities/entities.dart';
 import 'package:one_dungeon/injector.dart' as di;
+import 'package:one_dungeon/one_dungeon_audio/one_dungeon_audio.dart';
 
 import '../../../helpers/helpers.dart';
 
 class _MockGround extends Mock implements Ground {}
 
 void main() {
-  TestWidgetsFlutterBinding.ensureInitialized();
+  TestWidgetsBinding.ensureInitialized();
 
   late GroundCollidingBehavior groundCollidingBehavior;
 
@@ -23,6 +24,8 @@ void main() {
 
   setUpAll(() async {
     await di.initializeDependencies();
+    await di.injector.unregister<OneDungeonAudioPlayer>();
+    di.injector.registerSingleton<OneDungeonAudioPlayer>(TestAudioPlayer());
   });
 
   tearDownAll(() async {
@@ -40,7 +43,8 @@ void main() {
         );
 
         await game.ready();
-        await game.ensureAdd(boy);
+
+        await game.world.ensureAdd(boy);
         boy.isBottomTouching = false;
 
         groundCollidingBehavior
@@ -60,7 +64,8 @@ void main() {
         );
 
         await game.ready();
-        await game.ensureAdd(boy);
+
+        await game.world.ensureAdd(boy);
 
         expect(boy.isTopTouching, isFalse);
 
@@ -81,7 +86,8 @@ void main() {
         );
 
         await game.ready();
-        await game.ensureAdd(boy);
+
+        await game.world.ensureAdd(boy);
 
         expect(boy.isLeftSideTouching, isFalse);
         expect(boy.isRightSideTouching, isFalse);
@@ -105,7 +111,8 @@ void main() {
         );
 
         await game.ready();
-        await game.ensureAdd(boy);
+
+        await game.world.ensureAdd(boy);
 
         expect(boy.isLeftSideTouching, isFalse);
         expect(boy.isRightSideTouching, isFalse);
@@ -130,7 +137,8 @@ void main() {
         );
 
         await game.ready();
-        await game.ensureAdd(boy);
+
+        await game.world.ensureAdd(boy);
 
         expect(boy.isBottomTouching, isFalse);
 

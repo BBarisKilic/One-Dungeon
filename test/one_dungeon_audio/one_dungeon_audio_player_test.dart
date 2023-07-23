@@ -4,6 +4,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:one_dungeon/one_dungeon_audio/one_dungeon_audio.dart';
 
+import '../helpers/helpers.dart';
+
 class _AudioPlayerTester {
   void playBackgroundAudio() {}
   void stopBackgroundAudio() {}
@@ -14,9 +16,9 @@ class _AudioPlayerTester {
 class _MockAudioPlayerTester extends Mock implements _AudioPlayerTester {}
 
 void main() {
-  TestWidgetsFlutterBinding.ensureInitialized();
+  TestWidgetsBinding.ensureInitialized();
 
-  late _MockAudioPlayerTester mockAudioPlayerTester;
+  late _AudioPlayerTester mockAudioPlayerTester;
   late OneDungeonAudioPlayer audioPlayer;
 
   setUpAll(() {
@@ -34,6 +36,10 @@ void main() {
   });
 
   group('OneDungeonAudioPlayer', () {
+    test('can be instantiated', () {
+      expect(OneDungeonAudioPlayer(), isNotNull);
+    });
+
     group('sfx', () {
       test('descending plays as expected', () async {
         audioPlayer.isFirstRun = false;

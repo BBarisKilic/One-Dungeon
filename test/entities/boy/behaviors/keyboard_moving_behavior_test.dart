@@ -8,6 +8,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:one_dungeon/entities/entities.dart';
 import 'package:one_dungeon/injector.dart' as di;
+import 'package:one_dungeon/one_dungeon_audio/one_dungeon_audio.dart';
 
 import '../../../helpers/helpers.dart';
 
@@ -23,7 +24,7 @@ class _RawKeyEvent extends Mock
     implements RawKeyEvent {}
 
 void main() {
-  TestWidgetsFlutterBinding.ensureInitialized();
+  TestWidgetsBinding.ensureInitialized();
 
   late KeyboardMovingBehavior keyboardMovingBehavior;
 
@@ -37,6 +38,8 @@ void main() {
 
   setUpAll(() async {
     await di.initializeDependencies();
+    await di.injector.unregister<OneDungeonAudioPlayer>();
+    di.injector.registerSingleton<OneDungeonAudioPlayer>(TestAudioPlayer());
   });
 
   tearDownAll(() async {
@@ -70,7 +73,8 @@ void main() {
         );
 
         await game.ready();
-        await game.ensureAdd(boy);
+
+        await game.world.ensureAdd(boy);
 
         final event = _RawKeyEvent();
         final keysPressed = {LogicalKeyboardKey.arrowUp};
@@ -92,7 +96,8 @@ void main() {
         );
 
         await game.ready();
-        await game.ensureAdd(boy);
+
+        await game.world.ensureAdd(boy);
 
         final event = _RawKeyEvent();
         final keysPressed = {LogicalKeyboardKey.arrowRight};
@@ -114,7 +119,8 @@ void main() {
         );
 
         await game.ready();
-        await game.ensureAdd(boy);
+
+        await game.world.ensureAdd(boy);
 
         final event = _RawKeyEvent();
         final keysPressed = {LogicalKeyboardKey.arrowLeft};
@@ -136,7 +142,8 @@ void main() {
         );
 
         await game.ready();
-        await game.ensureAdd(boy);
+
+        await game.world.ensureAdd(boy);
 
         final event = _RawKeyEvent();
         final leftKeysPressed = {LogicalKeyboardKey.arrowLeft};
@@ -163,7 +170,8 @@ void main() {
       );
 
       await game.ready();
-      await game.ensureAdd(boy);
+
+      await game.world.ensureAdd(boy);
 
       final event = _RawKeyEvent();
       final keysPressed = <LogicalKeyboardKey>{};
@@ -185,7 +193,8 @@ void main() {
         );
 
         await game.ready();
-        await game.ensureAdd(boy);
+
+        await game.world.ensureAdd(boy);
 
         final event = _RawKeyEvent();
         final keysPressed = {LogicalKeyboardKey.arrowUp};

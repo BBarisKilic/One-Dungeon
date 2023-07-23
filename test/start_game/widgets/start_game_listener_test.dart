@@ -10,23 +10,12 @@ import 'package:one_dungeon/sound/sound.dart';
 import '../../helpers/helpers.dart';
 
 void main() {
-  TestWidgetsFlutterBinding.ensureInitialized();
-
-  late OneDungeonAudioPlayer audioPlayer;
+  TestWidgetsBinding.ensureInitialized();
 
   setUp(() async {
-    audioPlayer = OneDungeonAudioPlayer.test(
-      playBackgroundAudio: (_, {double? volume}) async {},
-      stopBackgroundAudio: () async {},
-      playSingleAudio: (_, {double? volume}) async {},
-      preCacheSingleAudio: (_) async {},
-    );
-
     await di.initializeDependencies();
-
     await di.injector.unregister<OneDungeonAudioPlayer>();
-
-    di.injector.registerSingleton<OneDungeonAudioPlayer>(audioPlayer);
+    di.injector.registerSingleton<OneDungeonAudioPlayer>(TestAudioPlayer());
   });
 
   tearDown(() async {
@@ -37,8 +26,8 @@ void main() {
     testWidgets('renders StartGameListener', (tester) async {
       await tester.runAsync(() async {
         await tester.pumpApp(
-          Stack(
-            children: const [
+          const Stack(
+            children: [
               OneDungeonGameLoadedView(
                 initialActiveOverlays: [
                   OneDungeonGame.menuOverlay,
@@ -59,8 +48,8 @@ void main() {
       testWidgets('play works as expected', (tester) async {
         await tester.runAsync(() async {
           await tester.pumpApp(
-            Stack(
-              children: const [
+            const Stack(
+              children: [
                 OneDungeonGameLoadedView(
                   initialActiveOverlays: [
                     OneDungeonGame.menuOverlay,
@@ -82,8 +71,8 @@ void main() {
       testWidgets('sound works as expected', (tester) async {
         await tester.runAsync(() async {
           await tester.pumpApp(
-            Stack(
-              children: const [
+            const Stack(
+              children: [
                 OneDungeonGameLoadedView(
                   initialActiveOverlays: [
                     OneDungeonGame.menuOverlay,
@@ -106,8 +95,8 @@ void main() {
       testWidgets('language works as expected', (tester) async {
         await tester.runAsync(() async {
           await tester.pumpApp(
-            Stack(
-              children: const [
+            const Stack(
+              children: [
                 OneDungeonGameLoadedView(
                   initialActiveOverlays: [
                     OneDungeonGame.menuOverlay,
@@ -130,8 +119,8 @@ void main() {
       testWidgets('how to play works as expected', (tester) async {
         await tester.runAsync(() async {
           await tester.pumpApp(
-            Stack(
-              children: const [
+            const Stack(
+              children: [
                 OneDungeonGameLoadedView(
                   initialActiveOverlays: [
                     OneDungeonGame.menuOverlay,
@@ -154,8 +143,8 @@ void main() {
       testWidgets('about works as expected', (tester) async {
         await tester.runAsync(() async {
           await tester.pumpApp(
-            Stack(
-              children: const [
+            const Stack(
+              children: [
                 OneDungeonGameLoadedView(
                   initialActiveOverlays: [
                     OneDungeonGame.menuOverlay,
