@@ -26,7 +26,7 @@ dependencies:
     path: ./packages/sharp_toggle_switch
 
 dev_dependencies:
-  bloc_test: ^9.1.3
+  bloc_test: ^9.1.5
   build_runner: ^2.4.6
   flame_test: ^1.12.0
   flutter_test:
