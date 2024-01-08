@@ -401,10 +401,10 @@ packages:
     dependency: "direct main"
     description:
       name: get_it
-      sha256: "529de303c739fca98cd7ece5fca500d8ff89649f1bb4b4e94fb20954abcd7468"
+      sha256: d0b88dc35a7f97fd91fec0cf8f165abd97a57977968d8fc02ba0bc92e14ba07e
       url: "https://pub.dev"
     source: hosted
-    version: "7.6.0"
+    version: "7.6.6"
   glob:
     dependency: transitive
     description:
