@@ -325,10 +325,10 @@ packages:
     dependency: "direct main"
     description:
       name: flame_behaviors
-      sha256: "64b6fba612388401d8380af2672eaabe3093108d19319eb12ecf11d9043db5b5"
+      sha256: "177aa671df88ecdaf01c28e8f6fbdb83a69ce923dc7c1b551cfc1b34df0386c7"
       url: "https://pub.dev"
     source: hosted
-    version: "0.2.0"
+    version: "1.1.0"
   flame_test:
     dependency: "direct dev"
     description:
