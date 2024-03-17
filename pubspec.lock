@@ -341,10 +341,10 @@ packages:
     dependency: "direct main"
     description:
       name: flame_tiled
-      sha256: "2145d63c5f62ffe357bf31ce18b287f68b1cff6c216e1ea4b01fdcf0cd878f3a"
+      sha256: "4b014957ba27e7bb230b1d111f593a9b733a28e9a542977bb57eb847572cf9e5"
       url: "https://pub.dev"
     source: hosted
-    version: "1.12.0"
+    version: "1.19.0"
   flutter:
     dependency: "direct main"
     description: flutter
