@@ -12,7 +12,7 @@ part of 'boy_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$BoyState {
@@ -77,25 +77,33 @@ class _$BoyStateCopyWithImpl<$Res, $Val extends BoyState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of BoyState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
-abstract class _$$_IdleCopyWith<$Res> {
-  factory _$$_IdleCopyWith(_$_Idle value, $Res Function(_$_Idle) then) =
-      __$$_IdleCopyWithImpl<$Res>;
+abstract class _$$IdleImplCopyWith<$Res> {
+  factory _$$IdleImplCopyWith(
+          _$IdleImpl value, $Res Function(_$IdleImpl) then) =
+      __$$IdleImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_IdleCopyWithImpl<$Res> extends _$BoyStateCopyWithImpl<$Res, _$_Idle>
-    implements _$$_IdleCopyWith<$Res> {
-  __$$_IdleCopyWithImpl(_$_Idle _value, $Res Function(_$_Idle) _then)
+class __$$IdleImplCopyWithImpl<$Res>
+    extends _$BoyStateCopyWithImpl<$Res, _$IdleImpl>
+    implements _$$IdleImplCopyWith<$Res> {
+  __$$IdleImplCopyWithImpl(_$IdleImpl _value, $Res Function(_$IdleImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of BoyState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$_Idle implements _Idle {
-  const _$_Idle();
+class _$IdleImpl implements _Idle {
+  const _$IdleImpl();
 
   @override
   String toString() {
@@ -103,9 +111,9 @@ class _$_Idle implements _Idle {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Idle);
+        (other.runtimeType == runtimeType && other is _$IdleImpl);
   }
 
   @override
@@ -181,26 +189,30 @@ class _$_Idle implements _Idle {
 }
 
 abstract class _Idle implements BoyState {
-  const factory _Idle() = _$_Idle;
+  const factory _Idle() = _$IdleImpl;
 }
 
 /// @nodoc
-abstract class _$$_RunCopyWith<$Res> {
-  factory _$$_RunCopyWith(_$_Run value, $Res Function(_$_Run) then) =
-      __$$_RunCopyWithImpl<$Res>;
+abstract class _$$RunImplCopyWith<$Res> {
+  factory _$$RunImplCopyWith(_$RunImpl value, $Res Function(_$RunImpl) then) =
+      __$$RunImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_RunCopyWithImpl<$Res> extends _$BoyStateCopyWithImpl<$Res, _$_Run>
-    implements _$$_RunCopyWith<$Res> {
-  __$$_RunCopyWithImpl(_$_Run _value, $Res Function(_$_Run) _then)
+class __$$RunImplCopyWithImpl<$Res>
+    extends _$BoyStateCopyWithImpl<$Res, _$RunImpl>
+    implements _$$RunImplCopyWith<$Res> {
+  __$$RunImplCopyWithImpl(_$RunImpl _value, $Res Function(_$RunImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of BoyState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$_Run implements _Run {
-  const _$_Run();
+class _$RunImpl implements _Run {
+  const _$RunImpl();
 
   @override
   String toString() {
@@ -208,9 +220,9 @@ class _$_Run implements _Run {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Run);
+        (other.runtimeType == runtimeType && other is _$RunImpl);
   }
 
   @override
@@ -286,26 +298,31 @@ class _$_Run implements _Run {
 }
 
 abstract class _Run implements BoyState {
-  const factory _Run() = _$_Run;
+  const factory _Run() = _$RunImpl;
 }
 
 /// @nodoc
-abstract class _$$_JumpCopyWith<$Res> {
-  factory _$$_JumpCopyWith(_$_Jump value, $Res Function(_$_Jump) then) =
-      __$$_JumpCopyWithImpl<$Res>;
+abstract class _$$JumpImplCopyWith<$Res> {
+  factory _$$JumpImplCopyWith(
+          _$JumpImpl value, $Res Function(_$JumpImpl) then) =
+      __$$JumpImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_JumpCopyWithImpl<$Res> extends _$BoyStateCopyWithImpl<$Res, _$_Jump>
-    implements _$$_JumpCopyWith<$Res> {
-  __$$_JumpCopyWithImpl(_$_Jump _value, $Res Function(_$_Jump) _then)
+class __$$JumpImplCopyWithImpl<$Res>
+    extends _$BoyStateCopyWithImpl<$Res, _$JumpImpl>
+    implements _$$JumpImplCopyWith<$Res> {
+  __$$JumpImplCopyWithImpl(_$JumpImpl _value, $Res Function(_$JumpImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of BoyState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$_Jump implements _Jump {
-  const _$_Jump();
+class _$JumpImpl implements _Jump {
+  const _$JumpImpl();
 
   @override
   String toString() {
@@ -313,9 +330,9 @@ class _$_Jump implements _Jump {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Jump);
+        (other.runtimeType == runtimeType && other is _$JumpImpl);
   }
 
   @override
@@ -391,5 +408,5 @@ class _$_Jump implements _Jump {
 }
 
 abstract class _Jump implements BoyState {
-  const factory _Jump() = _$_Jump;
+  const factory _Jump() = _$JumpImpl;
 }

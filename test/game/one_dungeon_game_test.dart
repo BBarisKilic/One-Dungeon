@@ -20,9 +20,9 @@ mixin _DiagnosticableToStringMixin on Object {
   }
 }
 
-class _RawKeyEvent extends Mock
+class _MockKeyEvent extends Mock
     with _DiagnosticableToStringMixin
-    implements RawKeyEvent {}
+    implements KeyEvent {}
 
 void main() {
   TestWidgetsBinding.ensureInitialized();
@@ -122,7 +122,7 @@ void main() {
         (game) async {
           await game.ready();
 
-          final event = _RawKeyEvent();
+          final event = _MockKeyEvent();
           final keysPressed = {LogicalKeyboardKey.pageDown};
 
           expect(

@@ -12,7 +12,7 @@ part of 'start_game_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$StartGameState {
@@ -96,26 +96,33 @@ class _$StartGameStateCopyWithImpl<$Res, $Val extends StartGameState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of StartGameState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
-abstract class _$$_MenuCopyWith<$Res> {
-  factory _$$_MenuCopyWith(_$_Menu value, $Res Function(_$_Menu) then) =
-      __$$_MenuCopyWithImpl<$Res>;
+abstract class _$$MenuImplCopyWith<$Res> {
+  factory _$$MenuImplCopyWith(
+          _$MenuImpl value, $Res Function(_$MenuImpl) then) =
+      __$$MenuImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_MenuCopyWithImpl<$Res>
-    extends _$StartGameStateCopyWithImpl<$Res, _$_Menu>
-    implements _$$_MenuCopyWith<$Res> {
-  __$$_MenuCopyWithImpl(_$_Menu _value, $Res Function(_$_Menu) _then)
+class __$$MenuImplCopyWithImpl<$Res>
+    extends _$StartGameStateCopyWithImpl<$Res, _$MenuImpl>
+    implements _$$MenuImplCopyWith<$Res> {
+  __$$MenuImplCopyWithImpl(_$MenuImpl _value, $Res Function(_$MenuImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of StartGameState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$_Menu with DiagnosticableTreeMixin implements _Menu {
-  const _$_Menu();
+class _$MenuImpl with DiagnosticableTreeMixin implements _Menu {
+  const _$MenuImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -129,9 +136,9 @@ class _$_Menu with DiagnosticableTreeMixin implements _Menu {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Menu);
+        (other.runtimeType == runtimeType && other is _$MenuImpl);
   }
 
   @override
@@ -225,27 +232,31 @@ class _$_Menu with DiagnosticableTreeMixin implements _Menu {
 }
 
 abstract class _Menu implements StartGameState {
-  const factory _Menu() = _$_Menu;
+  const factory _Menu() = _$MenuImpl;
 }
 
 /// @nodoc
-abstract class _$$_PlayCopyWith<$Res> {
-  factory _$$_PlayCopyWith(_$_Play value, $Res Function(_$_Play) then) =
-      __$$_PlayCopyWithImpl<$Res>;
+abstract class _$$PlayImplCopyWith<$Res> {
+  factory _$$PlayImplCopyWith(
+          _$PlayImpl value, $Res Function(_$PlayImpl) then) =
+      __$$PlayImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_PlayCopyWithImpl<$Res>
-    extends _$StartGameStateCopyWithImpl<$Res, _$_Play>
-    implements _$$_PlayCopyWith<$Res> {
-  __$$_PlayCopyWithImpl(_$_Play _value, $Res Function(_$_Play) _then)
+class __$$PlayImplCopyWithImpl<$Res>
+    extends _$StartGameStateCopyWithImpl<$Res, _$PlayImpl>
+    implements _$$PlayImplCopyWith<$Res> {
+  __$$PlayImplCopyWithImpl(_$PlayImpl _value, $Res Function(_$PlayImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of StartGameState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$_Play with DiagnosticableTreeMixin implements _Play {
-  const _$_Play();
+class _$PlayImpl with DiagnosticableTreeMixin implements _Play {
+  const _$PlayImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -259,9 +270,9 @@ class _$_Play with DiagnosticableTreeMixin implements _Play {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Play);
+        (other.runtimeType == runtimeType && other is _$PlayImpl);
   }
 
   @override
@@ -355,27 +366,32 @@ class _$_Play with DiagnosticableTreeMixin implements _Play {
 }
 
 abstract class _Play implements StartGameState {
-  const factory _Play() = _$_Play;
+  const factory _Play() = _$PlayImpl;
 }
 
 /// @nodoc
-abstract class _$$_SoundCopyWith<$Res> {
-  factory _$$_SoundCopyWith(_$_Sound value, $Res Function(_$_Sound) then) =
-      __$$_SoundCopyWithImpl<$Res>;
+abstract class _$$SoundImplCopyWith<$Res> {
+  factory _$$SoundImplCopyWith(
+          _$SoundImpl value, $Res Function(_$SoundImpl) then) =
+      __$$SoundImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_SoundCopyWithImpl<$Res>
-    extends _$StartGameStateCopyWithImpl<$Res, _$_Sound>
-    implements _$$_SoundCopyWith<$Res> {
-  __$$_SoundCopyWithImpl(_$_Sound _value, $Res Function(_$_Sound) _then)
+class __$$SoundImplCopyWithImpl<$Res>
+    extends _$StartGameStateCopyWithImpl<$Res, _$SoundImpl>
+    implements _$$SoundImplCopyWith<$Res> {
+  __$$SoundImplCopyWithImpl(
+      _$SoundImpl _value, $Res Function(_$SoundImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of StartGameState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$_Sound with DiagnosticableTreeMixin implements _Sound {
-  const _$_Sound();
+class _$SoundImpl with DiagnosticableTreeMixin implements _Sound {
+  const _$SoundImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -389,9 +405,9 @@ class _$_Sound with DiagnosticableTreeMixin implements _Sound {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Sound);
+        (other.runtimeType == runtimeType && other is _$SoundImpl);
   }
 
   @override
@@ -485,29 +501,32 @@ class _$_Sound with DiagnosticableTreeMixin implements _Sound {
 }
 
 abstract class _Sound implements StartGameState {
-  const factory _Sound() = _$_Sound;
+  const factory _Sound() = _$SoundImpl;
 }
 
 /// @nodoc
-abstract class _$$_LanguageCopyWith<$Res> {
-  factory _$$_LanguageCopyWith(
-          _$_Language value, $Res Function(_$_Language) then) =
-      __$$_LanguageCopyWithImpl<$Res>;
+abstract class _$$LanguageImplCopyWith<$Res> {
+  factory _$$LanguageImplCopyWith(
+          _$LanguageImpl value, $Res Function(_$LanguageImpl) then) =
+      __$$LanguageImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_LanguageCopyWithImpl<$Res>
-    extends _$StartGameStateCopyWithImpl<$Res, _$_Language>
-    implements _$$_LanguageCopyWith<$Res> {
-  __$$_LanguageCopyWithImpl(
-      _$_Language _value, $Res Function(_$_Language) _then)
+class __$$LanguageImplCopyWithImpl<$Res>
+    extends _$StartGameStateCopyWithImpl<$Res, _$LanguageImpl>
+    implements _$$LanguageImplCopyWith<$Res> {
+  __$$LanguageImplCopyWithImpl(
+      _$LanguageImpl _value, $Res Function(_$LanguageImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of StartGameState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$_Language with DiagnosticableTreeMixin implements _Language {
-  const _$_Language();
+class _$LanguageImpl with DiagnosticableTreeMixin implements _Language {
+  const _$LanguageImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -521,9 +540,9 @@ class _$_Language with DiagnosticableTreeMixin implements _Language {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Language);
+        (other.runtimeType == runtimeType && other is _$LanguageImpl);
   }
 
   @override
@@ -617,29 +636,32 @@ class _$_Language with DiagnosticableTreeMixin implements _Language {
 }
 
 abstract class _Language implements StartGameState {
-  const factory _Language() = _$_Language;
+  const factory _Language() = _$LanguageImpl;
 }
 
 /// @nodoc
-abstract class _$$_HowToPlayCopyWith<$Res> {
-  factory _$$_HowToPlayCopyWith(
-          _$_HowToPlay value, $Res Function(_$_HowToPlay) then) =
-      __$$_HowToPlayCopyWithImpl<$Res>;
+abstract class _$$HowToPlayImplCopyWith<$Res> {
+  factory _$$HowToPlayImplCopyWith(
+          _$HowToPlayImpl value, $Res Function(_$HowToPlayImpl) then) =
+      __$$HowToPlayImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_HowToPlayCopyWithImpl<$Res>
-    extends _$StartGameStateCopyWithImpl<$Res, _$_HowToPlay>
-    implements _$$_HowToPlayCopyWith<$Res> {
-  __$$_HowToPlayCopyWithImpl(
-      _$_HowToPlay _value, $Res Function(_$_HowToPlay) _then)
+class __$$HowToPlayImplCopyWithImpl<$Res>
+    extends _$StartGameStateCopyWithImpl<$Res, _$HowToPlayImpl>
+    implements _$$HowToPlayImplCopyWith<$Res> {
+  __$$HowToPlayImplCopyWithImpl(
+      _$HowToPlayImpl _value, $Res Function(_$HowToPlayImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of StartGameState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$_HowToPlay with DiagnosticableTreeMixin implements _HowToPlay {
-  const _$_HowToPlay();
+class _$HowToPlayImpl with DiagnosticableTreeMixin implements _HowToPlay {
+  const _$HowToPlayImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -653,9 +675,9 @@ class _$_HowToPlay with DiagnosticableTreeMixin implements _HowToPlay {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_HowToPlay);
+        (other.runtimeType == runtimeType && other is _$HowToPlayImpl);
   }
 
   @override
@@ -749,27 +771,32 @@ class _$_HowToPlay with DiagnosticableTreeMixin implements _HowToPlay {
 }
 
 abstract class _HowToPlay implements StartGameState {
-  const factory _HowToPlay() = _$_HowToPlay;
+  const factory _HowToPlay() = _$HowToPlayImpl;
 }
 
 /// @nodoc
-abstract class _$$_AboutCopyWith<$Res> {
-  factory _$$_AboutCopyWith(_$_About value, $Res Function(_$_About) then) =
-      __$$_AboutCopyWithImpl<$Res>;
+abstract class _$$AboutImplCopyWith<$Res> {
+  factory _$$AboutImplCopyWith(
+          _$AboutImpl value, $Res Function(_$AboutImpl) then) =
+      __$$AboutImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_AboutCopyWithImpl<$Res>
-    extends _$StartGameStateCopyWithImpl<$Res, _$_About>
-    implements _$$_AboutCopyWith<$Res> {
-  __$$_AboutCopyWithImpl(_$_About _value, $Res Function(_$_About) _then)
+class __$$AboutImplCopyWithImpl<$Res>
+    extends _$StartGameStateCopyWithImpl<$Res, _$AboutImpl>
+    implements _$$AboutImplCopyWith<$Res> {
+  __$$AboutImplCopyWithImpl(
+      _$AboutImpl _value, $Res Function(_$AboutImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of StartGameState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$_About with DiagnosticableTreeMixin implements _About {
-  const _$_About();
+class _$AboutImpl with DiagnosticableTreeMixin implements _About {
+  const _$AboutImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -783,9 +810,9 @@ class _$_About with DiagnosticableTreeMixin implements _About {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_About);
+        (other.runtimeType == runtimeType && other is _$AboutImpl);
   }
 
   @override
@@ -879,5 +906,5 @@ class _$_About with DiagnosticableTreeMixin implements _About {
 }
 
 abstract class _About implements StartGameState {
-  const factory _About() = _$_About;
+  const factory _About() = _$AboutImpl;
 }

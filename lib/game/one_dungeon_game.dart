@@ -33,6 +33,7 @@ class OneDungeonGame extends FlameGame
         super();
 
   /// Instance of [World].
+  @override
   final World world;
 
   /// Instance of [CameraComponent].
@@ -168,7 +169,7 @@ class OneDungeonGame extends FlameGame
   @override
   @mustCallSuper
   KeyEventResult onKeyEvent(
-    RawKeyEvent event,
+    KeyEvent event,
     Set<LogicalKeyboardKey> keysPressed,
   ) {
     super.onKeyEvent(event, keysPressed);

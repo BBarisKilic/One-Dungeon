@@ -17,7 +17,7 @@ class KeyboardMovingBehavior extends Behavior<Boy>
   final LogicalKeyboardKey rightKey;
 
   @override
-  bool onKeyEvent(RawKeyEvent event, Set<LogicalKeyboardKey> keysPressed) {
+  bool onKeyEvent(KeyEvent event, Set<LogicalKeyboardKey> keysPressed) {
     _setVelocityX(keysPressed);
     _setVelocityY(keysPressed);
 

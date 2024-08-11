@@ -19,9 +19,9 @@ mixin _DiagnosticableToStringMixin on Object {
   }
 }
 
-class _RawKeyEvent extends Mock
+class _MockKeyEvent extends Mock
     with _DiagnosticableToStringMixin
-    implements RawKeyEvent {}
+    implements KeyEvent {}
 
 void main() {
   TestWidgetsBinding.ensureInitialized();
@@ -76,7 +76,7 @@ void main() {
 
         await game.world.ensureAdd(boy);
 
-        final event = _RawKeyEvent();
+        final event = _MockKeyEvent();
         final keysPressed = {LogicalKeyboardKey.arrowUp};
 
         expect(boy.velocity.y, equals(0));
@@ -99,7 +99,7 @@ void main() {
 
         await game.world.ensureAdd(boy);
 
-        final event = _RawKeyEvent();
+        final event = _MockKeyEvent();
         final keysPressed = {LogicalKeyboardKey.arrowRight};
 
         expect(boy.velocity.x, equals(0));
@@ -122,7 +122,7 @@ void main() {
 
         await game.world.ensureAdd(boy);
 
-        final event = _RawKeyEvent();
+        final event = _MockKeyEvent();
         final keysPressed = {LogicalKeyboardKey.arrowLeft};
 
         expect(boy.velocity.x, equals(0));
@@ -145,7 +145,7 @@ void main() {
 
         await game.world.ensureAdd(boy);
 
-        final event = _RawKeyEvent();
+        final event = _MockKeyEvent();
         final leftKeysPressed = {LogicalKeyboardKey.arrowLeft};
         final rightKeysPressed = {LogicalKeyboardKey.arrowRight};
 
@@ -173,7 +173,7 @@ void main() {
 
       await game.world.ensureAdd(boy);
 
-      final event = _RawKeyEvent();
+      final event = _MockKeyEvent();
       final keysPressed = <LogicalKeyboardKey>{};
 
       keyboardMovingBehavior.onKeyEvent(event, keysPressed);
@@ -196,7 +196,7 @@ void main() {
 
         await game.world.ensureAdd(boy);
 
-        final event = _RawKeyEvent();
+        final event = _MockKeyEvent();
         final keysPressed = {LogicalKeyboardKey.arrowUp};
 
         expect(boy.position.y, equals(100));
@@ -212,7 +212,7 @@ void main() {
       'key events are handled',
       TestGame.new,
       (game) async {
-        final event = _RawKeyEvent();
+        final event = _MockKeyEvent();
         final keysPressed = {LogicalKeyboardKey.pageDown};
 
         expect(game.onKeyEvent(event, keysPressed), KeyEventResult.handled);
