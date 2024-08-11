@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:one_dungeon/about/about.dart';
+import 'package:one_dungeon/bootstrap.dart';
 import 'package:one_dungeon/game/game.dart';
 import 'package:one_dungeon/how_to_play/how_to_play.dart';
-import 'package:one_dungeon/injector.dart' as di;
 import 'package:one_dungeon/sound/sound.dart';
 import 'package:one_dungeon/start_game/start_game.dart';
 
@@ -21,7 +21,7 @@ class StartGameListener extends StatelessWidget {
       listener: (context, state) {
         state.when(
           menu: () => null,
-          play: () => di.injector<OneDungeonGame>().startGame(),
+          play: () => getIt<OneDungeonGame>().startGame(),
           sound: () => showDialog<SoundSettingsDialog>(
             context: context,
             barrierDismissible: false,

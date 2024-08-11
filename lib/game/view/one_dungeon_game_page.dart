@@ -2,8 +2,8 @@ import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:one_dungeon/assets_manager/assets_manager.dart';
+import 'package:one_dungeon/bootstrap.dart';
 import 'package:one_dungeon/game/game.dart';
-import 'package:one_dungeon/injector.dart' as di;
 import 'package:one_dungeon/l10n/l10n.dart';
 import 'package:one_dungeon/start_game/start_game.dart';
 
@@ -30,7 +30,7 @@ class OneDungeonGameLoadedView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final game = di.injector<OneDungeonGame>();
+    final game = getIt<OneDungeonGame>();
     final l10n = context.l10n;
 
     return StartGameListener(

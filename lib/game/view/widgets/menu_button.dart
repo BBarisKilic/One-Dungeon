@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:one_dungeon/injector.dart' as di;
+import 'package:one_dungeon/bootstrap.dart';
 import 'package:one_dungeon/one_dungeon_audio/one_dungeon_audio.dart';
 
 class MenuButton extends StatelessWidget {
@@ -14,14 +14,15 @@ class MenuButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final audioPlayer = di.injector<OneDungeonAudioPlayer>();
+    final audioPlayer = getIt<OneDungeonAudioPlayer>();
 
     return ElevatedButton(
       onPressed: () {
-        if (di.injector<OneDungeonAudioPlayer>().isFirstRun) {
-          di.injector<OneDungeonAudioPlayer>().isFirstRun = false;
-          di.injector<OneDungeonAudioPlayer>().isBackgroundMusicActive = true;
-          di.injector<OneDungeonAudioPlayer>().isSfxActive = true;
+        if (audioPlayer.isFirstRun) {
+          audioPlayer
+            ..isFirstRun = false
+            ..isBackgroundMusicActive = true
+            ..isSfxActive = true;
         }
 
         onPressed();

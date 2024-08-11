@@ -4,9 +4,9 @@ import 'package:flame/game.dart';
 import 'package:flame_test/flame_test.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:one_dungeon/bootstrap.dart';
 import 'package:one_dungeon/entities/entities.dart';
 import 'package:one_dungeon/game/game.dart';
-import 'package:one_dungeon/injector.dart' as di;
 import 'package:one_dungeon/one_dungeon_audio/one_dungeon_audio.dart';
 
 import '../../../helpers/helpers.dart';
@@ -21,13 +21,13 @@ void main() {
   });
 
   setUpAll(() async {
-    await di.initializeDependencies();
-    await di.injector.unregister<OneDungeonAudioPlayer>();
-    di.injector.registerSingleton<OneDungeonAudioPlayer>(TestAudioPlayer());
+    await injectDependencies();
+    await getIt.unregister<OneDungeonAudioPlayer>();
+    getIt.registerSingleton<OneDungeonAudioPlayer>(TestAudioPlayer());
   });
 
   tearDownAll(() async {
-    await di.injector.reset();
+    await getIt.reset();
   });
 
   group('StarCollidingBehavior', () {

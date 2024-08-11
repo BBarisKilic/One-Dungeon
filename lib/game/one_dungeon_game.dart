@@ -5,11 +5,11 @@ import 'package:flame_audio/flame_audio.dart';
 import 'package:flame_tiled/flame_tiled.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:one_dungeon/bootstrap.dart';
 import 'package:one_dungeon/components/components.dart';
 import 'package:one_dungeon/constants/constants.dart';
 import 'package:one_dungeon/entities/entities.dart';
 import 'package:one_dungeon/game/game.dart';
-import 'package:one_dungeon/injector.dart' as di;
 import 'package:one_dungeon/l10n/l10n.dart';
 import 'package:one_dungeon/one_dungeon_audio/one_dungeon_audio.dart';
 
@@ -67,7 +67,7 @@ class OneDungeonGame extends FlameGame
 
   @override
   Future<void>? onLoad() async {
-    audioPlayer = di.injector<OneDungeonAudioPlayer>();
+    audioPlayer = getIt<OneDungeonAudioPlayer>();
 
     FlameAudio.bgm.initialize();
 
