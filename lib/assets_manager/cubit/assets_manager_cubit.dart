@@ -13,11 +13,12 @@ class AssetsManagerCubit extends Cubit<AssetsManagerState> {
     required OneDungeonAudioPlayer audioPlayer,
   })  : _game = game,
         _audioPlayer = audioPlayer,
+        _loadables = <Future<void> Function()>[],
         super(const AssetsManagerState.initial());
 
   final OneDungeonGame _game;
   final OneDungeonAudioPlayer _audioPlayer;
-  final _loadables = <Future<void> Function()>[];
+  final List<Future<void> Function()> _loadables;
 
   Future<void> load() async {
     await Future<void>.delayed(const Duration(seconds: 1));
