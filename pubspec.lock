@@ -309,18 +309,18 @@ packages:
     dependency: "direct main"
     description:
       name: flame
-      sha256: "7a39044eeea6906d8acc5d8292941fa081a4f2a37fd76dc5a2dbee8a29e28256"
+      sha256: f9e7a100c25f8d6bfd143bf325a9689c509216cd1c8133ce4684955c56770de7
       url: "https://pub.dev"
     source: hosted
-    version: "1.27.0"
+    version: "1.28.1"
   flame_audio:
     dependency: "direct main"
     description:
       name: flame_audio
-      sha256: "8de338cb5bc44c7f31c229fc6da074f7ac4a1b02a24fc1a5244bc05921aee7b4"
+      sha256: "1f953ef04c97bfa36665318b6d3a4eadfee1e1ac7826203af432950360b77153"
       url: "https://pub.dev"
     source: hosted
-    version: "2.11.3"
+    version: "2.11.5"
   flame_behaviors:
     dependency: "direct main"
     description:
@@ -569,10 +569,10 @@ packages:
     dependency: transitive
     description:
       name: ordered_set
-      sha256: "984658d0c28c69516ed22f780db7511932a223339463a16c0cc48b3055e926c4"
+      sha256: dc68b8f1abc7115b81cf890bf7d2ece4ed1d95e0f3e486ab4b64ab3d16d2ea42
       url: "https://pub.dev"
     source: hosted
-    version: "6.0.1"
+    version: "7.0.0"
   package_config:
     dependency: transitive
     description:
