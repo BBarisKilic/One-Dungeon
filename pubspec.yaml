@@ -19,7 +19,7 @@ dependencies:
   flutter_bloc: ^9.1.1
   flutter_localizations:
     sdk: flutter
-  freezed_annotation: ^3.0.0
+  freezed_annotation: ^3.1.0
   get_it: ^8.0.3
   intl: ^0.20.2
   sharp_toggle_switch:
