@@ -317,10 +317,10 @@ packages:
     dependency: "direct main"
     description:
       name: flame
-      sha256: c50e2f39e118f5f6a6f3339ce6825ee803c7e5fada95ec50fb02eb27944e0e76
+      sha256: "86f63943349ef4d891fd1988ccd9fa3d27952eb8d9eb17b774a64e78cd62aaa6"
       url: "https://pub.dev"
     source: hosted
-    version: "1.30.1"
+    version: "1.32.0"
   flame_audio:
     dependency: "direct main"
     description:
@@ -349,10 +349,10 @@ packages:
     dependency: "direct main"
     description:
       name: flame_tiled
-      sha256: cc76bdb888ad9be15d8aacf6475dfa37271497e6968189c4857429ba6fc559fd
+      sha256: "36fef1d6b3caaa8b26f18cd20d1038d8d3409b8a9ea12de2c1295266c0d8e3c9"
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.1"
+    version: "3.0.7"
   flutter:
     dependency: "direct main"
     description: flutter
