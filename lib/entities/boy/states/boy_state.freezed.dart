@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,404 +10,132 @@ part of 'boy_state.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
 /// @nodoc
 mixin _$BoyState {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() idle,
-    required TResult Function() run,
-    required TResult Function() jump,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? idle,
-    TResult? Function()? run,
-    TResult? Function()? jump,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? idle,
-    TResult Function()? run,
-    TResult Function()? jump,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Idle value) idle,
-    required TResult Function(_Run value) run,
-    required TResult Function(_Jump value) jump,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Idle value)? idle,
-    TResult? Function(_Run value)? run,
-    TResult? Function(_Jump value)? jump,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Idle value)? idle,
-    TResult Function(_Run value)? run,
-    TResult Function(_Jump value)? jump,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is BoyState);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'BoyState()';
+}
+
+
 }
 
 /// @nodoc
-abstract class $BoyStateCopyWith<$Res> {
-  factory $BoyStateCopyWith(BoyState value, $Res Function(BoyState) then) =
-      _$BoyStateCopyWithImpl<$Res, BoyState>;
+class $BoyStateCopyWith<$Res>  {
+$BoyStateCopyWith(BoyState _, $Res Function(BoyState) __);
 }
 
-/// @nodoc
-class _$BoyStateCopyWithImpl<$Res, $Val extends BoyState>
-    implements $BoyStateCopyWith<$Res> {
-  _$BoyStateCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of BoyState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-abstract class _$$IdleImplCopyWith<$Res> {
-  factory _$$IdleImplCopyWith(
-          _$IdleImpl value, $Res Function(_$IdleImpl) then) =
-      __$$IdleImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$IdleImplCopyWithImpl<$Res>
-    extends _$BoyStateCopyWithImpl<$Res, _$IdleImpl>
-    implements _$$IdleImplCopyWith<$Res> {
-  __$$IdleImplCopyWithImpl(_$IdleImpl _value, $Res Function(_$IdleImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of BoyState
-  /// with the given fields replaced by the non-null parameter values.
-}
 
 /// @nodoc
 
-class _$IdleImpl implements _Idle {
-  const _$IdleImpl();
 
-  @override
-  String toString() {
-    return 'BoyState.idle()';
-  }
+class _Idle implements BoyState {
+  const _Idle();
+  
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$IdleImpl);
-  }
 
-  @override
-  int get hashCode => runtimeType.hashCode;
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() idle,
-    required TResult Function() run,
-    required TResult Function() jump,
-  }) {
-    return idle();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? idle,
-    TResult? Function()? run,
-    TResult? Function()? jump,
-  }) {
-    return idle?.call();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? idle,
-    TResult Function()? run,
-    TResult Function()? jump,
-    required TResult orElse(),
-  }) {
-    if (idle != null) {
-      return idle();
-    }
-    return orElse();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Idle value) idle,
-    required TResult Function(_Run value) run,
-    required TResult Function(_Jump value) jump,
-  }) {
-    return idle(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Idle value)? idle,
-    TResult? Function(_Run value)? run,
-    TResult? Function(_Jump value)? jump,
-  }) {
-    return idle?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Idle value)? idle,
-    TResult Function(_Run value)? run,
-    TResult Function(_Jump value)? jump,
-    required TResult orElse(),
-  }) {
-    if (idle != null) {
-      return idle(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Idle);
 }
 
-abstract class _Idle implements BoyState {
-  const factory _Idle() = _$IdleImpl;
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'BoyState.idle()';
 }
 
-/// @nodoc
-abstract class _$$RunImplCopyWith<$Res> {
-  factory _$$RunImplCopyWith(_$RunImpl value, $Res Function(_$RunImpl) then) =
-      __$$RunImplCopyWithImpl<$Res>;
+
 }
 
-/// @nodoc
-class __$$RunImplCopyWithImpl<$Res>
-    extends _$BoyStateCopyWithImpl<$Res, _$RunImpl>
-    implements _$$RunImplCopyWith<$Res> {
-  __$$RunImplCopyWithImpl(_$RunImpl _value, $Res Function(_$RunImpl) _then)
-      : super(_value, _then);
 
-  /// Create a copy of BoyState
-  /// with the given fields replaced by the non-null parameter values.
-}
+
 
 /// @nodoc
 
-class _$RunImpl implements _Run {
-  const _$RunImpl();
 
-  @override
-  String toString() {
-    return 'BoyState.run()';
-  }
+class _Run implements BoyState {
+  const _Run();
+  
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$RunImpl);
-  }
 
-  @override
-  int get hashCode => runtimeType.hashCode;
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() idle,
-    required TResult Function() run,
-    required TResult Function() jump,
-  }) {
-    return run();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? idle,
-    TResult? Function()? run,
-    TResult? Function()? jump,
-  }) {
-    return run?.call();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? idle,
-    TResult Function()? run,
-    TResult Function()? jump,
-    required TResult orElse(),
-  }) {
-    if (run != null) {
-      return run();
-    }
-    return orElse();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Idle value) idle,
-    required TResult Function(_Run value) run,
-    required TResult Function(_Jump value) jump,
-  }) {
-    return run(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Idle value)? idle,
-    TResult? Function(_Run value)? run,
-    TResult? Function(_Jump value)? jump,
-  }) {
-    return run?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Idle value)? idle,
-    TResult Function(_Run value)? run,
-    TResult Function(_Jump value)? jump,
-    required TResult orElse(),
-  }) {
-    if (run != null) {
-      return run(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Run);
 }
 
-abstract class _Run implements BoyState {
-  const factory _Run() = _$RunImpl;
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'BoyState.run()';
 }
 
-/// @nodoc
-abstract class _$$JumpImplCopyWith<$Res> {
-  factory _$$JumpImplCopyWith(
-          _$JumpImpl value, $Res Function(_$JumpImpl) then) =
-      __$$JumpImplCopyWithImpl<$Res>;
+
 }
 
-/// @nodoc
-class __$$JumpImplCopyWithImpl<$Res>
-    extends _$BoyStateCopyWithImpl<$Res, _$JumpImpl>
-    implements _$$JumpImplCopyWith<$Res> {
-  __$$JumpImplCopyWithImpl(_$JumpImpl _value, $Res Function(_$JumpImpl) _then)
-      : super(_value, _then);
 
-  /// Create a copy of BoyState
-  /// with the given fields replaced by the non-null parameter values.
-}
+
 
 /// @nodoc
 
-class _$JumpImpl implements _Jump {
-  const _$JumpImpl();
 
-  @override
-  String toString() {
-    return 'BoyState.jump()';
-  }
+class _Jump implements BoyState {
+  const _Jump();
+  
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$JumpImpl);
-  }
 
-  @override
-  int get hashCode => runtimeType.hashCode;
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() idle,
-    required TResult Function() run,
-    required TResult Function() jump,
-  }) {
-    return jump();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? idle,
-    TResult? Function()? run,
-    TResult? Function()? jump,
-  }) {
-    return jump?.call();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? idle,
-    TResult Function()? run,
-    TResult Function()? jump,
-    required TResult orElse(),
-  }) {
-    if (jump != null) {
-      return jump();
-    }
-    return orElse();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Idle value) idle,
-    required TResult Function(_Run value) run,
-    required TResult Function(_Jump value) jump,
-  }) {
-    return jump(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Idle value)? idle,
-    TResult? Function(_Run value)? run,
-    TResult? Function(_Jump value)? jump,
-  }) {
-    return jump?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Idle value)? idle,
-    TResult Function(_Run value)? run,
-    TResult Function(_Jump value)? jump,
-    required TResult orElse(),
-  }) {
-    if (jump != null) {
-      return jump(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Jump);
 }
 
-abstract class _Jump implements BoyState {
-  const factory _Jump() = _$JumpImpl;
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'BoyState.jump()';
 }
+
+
+}
+
+
+
+
+// dart format on

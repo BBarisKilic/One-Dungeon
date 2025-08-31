@@ -8,10 +8,7 @@ import 'package:one_dungeon/sound/sound.dart';
 import 'package:one_dungeon/start_game/start_game.dart';
 
 class StartGameListener extends StatelessWidget {
-  const StartGameListener({
-    required Widget child,
-    super.key,
-  }) : _child = child;
+  const StartGameListener({required Widget child, super.key}) : _child = child;
 
   final Widget _child;
 
@@ -19,26 +16,32 @@ class StartGameListener extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<StartGameCubit, StartGameState>(
       listener: (context, state) {
-        state.when(
-          menu: () => null,
-          play: () => getIt<OneDungeonGame>().startGame(),
-          sound: () => showDialog<SoundSettingsDialog>(
-            context: context,
-            barrierDismissible: false,
-            builder: (_) => const SoundSettingsDialog(),
-          ),
-          language: () => null,
-          howToPlay: () => showDialog<HowToPlayDialog>(
-            context: context,
-            barrierDismissible: false,
-            builder: (_) => const HowToPlayDialog(),
-          ),
-          about: () => showDialog<AboutGameDialog>(
-            context: context,
-            barrierDismissible: false,
-            builder: (_) => const AboutGameDialog(),
-          ),
-        );
+        switch (state) {
+          case Menu():
+            break;
+          case Play():
+            getIt<OneDungeonGame>().startGame();
+          case Sound():
+            showDialog<SoundSettingsDialog>(
+              context: context,
+              barrierDismissible: false,
+              builder: (_) => const SoundSettingsDialog(),
+            );
+          case Language():
+            break;
+          case HowToPlay():
+            showDialog<HowToPlayDialog>(
+              context: context,
+              barrierDismissible: false,
+              builder: (_) => const HowToPlayDialog(),
+            );
+          case About():
+            showDialog<AboutGameDialog>(
+              context: context,
+              barrierDismissible: false,
+              builder: (_) => const AboutGameDialog(),
+            );
+        }
       },
       child: _child,
     );
