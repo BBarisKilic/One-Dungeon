@@ -6,20 +6,18 @@ import 'package:one_dungeon/game/game.dart';
 
 class KeyboardMovingBehavior extends Behavior<Boy>
     with KeyboardHandler, HasGameRef<OneDungeonGame> {
-  KeyboardMovingBehavior({
-    required this.jumpKey,
-    required this.leftKey,
-    required this.rightKey,
-  });
+  KeyboardMovingBehavior({required this.leftKey, required this.rightKey});
 
-  final LogicalKeyboardKey jumpKey;
   final LogicalKeyboardKey leftKey;
   final LogicalKeyboardKey rightKey;
+
+  void jump() {
+    _setVelocityY();
+  }
 
   @override
   bool onKeyEvent(KeyEvent event, Set<LogicalKeyboardKey> keysPressed) {
     _setVelocityX(keysPressed);
-    _setVelocityY(keysPressed);
 
     return super.onKeyEvent(event, keysPressed);
   }
@@ -42,8 +40,7 @@ class KeyboardMovingBehavior extends Behavior<Boy>
     }
   }
 
-  void _setVelocityY(Set<LogicalKeyboardKey> keysPressed) {
-    if (!keysPressed.contains(jumpKey)) return;
+  void _setVelocityY() {
     if (parent.velocity.y != 0) return;
     if (parent.isTopTouching) return;
 
