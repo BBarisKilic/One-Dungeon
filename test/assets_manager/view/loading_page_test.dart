@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:one_dungeon/assets_manager/assets_manager.dart';
-import 'package:one_dungeon/injector.dart' as di;
+import 'package:one_dungeon/bootstrap.dart';
 
 import '../../helpers/helpers.dart';
 
@@ -18,15 +18,14 @@ void main() {
   setUpAll(() async {
     mockAssetsManagerCubit = _MockAssetsManagerCubit();
 
-    await di.initializeDependencies();
-    await di.injector.unregister<AssetsManagerCubit>();
+    await injectDependencies();
+    await getIt.unregister<AssetsManagerCubit>();
 
-    di.injector
-        .registerFactory<AssetsManagerCubit>(() => mockAssetsManagerCubit);
+    getIt.registerFactory<AssetsManagerCubit>(() => mockAssetsManagerCubit);
   });
 
   tearDownAll(() async {
-    await di.injector.reset();
+    await getIt.reset();
   });
 
   void arrangeState(AssetsManagerState state) {

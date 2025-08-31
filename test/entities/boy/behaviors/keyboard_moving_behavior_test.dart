@@ -30,7 +30,6 @@ void main() {
 
   setUp(() {
     keyboardMovingBehavior = KeyboardMovingBehavior(
-      jumpKey: LogicalKeyboardKey.arrowUp,
       leftKey: LogicalKeyboardKey.arrowLeft,
       rightKey: LogicalKeyboardKey.arrowRight,
     );
@@ -49,10 +48,6 @@ void main() {
   group('KeyboardMovingBehavior', () {
     group('initial', () {
       test('keys are correct', () {
-        expect(
-          keyboardMovingBehavior.jumpKey,
-          equals(LogicalKeyboardKey.arrowUp),
-        );
         expect(
           keyboardMovingBehavior.leftKey,
           equals(LogicalKeyboardKey.arrowLeft),

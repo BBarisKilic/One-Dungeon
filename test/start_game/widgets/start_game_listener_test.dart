@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:one_dungeon/about/about.dart';
+import 'package:one_dungeon/bootstrap.dart';
 import 'package:one_dungeon/game/game.dart';
 import 'package:one_dungeon/how_to_play/how_to_play.dart';
-import 'package:one_dungeon/injector.dart' as di;
 import 'package:one_dungeon/one_dungeon_audio/one_dungeon_audio.dart';
 import 'package:one_dungeon/sound/sound.dart';
 
@@ -13,13 +13,13 @@ void main() {
   TestWidgetsBinding.ensureInitialized();
 
   setUp(() async {
-    await di.initializeDependencies();
-    await di.injector.unregister<OneDungeonAudioPlayer>();
-    di.injector.registerSingleton<OneDungeonAudioPlayer>(TestAudioPlayer());
+    await injectDependencies();
+    await getIt.unregister<OneDungeonAudioPlayer>();
+    getIt.registerSingleton<OneDungeonAudioPlayer>(TestAudioPlayer());
   });
 
   tearDown(() async {
-    await di.injector.reset();
+    await getIt.reset();
   });
 
   group('StartGameListener', () {

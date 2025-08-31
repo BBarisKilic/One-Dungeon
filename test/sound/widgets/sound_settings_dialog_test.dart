@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:one_dungeon/injector.dart' as di;
+import 'package:one_dungeon/bootstrap.dart';
 import 'package:one_dungeon/one_dungeon_audio/one_dungeon_audio.dart';
 import 'package:one_dungeon/sound/sound.dart';
 import 'package:sharp_toggle_switch/sharp_toggle_switch.dart';
@@ -14,13 +14,13 @@ void main() {
 
   setUpAll(() async {
     audioPlayer = TestAudioPlayer();
-    await di.initializeDependencies();
-    await di.injector.unregister<OneDungeonAudioPlayer>();
-    di.injector.registerSingleton<OneDungeonAudioPlayer>(audioPlayer);
+    await injectDependencies();
+    await getIt.unregister<OneDungeonAudioPlayer>();
+    getIt.registerSingleton<OneDungeonAudioPlayer>(audioPlayer);
   });
 
   tearDownAll(() async {
-    await di.injector.reset();
+    await getIt.reset();
   });
 
   group('SoundSettingsDialog', () {

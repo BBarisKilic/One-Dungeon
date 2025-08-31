@@ -3,8 +3,8 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:one_dungeon/assets_manager/assets_manager.dart';
+import 'package:one_dungeon/bootstrap.dart';
 import 'package:one_dungeon/game/game.dart';
-import 'package:one_dungeon/injector.dart' as di;
 import 'package:one_dungeon/one_dungeon_audio/one_dungeon_audio.dart';
 
 import '../../helpers/helpers.dart';
@@ -18,18 +18,17 @@ void main() {
   late AssetsManagerCubit mockAssetsManagerCubit;
 
   setUpAll(() async {
-    await di.initializeDependencies();
-    await di.injector.unregister<OneDungeonAudioPlayer>();
-    di.injector.registerSingleton<OneDungeonAudioPlayer>(TestAudioPlayer());
+    await injectDependencies();
+    await getIt.unregister<OneDungeonAudioPlayer>();
+    getIt.registerSingleton<OneDungeonAudioPlayer>(TestAudioPlayer());
   });
 
   setUp(() async {
     mockAssetsManagerCubit = _MockAssetsManagerCubit();
 
-    await di.injector.unregister<AssetsManagerCubit>();
+    await getIt.unregister<AssetsManagerCubit>();
 
-    di.injector
-        .registerFactory<AssetsManagerCubit>(() => mockAssetsManagerCubit);
+    getIt.registerFactory<AssetsManagerCubit>(() => mockAssetsManagerCubit);
   });
 
   tearDown(() async {
@@ -37,7 +36,7 @@ void main() {
   });
 
   tearDownAll(() async {
-    await di.injector.reset();
+    await getIt.reset();
   });
 
   void arrangeState(AssetsManagerState state) {
@@ -80,7 +79,7 @@ void main() {
       await tester.pumpApp(const OneDungeonGamePage());
       await tester.pump();
 
-      final game = di.injector<OneDungeonGame>();
+      final game = getIt<OneDungeonGame>();
 
       game.focusNode.unfocus();
       await tester.pump();

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:one_dungeon/bootstrap.dart';
 import 'package:one_dungeon/game/game.dart';
-import 'package:one_dungeon/injector.dart' as di;
 import 'package:one_dungeon/one_dungeon_audio/one_dungeon_audio.dart';
 
 import '../../../helpers/helpers.dart';
@@ -13,13 +13,13 @@ void main() {
 
   setUpAll(() async {
     audioPlayer = TestAudioPlayer();
-    await di.initializeDependencies();
-    await di.injector.unregister<OneDungeonAudioPlayer>();
-    di.injector.registerSingleton<OneDungeonAudioPlayer>(audioPlayer);
+    await injectDependencies();
+    await getIt.unregister<OneDungeonAudioPlayer>();
+    getIt.registerSingleton<OneDungeonAudioPlayer>(audioPlayer);
   });
 
   tearDownAll(() async {
-    await di.injector.reset();
+    await getIt.reset();
   });
 
   group('GameOverMenuOverlay', () {
@@ -35,7 +35,7 @@ void main() {
     group('buttons', () {
       testWidgets('replay works as expected', (tester) async {
         await tester.runAsync(() async {
-          final game = di.injector<OneDungeonGame>();
+          final game = getIt<OneDungeonGame>();
 
           await tester.pumpApp(const GameOverMenuOverlay());
           await tester.pump();
@@ -52,7 +52,7 @@ void main() {
 
       testWidgets('exit to menu works as expected', (tester) async {
         await tester.runAsync(() async {
-          final game = di.injector<OneDungeonGame>();
+          final game = getIt<OneDungeonGame>();
 
           await tester.pumpApp(const GameOverMenuOverlay());
           await tester.pump();
