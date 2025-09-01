@@ -10,10 +10,10 @@ environment:
 dependencies:
   bloc: ^9.0.0
   equatable: ^2.0.7
-  flame: ^1.30.1
-  flame_audio: ^2.11.8
-  flame_behaviors: ^0.2.0
-  flame_tiled: ^2.0.1
+  flame: ^1.32.0
+  flame_audio: ^2.11.10
+  flame_behaviors: ^1.2.0
+  flame_tiled: ^3.0.7
   flutter:
     sdk: flutter
   flutter_bloc: ^9.1.1
@@ -31,9 +31,9 @@ dev_dependencies:
   flame_test: ^2.0.1
   flutter_test:
     sdk: flutter
-  freezed: ^3.0.6
+  freezed: ^3.2.0
   mocktail: ^1.0.4
-  very_good_analysis: ^8.0.0
+  very_good_analysis: ^9.0.0
 
 flutter:
   uses-material-design: true

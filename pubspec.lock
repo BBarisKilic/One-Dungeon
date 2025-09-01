@@ -317,26 +317,26 @@ packages:
     dependency: "direct main"
     description:
       name: flame
-      sha256: c50e2f39e118f5f6a6f3339ce6825ee803c7e5fada95ec50fb02eb27944e0e76
+      sha256: "86f63943349ef4d891fd1988ccd9fa3d27952eb8d9eb17b774a64e78cd62aaa6"
       url: "https://pub.dev"
     source: hosted
-    version: "1.30.1"
+    version: "1.32.0"
   flame_audio:
     dependency: "direct main"
     description:
       name: flame_audio
-      sha256: c03d1cfb952805a14b5a2793181009a1510ab28c8d0d69cd150cefd17053c489
+      sha256: "7c85f2975fcf8a385d47c225f63da97801ee150bc7ed7bf448f826403d5cef9f"
       url: "https://pub.dev"
     source: hosted
-    version: "2.11.8"
+    version: "2.11.10"
   flame_behaviors:
     dependency: "direct main"
     description:
       name: flame_behaviors
-      sha256: "64b6fba612388401d8380af2672eaabe3093108d19319eb12ecf11d9043db5b5"
+      sha256: d0ba1953b06e83978679df6f03c429b1102c4426b6590129113b0f7ede2ee75a
       url: "https://pub.dev"
     source: hosted
-    version: "0.2.0"
+    version: "1.2.0"
   flame_test:
     dependency: "direct dev"
     description:
@@ -349,10 +349,10 @@ packages:
     dependency: "direct main"
     description:
       name: flame_tiled
-      sha256: cc76bdb888ad9be15d8aacf6475dfa37271497e6968189c4857429ba6fc559fd
+      sha256: "36fef1d6b3caaa8b26f18cd20d1038d8d3409b8a9ea12de2c1295266c0d8e3c9"
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.1"
+    version: "3.0.7"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -901,10 +901,10 @@ packages:
     dependency: "direct dev"
     description:
       name: very_good_analysis
-      sha256: c529563be4cbba1137386f2720fb7ed69e942012a28b13398d8a5e3e6ef551a7
+      sha256: e479fbc0941009262343db308133e121bf8660c2c81d48dd8e952df7b7e1e382
       url: "https://pub.dev"
     source: hosted
-    version: "8.0.0"
+    version: "9.0.0"
   vm_service:
     dependency: transitive
     description:
@@ -978,5 +978,5 @@ packages:
     source: hosted
     version: "3.1.2"
 sdks:
-  dart: ">=3.0.0 <4.0.0"
-  flutter: ">=3.10.0"
+  dart: ">=3.8.0 <4.0.0"
+  flutter: ">=3.32.0"
