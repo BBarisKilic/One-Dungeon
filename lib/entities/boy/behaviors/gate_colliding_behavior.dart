@@ -5,11 +5,10 @@ import 'package:one_dungeon/entities/entities.dart';
 import 'package:one_dungeon/game/game.dart';
 
 class GateCollidingBehavior extends CollisionBehavior<Gate, Boy>
-    with HasGameRef<OneDungeonGame> {
+    with HasGameReference<OneDungeonGame> {
   @override
   void onCollisionStart(Set<Vector2> intersectionPoints, Gate other) {
-    gameRef.stopGame(GameStatus.win);
-
+    super.game.stopGame(GameStatus.win);
     super.onCollisionStart(intersectionPoints, other);
   }
 }

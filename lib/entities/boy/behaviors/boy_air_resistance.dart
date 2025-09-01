@@ -5,7 +5,7 @@ import 'package:one_dungeon/entities/entities.dart';
 import 'package:one_dungeon/game/game.dart';
 
 class BoyAirResistanceBehavior extends Behavior<Boy>
-    with HasGameRef<OneDungeonGame> {
+    with HasGameReference<OneDungeonGame> {
   @override
   void update(double dt) {
     _applyAirResistance(dt);
@@ -35,10 +35,10 @@ class BoyAirResistanceBehavior extends Behavior<Boy>
       parent.velocity.x = 0;
       parent.position.x = parent.size.x / 2;
     } else if (parent.position.x >
-        gameRef.cameraComponent.visibleWorldRect.width - parent.size.x / 2) {
+        super.game.cameraComponent.visibleWorldRect.width - parent.size.x / 2) {
       parent.velocity.x = 0;
       parent.position.x =
-          gameRef.cameraComponent.visibleWorldRect.width - parent.size.x / 2;
+          super.game.cameraComponent.visibleWorldRect.width - parent.size.x / 2;
     } else {
       parent.position.x += parent.velocity.x * dt;
     }

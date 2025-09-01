@@ -1,5 +1,3 @@
-// ignore_for_file: cascade_invocations
-
 import 'package:flame_test/flame_test.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

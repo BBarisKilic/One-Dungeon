@@ -10,7 +10,7 @@ import 'package:one_dungeon/game/game.dart';
 import 'package:one_dungeon/one_dungeon_audio/one_dungeon_audio.dart';
 import 'package:one_dungeon/start_game/start_game.dart';
 
-final getIt = GetIt.instance;
+final GetIt getIt = GetIt.instance;
 
 class AppBlocObserver extends BlocObserver {
   @override

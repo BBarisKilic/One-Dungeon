@@ -5,7 +5,7 @@ import 'package:one_dungeon/entities/entities.dart';
 import 'package:one_dungeon/game/game.dart';
 
 class KeyboardMovingBehavior extends Behavior<Boy>
-    with KeyboardHandler, HasGameRef<OneDungeonGame> {
+    with KeyboardHandler, HasGameReference<OneDungeonGame> {
   KeyboardMovingBehavior({required this.leftKey, required this.rightKey});
 
   final LogicalKeyboardKey leftKey;
@@ -31,8 +31,7 @@ class KeyboardMovingBehavior extends Behavior<Boy>
     } else if (keysPressed.contains(rightKey) &&
         !parent.isRightSideTouching &&
         parent.position.x <
-            gameRef.cameraComponent.visibleWorldRect.width -
-                parent.size.x / 2) {
+            game.cameraComponent.visibleWorldRect.width - parent.size.x / 2) {
       parent.isWalking = true;
       parent.velocity.x = 100;
     } else {

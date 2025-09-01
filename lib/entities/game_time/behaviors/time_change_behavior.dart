@@ -8,14 +8,14 @@ extension on Duration {
 }
 
 class TimeChangeBehavior extends Behavior<GameTime>
-    with HasGameRef<OneDungeonGame> {
+    with HasGameReference<OneDungeonGame> {
   @override
   void update(double dt) {
-    gameRef.time += dt;
+    game.time += dt;
 
-    final time = Duration(seconds: gameRef.time.round()).format();
+    final time = Duration(seconds: game.time.round()).format();
 
-    parent.textComponent.text = '${gameRef.l10n?.timeText} $time';
+    parent.textComponent.text = '${game.l10n?.timeText} $time';
 
     super.update(dt);
   }

@@ -4,7 +4,7 @@ import 'package:one_dungeon/constants/constants.dart';
 import 'package:one_dungeon/game/game.dart';
 
 class StarSprite extends SpriteAnimationComponent
-    with HasGameRef<OneDungeonGame> {
+    with HasGameReference<OneDungeonGame> {
   StarSprite({
     required Vector2 textureSize,
   })  : _textureSize = textureSize,

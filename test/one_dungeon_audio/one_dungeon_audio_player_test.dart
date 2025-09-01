@@ -1,10 +1,11 @@
-// ignore_for_file: cascade_invocations
-
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:one_dungeon/one_dungeon_audio/one_dungeon_audio.dart';
 
 import '../helpers/helpers.dart';
+
+/// Ignore warnings about cascade invocations in test file
+// ignore_for_file: cascade_invocations
 
 class _AudioPlayerTester {
   void playBackgroundAudio() {}

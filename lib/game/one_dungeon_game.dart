@@ -28,12 +28,12 @@ enum GameStatus {
 class OneDungeonGame extends FlameGame
     with HasKeyboardHandlerComponents, HasCollisionDetection, TapCallbacks {
   OneDungeonGame()
-    : time = 0,
-      score = 0,
-      collectedStars = 0,
-      focusNode = FocusNode(),
-      world = World(),
-      super();
+      : time = 0,
+        score = 0,
+        collectedStars = 0,
+        focusNode = FocusNode(),
+        world = World(),
+        super();
 
   /// Instance of [World].
   @override
@@ -42,7 +42,7 @@ class OneDungeonGame extends FlameGame
   /// Instance of [FocusNode].
   final FocusNode focusNode;
 
-  late final Boy boy;
+  late Boy boy;
 
   /// Instance of [CameraComponent].
   late final CameraComponent cameraComponent;
@@ -74,7 +74,7 @@ class OneDungeonGame extends FlameGame
   Future<void>? onLoad() async {
     audioPlayer = getIt<OneDungeonAudioPlayer>();
 
-    FlameAudio.bgm.initialize();
+    await FlameAudio.bgm.initialize();
 
     final map = await _createMap();
     await _createCameraAndWorld(map: map);
