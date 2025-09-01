@@ -2,7 +2,7 @@ import 'package:flame/extensions.dart';
 import 'package:flame_behaviors/flame_behaviors.dart';
 import 'package:one_dungeon/entities/entities.dart';
 
-class ElevatorCollidingBehavior extends CollisionBehavior<Elevator, Boy> {
+class BoyElevatorCollisionBehavior extends CollisionBehavior<Elevator, Boy> {
   @override
   void onCollision(Set<Vector2> intersectionPoints, Elevator other) {
     final pointOne = intersectionPoints.first;

@@ -16,10 +16,10 @@ class _MockGate extends Mock implements Gate {}
 void main() {
   TestWidgetsBinding.ensureInitialized();
 
-  late GateCollidingBehavior gateCollidingBehavior;
+  late BoyGateCollisionBehavior gateCollidingBehavior;
 
   setUp(() {
-    gateCollidingBehavior = GateCollidingBehavior();
+    gateCollidingBehavior = BoyGateCollisionBehavior();
   });
 
   setUpAll(() async {

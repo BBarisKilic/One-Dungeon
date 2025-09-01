@@ -10,10 +10,10 @@ import '../../../helpers/helpers.dart';
 void main() {
   TestWidgetsBinding.ensureInitialized();
 
-  late ElevatorCollidingBehavior elevatorCollidingBehavior;
+  late BoyElevatorCollisionBehavior elevatorCollidingBehavior;
 
   setUp(() {
-    elevatorCollidingBehavior = ElevatorCollidingBehavior();
+    elevatorCollidingBehavior = BoyElevatorCollisionBehavior();
   });
 
   setUpAll(() async {

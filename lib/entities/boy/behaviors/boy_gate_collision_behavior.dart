@@ -4,15 +4,11 @@ import 'package:one_dungeon/components/components.dart';
 import 'package:one_dungeon/entities/entities.dart';
 import 'package:one_dungeon/game/game.dart';
 
-class DangerCollidingBehavior extends CollisionBehavior<Danger, Boy>
+class BoyGateCollisionBehavior extends CollisionBehavior<Gate, Boy>
     with HasGameReference<OneDungeonGame> {
   @override
-  void onCollisionStart(Set<Vector2> intersectionPoints, Danger other) {
-    parent.velocity.x = 0;
-    parent.velocity.y = -100;
-
-    super.game.stopGame(GameStatus.lose);
-
+  void onCollisionStart(Set<Vector2> intersectionPoints, Gate other) {
+    super.game.stopGame(GameStatus.win);
     super.onCollisionStart(intersectionPoints, other);
   }
 }

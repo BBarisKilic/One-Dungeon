@@ -12,10 +12,10 @@ import '../../../helpers/helpers.dart';
 void main() {
   TestWidgetsBinding.ensureInitialized();
 
-  late StarCollidingBehavior starCollidingBehavior;
+  late BoyStarCollisionBehavior starCollidingBehavior;
 
   setUp(() {
-    starCollidingBehavior = StarCollidingBehavior();
+    starCollidingBehavior = BoyStarCollisionBehavior();
   });
 
   setUpAll(() async {
@@ -33,7 +33,7 @@ void main() {
       'collected stars increases when touches',
       TestGame.new,
       (game) async {
-        final star = Star(center: Vector2(10, 10));
+        final star = StarEntity(center: Vector2(10, 10));
         final boy = Boy.test(
           velocity: Vector2(10, 10),
           behavior: starCollidingBehavior,
@@ -62,7 +62,7 @@ void main() {
       'stars get removed from the component tree when touches',
       TestGame.new,
       (game) async {
-        final star = Star(center: Vector2(10, 10));
+        final star = StarEntity(center: Vector2(10, 10));
         final boy = Boy.test(
           velocity: Vector2(10, 10),
           behavior: starCollidingBehavior,

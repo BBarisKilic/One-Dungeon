@@ -42,13 +42,13 @@ class OneDungeonGame extends FlameGame
   /// Instance of [FocusNode].
   final FocusNode focusNode;
 
-  late Boy boy;
-
   /// Instance of [CameraComponent].
   late final CameraComponent cameraComponent;
 
   /// Instance of [OneDungeonAudioPlayer].
   late final OneDungeonAudioPlayer audioPlayer;
+
+  late Boy boy;
 
   /// Instance of [AppLocalizations].
   AppLocalizations? l10n;
@@ -202,7 +202,7 @@ class OneDungeonGame extends FlameGame
 
     final loadables = [
       _addStars(),
-      Future.value(world.add(GameTime())),
+      Future.value(world.add(TimeEntity())),
       Future.value(world.add(Elevator())),
       Future.value(world.add(boy)),
     ];

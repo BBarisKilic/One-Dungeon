@@ -3,8 +3,8 @@ import 'package:flame_behaviors/flame_behaviors.dart';
 import 'package:flutter/material.dart';
 import 'package:one_dungeon/entities/entities.dart';
 
-class GameTime extends PositionedEntity {
-  GameTime({
+class TimeEntity extends PositionedEntity {
+  TimeEntity({
     Vector2? center,
   }) : this._(
           center: center ?? Vector2(60, 600),
@@ -21,7 +21,7 @@ class GameTime extends PositionedEntity {
           behaviors: [TimeChangeBehavior()],
         );
 
-  GameTime._({
+  TimeEntity._({
     required Vector2 center,
     required this.textComponent,
     required Iterable<Behavior> behaviors,

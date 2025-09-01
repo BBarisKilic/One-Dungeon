@@ -14,10 +14,10 @@ class _MockGround extends Mock implements Ground {}
 void main() {
   TestWidgetsBinding.ensureInitialized();
 
-  late GroundCollidingBehavior groundCollidingBehavior;
+  late BoyGroundCollisionBehavior groundCollidingBehavior;
 
   setUp(() {
-    groundCollidingBehavior = GroundCollidingBehavior();
+    groundCollidingBehavior = BoyGroundCollisionBehavior();
   });
 
   setUpAll(() async {

@@ -4,9 +4,9 @@ import 'package:flutter/services.dart';
 import 'package:one_dungeon/entities/entities.dart';
 import 'package:one_dungeon/game/game.dart';
 
-class KeyboardMovingBehavior extends Behavior<Boy>
+class BoyMovingBehavior extends Behavior<Boy>
     with KeyboardHandler, HasGameReference<OneDungeonGame> {
-  KeyboardMovingBehavior({required this.leftKey, required this.rightKey});
+  BoyMovingBehavior({required this.leftKey, required this.rightKey});
 
   final LogicalKeyboardKey leftKey;
   final LogicalKeyboardKey rightKey;

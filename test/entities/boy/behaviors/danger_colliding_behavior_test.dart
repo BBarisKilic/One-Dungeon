@@ -16,10 +16,10 @@ class _MockDanger extends Mock implements Danger {}
 void main() {
   TestWidgetsBinding.ensureInitialized();
 
-  late DangerCollidingBehavior dangerCollidingBehavior;
+  late BoyDangerCollisionBehavior dangerCollidingBehavior;
 
   setUp(() {
-    dangerCollidingBehavior = DangerCollidingBehavior();
+    dangerCollidingBehavior = BoyDangerCollisionBehavior();
   });
 
   setUpAll(() async {

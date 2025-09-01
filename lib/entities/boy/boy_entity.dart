@@ -16,12 +16,12 @@ class Boy extends PositionedEntity with HasGameReference<OneDungeonGame> {
           behaviors: [
             BoyAirResistanceBehavior(),
             BoyGravityBehavior(),
-            DangerCollidingBehavior(),
-            ElevatorCollidingBehavior(),
-            GateCollidingBehavior(),
-            GroundCollidingBehavior(),
-            KeyboardMovingBehavior(leftKey: leftKey, rightKey: rightKey),
-            StarCollidingBehavior(),
+            BoyDangerCollisionBehavior(),
+            BoyElevatorCollisionBehavior(),
+            BoyGateCollisionBehavior(),
+            BoyGroundCollisionBehavior(),
+            BoyMovingBehavior(leftKey: leftKey, rightKey: rightKey),
+            BoyStarCollisionBehavior(),
           ],
           boySprite: BoySprite(textureSize: _boySize),
         );
@@ -77,7 +77,7 @@ class Boy extends PositionedEntity with HasGameReference<OneDungeonGame> {
   bool isWalking = false;
   bool isUsingElevator = false;
 
-  void jump() => findBehavior<KeyboardMovingBehavior>().jump();
+  void jump() => findBehavior<BoyMovingBehavior>().jump();
 
   void updateState({required BoyState state}) =>
       _boySprite.updateState(state: state);

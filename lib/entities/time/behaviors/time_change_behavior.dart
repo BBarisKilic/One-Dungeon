@@ -7,7 +7,7 @@ extension on Duration {
   String format() => '$this'.split('.')[0].padLeft(8, '0');
 }
 
-class TimeChangeBehavior extends Behavior<GameTime>
+class TimeChangeBehavior extends Behavior<TimeEntity>
     with HasGameReference<OneDungeonGame> {
   @override
   void update(double dt) {

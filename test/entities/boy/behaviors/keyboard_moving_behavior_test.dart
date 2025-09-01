@@ -24,10 +24,10 @@ class _MockKeyEvent extends Mock
 void main() {
   TestWidgetsBinding.ensureInitialized();
 
-  late KeyboardMovingBehavior keyboardMovingBehavior;
+  late BoyMovingBehavior keyboardMovingBehavior;
 
   setUp(() {
-    keyboardMovingBehavior = KeyboardMovingBehavior(
+    keyboardMovingBehavior = BoyMovingBehavior(
       leftKey: LogicalKeyboardKey.arrowLeft,
       rightKey: LogicalKeyboardKey.arrowRight,
     );

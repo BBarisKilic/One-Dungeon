@@ -4,12 +4,12 @@ import 'package:one_dungeon/entities/entities.dart';
 import 'package:one_dungeon/game/game.dart';
 import 'package:one_dungeon/one_dungeon_audio/one_dungeon_audio.dart';
 
-class StarCollidingBehavior extends CollisionBehavior<Star, Boy>
+class BoyStarCollisionBehavior extends CollisionBehavior<StarEntity, Boy>
     with HasGameReference<OneDungeonGame> {
   @override
   Future<void> onCollisionStart(
     Set<Vector2> intersectionPoints,
-    Star other,
+    StarEntity other,
   ) async {
     super.game.world.remove(other);
     super.game.collectedStars++;

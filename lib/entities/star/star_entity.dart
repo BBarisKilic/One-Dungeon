@@ -3,8 +3,8 @@ import 'package:flame/components.dart';
 import 'package:flame_behaviors/flame_behaviors.dart';
 import 'package:one_dungeon/entities/entities.dart';
 
-class Star extends PositionedEntity {
-  Star({
+class StarEntity extends PositionedEntity {
+  StarEntity({
     required Vector2 center,
   }) : this._(
           center: center,
@@ -12,7 +12,7 @@ class Star extends PositionedEntity {
           starSprite: StarSprite(textureSize: _starSize),
         );
 
-  Star._({
+  StarEntity._({
     required Vector2 center,
     required Iterable<Behavior> behaviors,
     required StarSprite starSprite,
