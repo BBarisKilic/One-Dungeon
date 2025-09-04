@@ -10,8 +10,10 @@ import 'package:one_dungeon/game/game.dart';
 import 'package:one_dungeon/one_dungeon_audio/one_dungeon_audio.dart';
 import 'package:one_dungeon/start_game/start_game.dart';
 
+/// An instance of GetIt, used for dependency injection throughout the app.
 final GetIt getIt = GetIt.instance;
 
+/// A custom [BlocObserver] that logs state changes and errors.
 class AppBlocObserver extends BlocObserver {
   @override
   void onChange(BlocBase<dynamic> bloc, Change<dynamic> change) {
@@ -26,6 +28,8 @@ class AppBlocObserver extends BlocObserver {
   }
 }
 
+/// Bootstraps the application by initializing necessary services and running
+/// the provided [builder] function to create the root widget.
 Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
   FlutterError.onError = (details) {
     log(details.exceptionAsString(), stackTrace: details.stack);
@@ -46,6 +50,7 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
   runApp(await builder());
 }
 
+/// Injects dependencies into the GetIt service locator.
 Future<void> injectDependencies() async {
   getIt
     ..registerSingleton<OneDungeonAudioPlayer>(OneDungeonAudioPlayer())

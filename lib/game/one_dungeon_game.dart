@@ -106,7 +106,7 @@ class OneDungeonGame extends FlameGame
   }
 
   Future<TiledComponent> _createMap() async {
-    final map = await TiledComponent.load(GameMaps.kLeveOne, Vector2.all(16));
+    final map = await TiledComponent.load(GameMaps.leveOne, Vector2.all(16));
 
     await Future.wait([
       Future.value(world.add(map)),
@@ -130,7 +130,7 @@ class OneDungeonGame extends FlameGame
 
   Future<void> _addGrounds(TiledComponent map) async {
     final obstacleGroup = map.tileMap.getLayer<ObjectGroup>(
-      GameMapLayers.kGroundLayer,
+      GameMapLayers.groundLayer,
     );
     if (obstacleGroup == null) return;
 
@@ -153,7 +153,7 @@ class OneDungeonGame extends FlameGame
 
   Future<void> _addGates(TiledComponent map) async {
     final obstacleGroup = map.tileMap.getLayer<ObjectGroup>(
-      GameMapLayers.kGateLayer,
+      GameMapLayers.gateLayer,
     );
     if (obstacleGroup == null) return;
 
@@ -176,7 +176,7 @@ class OneDungeonGame extends FlameGame
 
   Future<void> _addTraps(TiledComponent map) async {
     final obstacleGroup = map.tileMap.getLayer<ObjectGroup>(
-      GameMapLayers.kTrapLayer,
+      GameMapLayers.trapLayer,
     );
     if (obstacleGroup == null) return;
 

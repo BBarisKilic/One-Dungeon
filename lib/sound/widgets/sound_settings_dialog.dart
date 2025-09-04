@@ -16,24 +16,24 @@ class SoundSettingsDialog extends StatelessWidget {
 
     return Center(
       child: SizedBox(
-        width: GameLayout.kGeneralWidth,
+        width: GameLayout.generalWidth,
         child: Card(
-          color: GameColors.kDialogBackgroundColor,
+          color: GameColors.dialogBackgroundColor,
           shape: const RoundedRectangleBorder(),
           child: Padding(
             padding: const EdgeInsets.symmetric(
-              horizontal: GameLayout.kButtonPadding,
+              horizontal: GameLayout.buttonPadding,
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               mainAxisSize: MainAxisSize.min,
               children: [
-                const SizedBox(height: GameLayout.kVerticalSpace),
+                const SizedBox(height: GameLayout.verticalSpace),
                 Text(
                   l10n.soundText,
                   style: Theme.of(context).textTheme.titleMedium,
                 ),
-                const SizedBox(height: GameLayout.kLongVerticalSpace),
+                const SizedBox(height: GameLayout.longVerticalSpace),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -54,7 +54,7 @@ class SoundSettingsDialog extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: GameLayout.kVerticalSpace),
+                const SizedBox(height: GameLayout.verticalSpace),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -75,12 +75,12 @@ class SoundSettingsDialog extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: GameLayout.kVerticalSpace),
+                const SizedBox(height: GameLayout.verticalSpace),
                 MenuButton(
                   onPressed: Navigator.of(context).pop,
                   text: l10n.backText,
                 ),
-                const SizedBox(height: GameLayout.kVerticalSpace),
+                const SizedBox(height: GameLayout.verticalSpace),
               ],
             ),
           ),

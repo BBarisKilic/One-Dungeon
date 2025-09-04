@@ -18,9 +18,9 @@ class BoySprite extends SpriteAnimationGroupComponent<BoyState>
 
   @override
   Future<void>? onLoad() async {
-    final idleImage = Flame.images.fromCache(GameAssets.kBoyIdleSprite);
-    final runImage = Flame.images.fromCache(GameAssets.kBoyRunSprite);
-    final jumpImage = Flame.images.fromCache(GameAssets.kBoyJumpSprite);
+    final idleImage = Flame.images.fromCache(GameAssets.boyIdleSprite);
+    final runImage = Flame.images.fromCache(GameAssets.boyRunSprite);
+    final jumpImage = Flame.images.fromCache(GameAssets.boyJumpSprite);
 
     final idle = SpriteAnimation.fromFrameData(
       idleImage,

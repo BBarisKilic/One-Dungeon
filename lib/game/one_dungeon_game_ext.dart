@@ -7,11 +7,11 @@ import 'package:one_dungeon/game/game.dart';
 extension OneDungeonGameExt on OneDungeonGame {
   List<Future<Image> Function()> preLoadAssets() {
     return [
-      () async => images.load(GameAssets.kBoyIdleSprite),
-      () async => images.load(GameAssets.kBoyRunSprite),
-      () async => images.load(GameAssets.kBoyJumpSprite),
-      () async => images.load(GameAssets.kElevatorImage),
-      () async => images.load(GameAssets.kStarSprite),
+      () async => images.load(GameAssets.boyIdleSprite),
+      () async => images.load(GameAssets.boyRunSprite),
+      () async => images.load(GameAssets.boyJumpSprite),
+      () async => images.load(GameAssets.elevatorImage),
+      () async => images.load(GameAssets.starSprite),
     ];
   }
 

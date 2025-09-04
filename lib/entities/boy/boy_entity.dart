@@ -6,7 +6,11 @@ import 'package:flutter/services.dart';
 import 'package:one_dungeon/entities/entities.dart';
 import 'package:one_dungeon/game/game.dart';
 
+/// {@template boy}
+/// The main character controlled by the player.
+/// {@endtemplate}
 class Boy extends PositionedEntity with HasGameReference<OneDungeonGame> {
+  /// {@macro boy}
   Boy({
     required LogicalKeyboardKey leftKey,
     required LogicalKeyboardKey rightKey,
@@ -20,12 +24,13 @@ class Boy extends PositionedEntity with HasGameReference<OneDungeonGame> {
             BoyElevatorCollisionBehavior(),
             BoyGateCollisionBehavior(),
             BoyGroundCollisionBehavior(),
-            BoyMovingBehavior(leftKey: leftKey, rightKey: rightKey),
+            BoyMovementBehavior(leftKey: leftKey, rightKey: rightKey),
             BoyStarCollisionBehavior(),
           ],
           boySprite: BoySprite(textureSize: _boySize),
         );
 
+  /// A private constructor.
   Boy._({
     required Vector2 center,
     required Iterable<Behavior> behaviors,
@@ -44,6 +49,7 @@ class Boy extends PositionedEntity with HasGameReference<OneDungeonGame> {
           children: [boySprite],
         );
 
+  /// Creates a boy entity controlled by the 'WASD' keys.
   Boy.wasd({Vector2? center})
       : this(
           center: center,
@@ -51,6 +57,7 @@ class Boy extends PositionedEntity with HasGameReference<OneDungeonGame> {
           rightKey: LogicalKeyboardKey.keyD,
         );
 
+  /// Creates a boy entity controlled by the arrow keys.
   Boy.arrows({Vector2? center})
       : this(
           center: center,
@@ -58,6 +65,7 @@ class Boy extends PositionedEntity with HasGameReference<OneDungeonGame> {
           rightKey: LogicalKeyboardKey.arrowRight,
         );
 
+  /// A constructor used for testing purposes.
   @visibleForTesting
   Boy.test({Vector2? velocity, Vector2? center, Behavior? behavior})
       : this._(
@@ -68,17 +76,35 @@ class Boy extends PositionedEntity with HasGameReference<OneDungeonGame> {
         );
 
   final BoySprite _boySprite;
+
+  /// The current velocity of boy.
   final Vector2 velocity;
+
+  /// Indicates whether the boy is touching the ground from the bottom.
   bool isBottomTouching = false;
+
+  /// Indicates whether the boy is touching an obstacle from the top.
   bool isTopTouching = false;
+
+  /// Indicates whether the boy is touching an obstacle from the left side.
   bool isLeftSideTouching = false;
+
+  /// Indicates whether the boy is touching an obstacle from the right side.
   bool isRightSideTouching = false;
+
+  /// Indicates whether the boy is facing left (true) or right (false).
   bool isFlipped = false;
+
+  /// Indicates whether the boy is currently walking.
   bool isWalking = false;
+
+  /// Indicates whether the boy is using an elevator.
   bool isUsingElevator = false;
 
-  void jump() => findBehavior<BoyMovingBehavior>().jump();
+  /// Makes jump action.
+  void jump() => findBehavior<BoyMovementBehavior>().jump();
 
+  /// Updates boy's state.
   void updateState({required BoyState state}) =>
       _boySprite.updateState(state: state);
 

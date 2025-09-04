@@ -4,13 +4,22 @@ import 'package:flutter/services.dart';
 import 'package:one_dungeon/entities/entities.dart';
 import 'package:one_dungeon/game/game.dart';
 
-class BoyMovingBehavior extends Behavior<Boy>
+/// {@template boy_movement_behavior}
+/// A behavior that handles the movement logic for the boy entity, including
+/// walking and jumping actions.
+/// {@endtemplate}
+class BoyMovementBehavior extends Behavior<Boy>
     with KeyboardHandler, HasGameReference<OneDungeonGame> {
-  BoyMovingBehavior({required this.leftKey, required this.rightKey});
+  /// {@macro boy_movement_behavior}
+  BoyMovementBehavior({required this.leftKey, required this.rightKey});
 
+  /// The key used for moving left.
   final LogicalKeyboardKey leftKey;
+
+  /// The key used for moving right.
   final LogicalKeyboardKey rightKey;
 
+  /// Makes jump action.
   void jump() {
     _setVelocityY();
   }

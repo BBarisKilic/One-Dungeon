@@ -2,7 +2,13 @@ import 'package:flame/extensions.dart';
 import 'package:flame_behaviors/flame_behaviors.dart';
 import 'package:one_dungeon/entities/entities.dart';
 
+/// {@template boy_elevator_collision_behavior}
+/// A behavior that handles collision between boy and elevator entities.
+/// {@endtemplate}
 class BoyElevatorCollisionBehavior extends CollisionBehavior<Elevator, Boy> {
+  /// {@macro boy_elevator_collision_behavior}
+  BoyElevatorCollisionBehavior();
+
   @override
   void onCollision(Set<Vector2> intersectionPoints, Elevator other) {
     final pointOne = intersectionPoints.first;

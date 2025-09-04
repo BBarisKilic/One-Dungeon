@@ -6,14 +6,14 @@ extension OneDungeonAudioPlayerX on OneDungeonAudioPlayer {
     PreCacheSingleAudio preCacheSingleAudio,
   ) {
     return [
-      () => preCacheSingleAudio(GameAssets.kBackgroudMusic),
-      () => preCacheSingleAudio(GameAssets.kDescendingSfx),
-      () => preCacheSingleAudio(GameAssets.kJumpSfx),
-      () => preCacheSingleAudio(GameAssets.kLandingSfx),
-      () => preCacheSingleAudio(GameAssets.kPickUpStarSfx),
-      () => preCacheSingleAudio(GameAssets.kPickUpSfx),
-      () => preCacheSingleAudio(GameAssets.kSelectSfx),
-      () => preCacheSingleAudio(GameAssets.kSuccessSfx),
+      () => preCacheSingleAudio(GameAssets.backgroundMusic),
+      () => preCacheSingleAudio(GameAssets.descendingSfx),
+      () => preCacheSingleAudio(GameAssets.jumpSfx),
+      () => preCacheSingleAudio(GameAssets.landingSfx),
+      () => preCacheSingleAudio(GameAssets.pickUpStarSfx),
+      () => preCacheSingleAudio(GameAssets.pickUpSfx),
+      () => preCacheSingleAudio(GameAssets.selectSfx),
+      () => preCacheSingleAudio(GameAssets.successSfx),
     ];
   }
 }

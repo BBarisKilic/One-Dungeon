@@ -116,28 +116,28 @@ class OneDungeonAudioPlayer {
     switch (audio) {
       case OneDungeonAudio.backgroundMusic:
         if (!isBackgroundMusicActive) return;
-        return _playBackgroundAudio(GameAssets.kBackgroudMusic, volume: 0.5);
+        return _playBackgroundAudio(GameAssets.backgroundMusic, volume: 0.5);
       case OneDungeonAudio.descending:
         if (!isSfxActive) return;
-        return _playSingleAudio(GameAssets.kDescendingSfx);
+        return _playSingleAudio(GameAssets.descendingSfx);
       case OneDungeonAudio.jump:
         if (!isSfxActive) return;
-        return _playSingleAudio(GameAssets.kJumpSfx);
+        return _playSingleAudio(GameAssets.jumpSfx);
       case OneDungeonAudio.landing:
         if (!isSfxActive) return;
-        return _playSingleAudio(GameAssets.kLandingSfx);
+        return _playSingleAudio(GameAssets.landingSfx);
       case OneDungeonAudio.pickUp:
         if (!isSfxActive) return;
-        return _playSingleAudio(GameAssets.kPickUpSfx);
+        return _playSingleAudio(GameAssets.pickUpSfx);
       case OneDungeonAudio.pickUpStar:
         if (!isSfxActive) return;
-        return _playSingleAudio(GameAssets.kPickUpStarSfx);
+        return _playSingleAudio(GameAssets.pickUpStarSfx);
       case OneDungeonAudio.select:
         if (!isSfxActive) return;
-        return _playSingleAudio(GameAssets.kSelectSfx);
+        return _playSingleAudio(GameAssets.selectSfx);
       case OneDungeonAudio.success:
         if (!isSfxActive) return;
-        return _playSingleAudio(GameAssets.kSuccessSfx);
+        return _playSingleAudio(GameAssets.successSfx);
     }
   }
 

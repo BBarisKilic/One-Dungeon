@@ -14,35 +14,35 @@ class GameOverMenuOverlay extends StatelessWidget {
 
     return Center(
       child: SizedBox(
-        width: GameLayout.kGeneralWidth,
+        width: GameLayout.generalWidth,
         child: Card(
-          color: GameColors.kMenuBackgroundColor,
+          color: GameColors.menuBackgroundColor,
           shape: const RoundedRectangleBorder(),
           child: Padding(
             padding: const EdgeInsets.symmetric(
-              horizontal: GameLayout.kButtonPadding,
+              horizontal: GameLayout.buttonPadding,
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               mainAxisSize: MainAxisSize.min,
               children: [
-                const SizedBox(height: GameLayout.kVerticalSpace),
+                const SizedBox(height: GameLayout.verticalSpace),
                 Text(
                   l10n.gameOverText,
                   style: Theme.of(context).textTheme.titleMedium,
                 ),
-                const SizedBox(height: GameLayout.kLongVerticalSpace),
+                const SizedBox(height: GameLayout.longVerticalSpace),
                 Text(
                   '${l10n.yourScoreText} ${game.score}',
                   style: Theme.of(context).textTheme.bodySmall,
                 ),
-                const SizedBox(height: GameLayout.kLongVerticalSpace),
+                const SizedBox(height: GameLayout.longVerticalSpace),
                 MenuButton(
                   key: const Key('menuButton1'),
                   onPressed: game.restartGame,
                   text: l10n.replayText,
                 ),
-                const SizedBox(height: GameLayout.kVerticalSpace),
+                const SizedBox(height: GameLayout.verticalSpace),
                 MenuButton(
                   key: const Key('menuButton2'),
                   onPressed: () {
@@ -51,7 +51,7 @@ class GameOverMenuOverlay extends StatelessWidget {
                   },
                   text: l10n.exitToMenuText,
                 ),
-                const SizedBox(height: GameLayout.kVerticalSpace),
+                const SizedBox(height: GameLayout.verticalSpace),
               ],
             ),
           ),

@@ -8,7 +8,11 @@ import 'package:one_dungeon/game/game.dart';
 import 'package:one_dungeon/l10n/l10n.dart';
 import 'package:one_dungeon/start_game/start_game.dart';
 
+/// {@template app}
+/// The root widget of the game.
+/// {@endtemplate}
 class App extends StatelessWidget {
+  /// {@macro app}
   const App({super.key});
 
   @override
@@ -24,11 +28,11 @@ class App extends StatelessWidget {
           fontFamily: 'PressStart2P',
           elevatedButtonTheme: ElevatedButtonThemeData(
             style: ElevatedButton.styleFrom(
-              backgroundColor: GameColors.kButtonColor,
+              backgroundColor: GameColors.buttonColor,
               shape: const RoundedRectangleBorder(),
               minimumSize: const Size(double.infinity, 0),
               padding: const EdgeInsets.symmetric(
-                vertical: GameLayout.kButtonPadding,
+                vertical: GameLayout.buttonPadding,
               ),
             ),
           ),

@@ -9,7 +9,7 @@ class ElevatorSprite extends SpriteComponent {
 
   @override
   FutureOr<void>? onLoad() {
-    sprite = Sprite(Flame.images.fromCache(GameAssets.kElevatorImage));
+    sprite = Sprite(Flame.images.fromCache(GameAssets.elevatorImage));
     return super.onLoad();
   }
 }

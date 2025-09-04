@@ -4,8 +4,14 @@ import 'package:one_dungeon/entities/entities.dart';
 import 'package:one_dungeon/game/game.dart';
 import 'package:one_dungeon/one_dungeon_audio/one_dungeon_audio.dart';
 
+/// {@template boy_star_collision_behavior}
+/// A behavior that handles collision between boy and star entities.
+/// {@endtemplate}
 class BoyStarCollisionBehavior extends CollisionBehavior<StarEntity, Boy>
     with HasGameReference<OneDungeonGame> {
+  /// {@macro boy_star_collision_behavior}
+  BoyStarCollisionBehavior();
+
   @override
   Future<void> onCollisionStart(
     Set<Vector2> intersectionPoints,

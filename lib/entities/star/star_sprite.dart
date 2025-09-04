@@ -14,7 +14,7 @@ class StarSprite extends SpriteAnimationComponent
 
   @override
   Future<void>? onLoad() async {
-    final starImage = Flame.images.fromCache(GameAssets.kStarSprite);
+    final starImage = Flame.images.fromCache(GameAssets.starSprite);
 
     animation = SpriteAnimation.fromFrameData(
       starImage,

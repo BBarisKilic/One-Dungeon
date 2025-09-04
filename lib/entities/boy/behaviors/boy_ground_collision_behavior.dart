@@ -3,7 +3,13 @@ import 'package:flame_behaviors/flame_behaviors.dart';
 import 'package:one_dungeon/components/components.dart';
 import 'package:one_dungeon/entities/entities.dart';
 
+/// {@template boy_ground_collision_behavior}
+/// A behavior that handles collision between boy and ground entities.
+/// {@endtemplate}
 class BoyGroundCollisionBehavior extends CollisionBehavior<Ground, Boy> {
+  /// {@macro boy_ground_collision_behavior}
+  BoyGroundCollisionBehavior();
+
   @override
   void onCollision(Set<Vector2> intersectionPoints, Ground other) {
     final pointOne = intersectionPoints.first;

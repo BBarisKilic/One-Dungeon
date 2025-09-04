@@ -106,7 +106,7 @@ void main() {
           final boy = game.world.children.whereType<Boy>();
 
           expect(
-            boy.first.hasBehavior<BoyMovingBehavior>(),
+            boy.first.hasBehavior<BoyMovementBehavior>(),
             isTrue,
           );
         },

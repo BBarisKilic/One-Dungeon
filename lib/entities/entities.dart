@@ -1,7 +1,7 @@
 export 'boy/behaviors/behaviors.dart';
 export 'boy/boy_entity.dart';
 export 'boy/boy_sprite.dart';
-export 'boy/states/boy_state.dart';
+export 'boy/states/states.dart';
 export 'elevator/behaviors/behaviors.dart';
 export 'elevator/elevator_entity.dart';
 export 'elevator/elevator_sprite.dart';
