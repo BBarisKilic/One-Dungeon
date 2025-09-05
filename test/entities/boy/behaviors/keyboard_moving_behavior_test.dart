@@ -61,7 +61,7 @@ void main() {
       'jumps as expected',
       TestGame.new,
       (game) async {
-        final boy = Boy.test(
+        final boy = BoyEntity.test(
           behavior: keyboardMovingBehavior,
         );
 
@@ -84,7 +84,7 @@ void main() {
       'moves right as expected',
       TestGame.new,
       (game) async {
-        final boy = Boy.test(
+        final boy = BoyEntity.test(
           behavior: keyboardMovingBehavior,
         );
 
@@ -107,7 +107,7 @@ void main() {
       'moves left as expected',
       TestGame.new,
       (game) async {
-        final boy = Boy.test(
+        final boy = BoyEntity.test(
           behavior: keyboardMovingBehavior,
         );
 
@@ -130,7 +130,7 @@ void main() {
       'flips as expected',
       TestGame.new,
       (game) async {
-        final boy = Boy.test(
+        final boy = BoyEntity.test(
           behavior: keyboardMovingBehavior,
         );
 
@@ -157,7 +157,7 @@ void main() {
     testWithGame<TestGame>('motionless as expected', TestGame.new,
         (game) async {
       final center = Vector2(0, 0);
-      final boy = Boy.test(
+      final boy = BoyEntity.test(
         behavior: keyboardMovingBehavior,
         center: center,
       );
@@ -180,7 +180,7 @@ void main() {
       TestGame.new,
       (game) async {
         final center = Vector2(100, 100);
-        final boy = Boy.test(
+        final boy = BoyEntity.test(
           behavior: keyboardMovingBehavior,
           center: center,
         );

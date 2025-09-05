@@ -6,7 +6,7 @@ import 'package:one_dungeon/entities/entities.dart';
 /// {@template boy_ground_collision_behavior}
 /// A behavior that handles collision between boy and ground entities.
 /// {@endtemplate}
-class BoyGroundCollisionBehavior extends CollisionBehavior<Ground, Boy> {
+class BoyGroundCollisionBehavior extends CollisionBehavior<Ground, BoyEntity> {
   /// {@macro boy_ground_collision_behavior}
   BoyGroundCollisionBehavior();
 

@@ -10,10 +10,10 @@ import '../../../helpers/helpers.dart';
 void main() {
   TestWidgetsBinding.ensureInitialized();
 
-  late ElevatorMovingBehavior elevatorMovingBehavior;
+  late ElevatorMovementBehavior elevatorMovingBehavior;
 
   setUp(() {
-    elevatorMovingBehavior = ElevatorMovingBehavior();
+    elevatorMovingBehavior = ElevatorMovementBehavior();
   });
 
   setUpAll(() async {
@@ -32,7 +32,7 @@ void main() {
       TestGame.new,
       (game) async {
         final center = Vector2(0, 350);
-        final elevator = Elevator.test(
+        final elevator = ElevatorEntity.test(
           center: center,
           behavior: elevatorMovingBehavior,
         );
@@ -54,7 +54,7 @@ void main() {
       TestGame.new,
       (game) async {
         final center = Vector2(0, 160);
-        final elevator = Elevator.test(
+        final elevator = ElevatorEntity.test(
           center: center,
           behavior: elevatorMovingBehavior,
         );

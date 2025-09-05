@@ -5,12 +5,13 @@ import 'package:one_dungeon/entities/entities.dart';
 /// {@template boy_elevator_collision_behavior}
 /// A behavior that handles collision between boy and elevator entities.
 /// {@endtemplate}
-class BoyElevatorCollisionBehavior extends CollisionBehavior<Elevator, Boy> {
+class BoyElevatorCollisionBehavior
+    extends CollisionBehavior<ElevatorEntity, BoyEntity> {
   /// {@macro boy_elevator_collision_behavior}
   BoyElevatorCollisionBehavior();
 
   @override
-  void onCollision(Set<Vector2> intersectionPoints, Elevator other) {
+  void onCollision(Set<Vector2> intersectionPoints, ElevatorEntity other) {
     final pointOne = intersectionPoints.first;
     final pointTwo = intersectionPoints.last;
 
@@ -41,7 +42,7 @@ class BoyElevatorCollisionBehavior extends CollisionBehavior<Elevator, Boy> {
     }
   }
 
-  void _onBottomCollision(Elevator other) {
+  void _onBottomCollision(ElevatorEntity other) {
     parent.velocity.y = 0;
     parent.position.y = other.position.y + 4;
     parent
@@ -55,7 +56,7 @@ class BoyElevatorCollisionBehavior extends CollisionBehavior<Elevator, Boy> {
   }
 
   @override
-  void onCollisionEnd(Elevator other) {
+  void onCollisionEnd(ElevatorEntity other) {
     parent
       ..isBottomTouching = false
       ..isTopTouching = false

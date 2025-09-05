@@ -3,8 +3,12 @@ import 'package:flame/flame.dart';
 import 'package:one_dungeon/constants/constants.dart';
 import 'package:one_dungeon/game/game.dart';
 
+/// {@template star_sprite}
+/// Sprite animation of the star entity.
+/// {@endtemplate}
 class StarSprite extends SpriteAnimationComponent
     with HasGameReference<OneDungeonGame> {
+  /// {@macro star_sprite}
   StarSprite({
     required Vector2 textureSize,
   })  : _textureSize = textureSize,

@@ -7,7 +7,7 @@ import 'package:one_dungeon/one_dungeon_audio/one_dungeon_audio.dart';
 /// {@template boy_star_collision_behavior}
 /// A behavior that handles collision between boy and star entities.
 /// {@endtemplate}
-class BoyStarCollisionBehavior extends CollisionBehavior<StarEntity, Boy>
+class BoyStarCollisionBehavior extends CollisionBehavior<StarEntity, BoyEntity>
     with HasGameReference<OneDungeonGame> {
   /// {@macro boy_star_collision_behavior}
   BoyStarCollisionBehavior();

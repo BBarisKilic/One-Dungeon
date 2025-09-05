@@ -37,7 +37,7 @@ void main() {
       'detects when touches',
       TestGame.new,
       (game) async {
-        final boy = Boy.test(
+        final boy = BoyEntity.test(
           velocity: Vector2(10, 10),
           behavior: gateCollidingBehavior,
         );

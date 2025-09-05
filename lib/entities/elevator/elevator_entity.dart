@@ -4,16 +4,20 @@ import 'package:flame_behaviors/flame_behaviors.dart';
 import 'package:flutter/material.dart';
 import 'package:one_dungeon/entities/entities.dart';
 
-class Elevator extends PositionedEntity {
-  Elevator({
+/// {@template elevator_entity}
+/// An elevator entity that moves up and down.
+/// {@endtemplate}
+class ElevatorEntity extends PositionedEntity {
+  /// {@macro elevator_entity}
+  ElevatorEntity({
     Vector2? center,
   }) : this._(
           center: center ?? Vector2(1110, 200),
           spriteComponent: ElevatorSprite(size: _elevatorSize),
-          behaviors: [ElevatorMovingBehavior()],
+          behaviors: [ElevatorMovementBehavior()],
         );
 
-  Elevator._({
+  ElevatorEntity._({
     required Vector2 center,
     required this.spriteComponent,
     required Iterable<Behavior> behaviors,
@@ -28,8 +32,9 @@ class Elevator extends PositionedEntity {
           children: [spriteComponent],
         );
 
+  /// A constructor used for testing purposes.
   @visibleForTesting
-  Elevator.test({
+  ElevatorEntity.test({
     Vector2? center,
     Behavior? behavior,
   }) : this._(
@@ -38,6 +43,7 @@ class Elevator extends PositionedEntity {
           behaviors: [if (behavior != null) behavior],
         );
 
+  /// The sprite component of the elevator.
   final SpriteComponent spriteComponent;
 
   static final _elevatorSize = Vector2(103, 9);

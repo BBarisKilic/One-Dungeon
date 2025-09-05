@@ -89,7 +89,7 @@ void main() {
           await game.ready();
 
           expect(
-            game.world.children.whereType<Boy>().length,
+            game.world.children.whereType<BoyEntity>().length,
             equals(1),
           );
         },
@@ -103,7 +103,7 @@ void main() {
         (game) async {
           await game.ready();
 
-          final boy = game.world.children.whereType<Boy>();
+          final boy = game.world.children.whereType<BoyEntity>();
 
           expect(
             boy.first.hasBehavior<BoyMovementBehavior>(),

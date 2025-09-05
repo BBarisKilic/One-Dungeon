@@ -7,7 +7,7 @@ import 'package:one_dungeon/game/game.dart';
 /// {@template boy_air_resistance_behavior}
 /// A behavior that applies air resistance to boy entity.
 /// {@endtemplate}
-class BoyAirResistanceBehavior extends Behavior<Boy>
+class BoyAirResistanceBehavior extends Behavior<BoyEntity>
     with HasGameReference<OneDungeonGame> {
   /// {@macro boy_air_resistance_behavior}
   BoyAirResistanceBehavior();

@@ -25,7 +25,7 @@ void main() {
       'loads correctly',
       TestGame.new,
       (game) async {
-        final elevator = Elevator.test();
+        final elevator = ElevatorEntity.test();
 
         await game.ready();
 
@@ -39,7 +39,7 @@ void main() {
       'positioned correctly',
       TestGame.new,
       (game) async {
-        final elevator = Elevator.test(center: Vector2.zero());
+        final elevator = ElevatorEntity.test(center: Vector2.zero());
 
         await game.ready();
 

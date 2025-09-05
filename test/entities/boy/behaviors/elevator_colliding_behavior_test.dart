@@ -31,7 +31,7 @@ void main() {
       'detects when bottom touches',
       TestGame.new,
       (game) async {
-        final boy = Boy.test(
+        final boy = BoyEntity.test(
           center: Vector2(0, 0),
           behavior: elevatorCollidingBehavior,
         );
@@ -42,7 +42,7 @@ void main() {
         boy.isBottomTouching = false;
 
         elevatorCollidingBehavior
-            .onCollision({Vector2(0, 0), Vector2(10, 10)}, Elevator());
+            .onCollision({Vector2(0, 0), Vector2(10, 10)}, ElevatorEntity());
 
         expect(boy.isBottomTouching, isTrue);
       },
@@ -52,7 +52,7 @@ void main() {
       'detects when top touches',
       TestGame.new,
       (game) async {
-        final boy = Boy.test(
+        final boy = BoyEntity.test(
           center: Vector2(0, 200),
           behavior: elevatorCollidingBehavior,
         );
@@ -64,7 +64,7 @@ void main() {
         expect(boy.isTopTouching, isFalse);
 
         elevatorCollidingBehavior
-            .onCollision({Vector2(0, 0), Vector2(10, 0)}, Elevator());
+            .onCollision({Vector2(0, 0), Vector2(10, 0)}, ElevatorEntity());
 
         expect(boy.isTopTouching, isTrue);
       },
@@ -74,7 +74,7 @@ void main() {
       'detects when side(left) touches',
       TestGame.new,
       (game) async {
-        final boy = Boy.test(
+        final boy = BoyEntity.test(
           center: Vector2(10, 0),
           behavior: elevatorCollidingBehavior,
         );
@@ -88,7 +88,7 @@ void main() {
 
         boy.isFlipped = true;
         elevatorCollidingBehavior
-            .onCollision({Vector2(8, 0), Vector2(9, 10)}, Elevator());
+            .onCollision({Vector2(8, 0), Vector2(9, 10)}, ElevatorEntity());
 
         expect(boy.isLeftSideTouching, isTrue);
         expect(boy.isRightSideTouching, isFalse);
@@ -99,7 +99,7 @@ void main() {
       'detects when side(right) touches',
       TestGame.new,
       (game) async {
-        final boy = Boy.test(
+        final boy = BoyEntity.test(
           center: Vector2(10, 0),
           behavior: elevatorCollidingBehavior,
         );
@@ -113,7 +113,7 @@ void main() {
 
         boy.isFlipped = false;
         elevatorCollidingBehavior
-            .onCollision({Vector2(11, 0), Vector2(12, 10)}, Elevator());
+            .onCollision({Vector2(11, 0), Vector2(12, 10)}, ElevatorEntity());
 
         expect(boy.isLeftSideTouching, isFalse);
         expect(boy.isRightSideTouching, isTrue);
@@ -124,7 +124,7 @@ void main() {
       'bottom is not touching when the collision end',
       TestGame.new,
       (game) async {
-        final boy = Boy.test(
+        final boy = BoyEntity.test(
           velocity: Vector2(0, 10),
           center: Vector2(10, 20),
           behavior: elevatorCollidingBehavior,
@@ -137,11 +137,11 @@ void main() {
         expect(boy.isBottomTouching, isFalse);
 
         elevatorCollidingBehavior
-            .onCollision({Vector2(10, 20), Vector2(40, 20)}, Elevator());
+            .onCollision({Vector2(10, 20), Vector2(40, 20)}, ElevatorEntity());
 
         expect(boy.isBottomTouching, isTrue);
 
-        elevatorCollidingBehavior.onCollisionEnd(Elevator());
+        elevatorCollidingBehavior.onCollisionEnd(ElevatorEntity());
 
         expect(boy.isBottomTouching, isFalse);
       },

@@ -8,7 +8,7 @@ import 'package:one_dungeon/game/game.dart';
 /// A behavior that handles the movement logic for the boy entity, including
 /// walking and jumping actions.
 /// {@endtemplate}
-class BoyMovementBehavior extends Behavior<Boy>
+class BoyMovementBehavior extends Behavior<BoyEntity>
     with KeyboardHandler, HasGameReference<OneDungeonGame> {
   /// {@macro boy_movement_behavior}
   BoyMovementBehavior({required this.leftKey, required this.rightKey});

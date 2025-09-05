@@ -34,7 +34,7 @@ void main() {
       TestGame.new,
       (game) async {
         final star = StarEntity(center: Vector2(10, 10));
-        final boy = Boy.test(
+        final boy = BoyEntity.test(
           velocity: Vector2(10, 10),
           behavior: starCollidingBehavior,
         );
@@ -63,7 +63,7 @@ void main() {
       TestGame.new,
       (game) async {
         final star = StarEntity(center: Vector2(10, 10));
-        final boy = Boy.test(
+        final boy = BoyEntity.test(
           velocity: Vector2(10, 10),
           behavior: starCollidingBehavior,
         );

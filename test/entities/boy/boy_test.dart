@@ -25,7 +25,7 @@ void main() {
       'loads correctly',
       TestGame.new,
       (game) async {
-        final boy = Boy.wasd();
+        final boy = BoyEntity.wasd();
 
         await game.ready();
 
@@ -39,7 +39,7 @@ void main() {
       'positioned correctly',
       TestGame.new,
       (game) async {
-        final boy = Boy.arrows(center: Vector2.zero());
+        final boy = BoyEntity.arrows(center: Vector2.zero());
 
         await game.ready();
 

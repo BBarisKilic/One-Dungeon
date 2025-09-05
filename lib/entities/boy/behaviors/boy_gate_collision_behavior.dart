@@ -7,7 +7,7 @@ import 'package:one_dungeon/game/game.dart';
 /// {@template boy_gate_collision_behavior}
 /// A behavior that handles collision between boy and gate entities.
 /// {@endtemplate}
-class BoyGateCollisionBehavior extends CollisionBehavior<Gate, Boy>
+class BoyGateCollisionBehavior extends CollisionBehavior<Gate, BoyEntity>
     with HasGameReference<OneDungeonGame> {
   /// {@macro boy_gate_collision_behavior}
   BoyGateCollisionBehavior();

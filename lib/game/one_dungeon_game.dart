@@ -48,7 +48,7 @@ class OneDungeonGame extends FlameGame
   /// Instance of [OneDungeonAudioPlayer].
   late final OneDungeonAudioPlayer audioPlayer;
 
-  late Boy boy;
+  late BoyEntity boy;
 
   /// Instance of [AppLocalizations].
   AppLocalizations? l10n;
@@ -198,12 +198,12 @@ class OneDungeonGame extends FlameGame
   }
 
   Future<void> _createEntities() async {
-    boy = Boy.wasd();
+    boy = BoyEntity.wasd();
 
     final loadables = [
       _addStars(),
       Future.value(world.add(TimeEntity())),
-      Future.value(world.add(Elevator())),
+      Future.value(world.add(ElevatorEntity())),
       Future.value(world.add(boy)),
     ];
 

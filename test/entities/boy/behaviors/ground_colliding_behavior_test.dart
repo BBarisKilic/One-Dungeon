@@ -35,7 +35,7 @@ void main() {
       'detects when bottom touches',
       TestGame.new,
       (game) async {
-        final boy = Boy.test(
+        final boy = BoyEntity.test(
           center: Vector2(0, 0),
           behavior: groundCollidingBehavior,
         );
@@ -56,7 +56,7 @@ void main() {
       'detects when top touches',
       TestGame.new,
       (game) async {
-        final boy = Boy.test(
+        final boy = BoyEntity.test(
           center: Vector2(0, 200),
           behavior: groundCollidingBehavior,
         );
@@ -78,7 +78,7 @@ void main() {
       'detects when side(left) touches',
       TestGame.new,
       (game) async {
-        final boy = Boy.test(
+        final boy = BoyEntity.test(
           center: Vector2(10, 0),
           behavior: groundCollidingBehavior,
         );
@@ -103,7 +103,7 @@ void main() {
       'detects when side(right) touches',
       TestGame.new,
       (game) async {
-        final boy = Boy.test(
+        final boy = BoyEntity.test(
           center: Vector2(10, 0),
           behavior: groundCollidingBehavior,
         );
@@ -128,7 +128,7 @@ void main() {
       'bottom is not touching when the collision end',
       TestGame.new,
       (game) async {
-        final boy = Boy.test(
+        final boy = BoyEntity.test(
           velocity: Vector2(0, 10),
           center: Vector2(10, 20),
           behavior: groundCollidingBehavior,

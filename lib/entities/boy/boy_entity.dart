@@ -9,9 +9,9 @@ import 'package:one_dungeon/game/game.dart';
 /// {@template boy}
 /// The main character controlled by the player.
 /// {@endtemplate}
-class Boy extends PositionedEntity with HasGameReference<OneDungeonGame> {
+class BoyEntity extends PositionedEntity with HasGameReference<OneDungeonGame> {
   /// {@macro boy}
-  Boy({
+  BoyEntity({
     required LogicalKeyboardKey leftKey,
     required LogicalKeyboardKey rightKey,
     Vector2? center,
@@ -31,7 +31,7 @@ class Boy extends PositionedEntity with HasGameReference<OneDungeonGame> {
         );
 
   /// A private constructor.
-  Boy._({
+  BoyEntity._({
     required Vector2 center,
     required Iterable<Behavior> behaviors,
     required BoySprite boySprite,
@@ -50,7 +50,7 @@ class Boy extends PositionedEntity with HasGameReference<OneDungeonGame> {
         );
 
   /// Creates a boy entity controlled by the 'WASD' keys.
-  Boy.wasd({Vector2? center})
+  BoyEntity.wasd({Vector2? center})
       : this(
           center: center,
           leftKey: LogicalKeyboardKey.keyA,
@@ -58,7 +58,7 @@ class Boy extends PositionedEntity with HasGameReference<OneDungeonGame> {
         );
 
   /// Creates a boy entity controlled by the arrow keys.
-  Boy.arrows({Vector2? center})
+  BoyEntity.arrows({Vector2? center})
       : this(
           center: center,
           leftKey: LogicalKeyboardKey.arrowLeft,
@@ -67,7 +67,7 @@ class Boy extends PositionedEntity with HasGameReference<OneDungeonGame> {
 
   /// A constructor used for testing purposes.
   @visibleForTesting
-  Boy.test({Vector2? velocity, Vector2? center, Behavior? behavior})
+  BoyEntity.test({Vector2? velocity, Vector2? center, Behavior? behavior})
       : this._(
           velocity: velocity,
           center: center ?? Vector2(30, 500),

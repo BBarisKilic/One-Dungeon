@@ -5,7 +5,7 @@ import 'package:one_dungeon/entities/entities.dart';
 /// {@template boy_gravity_behavior}
 /// A behavior that applies gravity to boy entity.
 /// {@endtemplate}
-class BoyGravityBehavior extends Behavior<Boy> {
+class BoyGravityBehavior extends Behavior<BoyEntity> {
   /// {@macro boy_gravity_behavior}
   BoyGravityBehavior();
 

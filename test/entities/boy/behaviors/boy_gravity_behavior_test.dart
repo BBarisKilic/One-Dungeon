@@ -32,7 +32,7 @@ void main() {
       TestGame.new,
       (game) async {
         final centerY = game.size.y / 2;
-        final boy = Boy.test(
+        final boy = BoyEntity.test(
           center: Vector2(0, centerY),
           behavior: boyGravityBehavior,
         );

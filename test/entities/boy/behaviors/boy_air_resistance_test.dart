@@ -31,7 +31,7 @@ void main() {
       'applies resistance when having positive velocity in the x direction',
       TestGame.new,
       (game) async {
-        final boy = Boy.test(
+        final boy = BoyEntity.test(
           velocity: Vector2(10, 0),
           behavior: boyAirResistanceBehavior,
         );
@@ -52,7 +52,7 @@ void main() {
       'applies resistance when having negative velocity in the x direction',
       TestGame.new,
       (game) async {
-        final boy = Boy.test(
+        final boy = BoyEntity.test(
           velocity: Vector2(-10, 0),
           behavior: boyAirResistanceBehavior,
         );
@@ -72,7 +72,7 @@ void main() {
       'stops character on left edge of the screen',
       TestGame.new,
       (game) async {
-        final boy = Boy.test(
+        final boy = BoyEntity.test(
           velocity: Vector2(-10, 0),
           center: Vector2(10, 0),
           behavior: boyAirResistanceBehavior,
@@ -93,7 +93,7 @@ void main() {
       'stops character on right edge of the screen',
       TestGame.new,
       (game) async {
-        final boy = Boy.test(
+        final boy = BoyEntity.test(
           velocity: Vector2(10, 0),
           center: Vector2(game.cameraComponent.visibleWorldRect.width, 0),
           behavior: boyAirResistanceBehavior,

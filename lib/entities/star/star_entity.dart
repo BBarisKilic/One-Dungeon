@@ -3,7 +3,11 @@ import 'package:flame/components.dart';
 import 'package:flame_behaviors/flame_behaviors.dart';
 import 'package:one_dungeon/entities/entities.dart';
 
+/// {@template star_entity}
+/// An entity that represents a star.
+/// {@endtemplate}
 class StarEntity extends PositionedEntity {
+  /// {@macro star_entity}
   StarEntity({
     required Vector2 center,
   }) : this._(

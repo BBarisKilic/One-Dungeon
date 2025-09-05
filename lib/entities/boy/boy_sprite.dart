@@ -4,8 +4,12 @@ import 'package:one_dungeon/constants/constants.dart';
 import 'package:one_dungeon/entities/entities.dart';
 import 'package:one_dungeon/game/game.dart';
 
+/// {@template boy_sprite}
+/// Sprit of the boy entity.
+/// {@endtemplate}
 class BoySprite extends SpriteAnimationGroupComponent<BoyState>
     with HasGameReference<OneDungeonGame> {
+  /// {@macro boy_sprite}
   BoySprite({
     required Vector2 textureSize,
     BoyState state = const BoyState.idle(),
@@ -60,6 +64,7 @@ class BoySprite extends SpriteAnimationGroupComponent<BoyState>
     return super.onLoad();
   }
 
+  /// Updates the current state.
   void updateState({required BoyState state}) {
     if (current != state) current = state;
   }
