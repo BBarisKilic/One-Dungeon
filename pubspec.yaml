@@ -27,7 +27,7 @@ dependencies:
 
 dev_dependencies:
   bloc_test: ^10.0.0
-  build_runner: ^2.7.1
+  build_runner: ^2.10.4
   flame_test: ^2.0.1
   flutter_test:
     sdk: flutter
