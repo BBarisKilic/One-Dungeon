@@ -25,8 +25,12 @@ enum GameStatus {
   lose,
 }
 
+/// {@template one_dungeon_game}
+/// Main game class for One Dungeon game.
+/// {@endtemplate}
 class OneDungeonGame extends FlameGame
     with HasKeyboardHandlerComponents, HasCollisionDetection, TapCallbacks {
+  /// {@macro one_dungeon_game}
   OneDungeonGame()
       : time = 0,
         score = 0,
@@ -48,6 +52,7 @@ class OneDungeonGame extends FlameGame
   /// Instance of [OneDungeonAudioPlayer].
   late final OneDungeonAudioPlayer audioPlayer;
 
+  /// Instance of [BoyEntity].
   late BoyEntity boy;
 
   /// Instance of [AppLocalizations].
@@ -214,6 +219,7 @@ class OneDungeonGame extends FlameGame
     await Future.wait(loadStars(world));
   }
 
+  /// Starts the game if not started, otherwise restarts it.
   FutureOr<void> startGame() {
     if (time != 0) return restartGame();
 
@@ -222,6 +228,7 @@ class OneDungeonGame extends FlameGame
     resumeEngine();
   }
 
+  /// Restarts the game.
   Future<void> restartGame() async {
     score = 0;
     collectedStars = 0;
@@ -241,6 +248,7 @@ class OneDungeonGame extends FlameGame
     resumeEngine();
   }
 
+  /// Stops the game with the given [status].
   Future<void> stopGame(GameStatus status) async {
     score = status == GameStatus.win ? _calculateScore() : 0;
 

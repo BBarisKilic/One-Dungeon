@@ -4,7 +4,9 @@ import 'package:one_dungeon/constants/constants.dart';
 import 'package:one_dungeon/entities/entities.dart';
 import 'package:one_dungeon/game/game.dart';
 
+/// Extension for main game class to add utility methods.
 extension OneDungeonGameExt on OneDungeonGame {
+  /// Pre-loads essential game assets.
   List<Future<Image> Function()> preLoadAssets() {
     return [
       () async => images.load(GameAssets.boyIdleSprite),
@@ -15,6 +17,7 @@ extension OneDungeonGameExt on OneDungeonGame {
     ];
   }
 
+  /// Loads star entities into the game world at predefined positions.
   List<Future<void>> loadStars(World world) {
     return [
       Future.value(world.add(StarEntity(center: Vector2(350, 470)))),

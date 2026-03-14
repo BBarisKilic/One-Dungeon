@@ -7,7 +7,11 @@ import 'package:one_dungeon/game/game.dart';
 import 'package:one_dungeon/l10n/l10n.dart';
 import 'package:one_dungeon/start_game/start_game.dart';
 
+/// {@template one_dungeon_game_page}
+/// A page that displays the One Dungeon game.
+/// {@endtemplate}
 class OneDungeonGamePage extends StatelessWidget {
+  /// {@macro one_dungeon_game_page}
   const OneDungeonGamePage({super.key});
 
   @override
@@ -22,6 +26,7 @@ class OneDungeonGamePage extends StatelessWidget {
   }
 }
 
+///
 @visibleForTesting
 class OneDungeonGameLoadedView extends StatelessWidget {
   const OneDungeonGameLoadedView({super.key, this.initialActiveOverlays});
