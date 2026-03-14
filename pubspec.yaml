@@ -28,10 +28,12 @@ dependencies:
 dev_dependencies:
   bloc_test: ^10.0.0
   build_runner: ^2.7.0
+  custom_lint: ^0.7.6
   flame_test: ^2.0.3
   flutter_test:
     sdk: flutter
   freezed: ^3.2.0
+  freezed_lint: ^0.0.10
   mocktail: ^1.0.4
   very_good_analysis: ^9.0.0
 
