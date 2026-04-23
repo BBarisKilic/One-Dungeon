@@ -32,7 +32,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   freezed: ^3.0.6
-  mocktail: ^1.0.4
+  mocktail: ^1.0.5
   very_good_analysis: ^10.0.0
 
 flutter:
