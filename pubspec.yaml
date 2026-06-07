@@ -31,7 +31,7 @@ dev_dependencies:
   flame_test: ^2.2.0
   flutter_test:
     sdk: flutter
-  freezed: ^3.0.6
+  freezed: ^3.2.5
   mocktail: ^1.0.5
   very_good_analysis: ^10.0.0
 
