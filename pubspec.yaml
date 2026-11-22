@@ -20,7 +20,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   freezed_annotation: ^3.1.0
-  get_it: ^9.2.1
+  get_it: ^9.3.0
   intl: ^0.20.3
   sharp_toggle_switch:
     path: ./packages/sharp_toggle_switch
